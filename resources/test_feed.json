@@ -1,0 +1,4159 @@
+{
+  'updated': 'Fri, 29 Jan 2016 17:24:34 GMT',
+  'feed': {
+    'updated': 'Fri, 29 Jan 2016 18:24:34 +0100',
+    'subtitle': 'Das Handelsblatt ist die größte Wirtschafts- und Finanzzeitung in deutscher Sprache. Rund 200 Redakteure, Korrespondenten und ständige Mitarbeiter rund um den Globus sorgen für eine aktuelle, umfassende und fundierte Berichterstattung.',
+    'updated_parsed': time
+    .
+    struct_time
+    (
+    tm_year
+    =
+    2016,
+    tm_mon
+    =
+    1,
+    tm_mday
+    =
+    29,
+    tm_hour
+    =
+    17,
+    tm_min
+    =
+    24,
+    tm_sec
+    =
+    34,
+    tm_wday
+    =
+    4,
+    tm_yday
+    =
+    29,
+    tm_isdst
+    =
+    0
+    ),
+    'link': 'http://www.handelsblatt.com',
+    'xhtml_meta': {
+      'name': 'robots',
+      'content': 'noindex, follow, noarchive'
+    },
+    'rights_detail': {
+      'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+      'language': None,
+      'type': 'text/plain',
+      'value': 'Handelsblatt GmbH'
+    },
+    'subtitle_detail': {
+      'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+      'language': None,
+      'type': 'text/html',
+      'value': 'Das Handelsblatt ist die größte Wirtschafts- und Finanzzeitung in deutscher Sprache. Rund 200 Redakteure, Korrespondenten und ständige Mitarbeiter rund um den Globus sorgen für eine aktuelle, umfassende und fundierte Berichterstattung.'
+    },
+    'title_detail': {
+      'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+      'language': None,
+      'type': 'text/plain',
+      'value': 'Handelsblatt Online - Unternehmen'
+    },
+    'links': [
+      {
+        'rel': 'self',
+        'type': 'application/rss+xml',
+        'href': 'http://www.handelsblatt.com/contentexport/feed/unternehmen'
+      },
+      {
+        'rel': 'alternate',
+        'type': 'text/html',
+        'href': 'http://www.handelsblatt.com'
+      }
+    ],
+    'title': 'Handelsblatt Online - Unternehmen',
+    'image': {
+      'link': 'http://www.handelsblatt.com',
+      'title_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/plain',
+        'value': 'handelsblatt.com'
+      },
+      'links': [
+        {
+          'rel': 'alternate',
+          'type': 'text/html',
+          'href': 'http://www.handelsblatt.com'
+        }
+      ],
+      'href': 'http://www.handelsblatt.com/images/rss_logo_exklusiv/3595600/1-formatOriginal.jpg',
+      'title': 'handelsblatt.com'
+    },
+    'ttl': '13',
+    'rights': 'Handelsblatt GmbH',
+    'language': 'de-de'
+  },
+  'href': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+  'headers': {
+    'Content-Length': '12274',
+    'X-Varnish-HitMiss': 'HIT (12) degtluv8450',
+    'X-Backend': 'BE: handelsblatt',
+    'Cache-Control': 'public, private, max-age=600',
+    'Vary': 'Accept-Encoding',
+    'X-Varnish': '893078409 893066113',
+    'Date': 'Fri, 29 Jan 2016 17:25:38 GMT',
+    'Expires': 'Fri, 29 Jan 2016 17:35:38 GMT',
+    'Content-Encoding': 'gzip',
+    'Server': 'nginx/1.8.0',
+    'Connection': 'close',
+    'Accept-Ranges': 'bytes',
+    'X-Cache-Control-Set-By': 'Cache-Control or Expires (300)',
+    'X-Cdn': 'Served-By-Akamai',
+    'Last-Modified': 'Fri, 29 Jan 2016 17:24:34 GMT',
+    'Content-Type': 'text/xml;charset=UTF-8'
+  },
+  'updated_parsed': time
+  .
+  struct_time
+  (
+  tm_year
+  =
+  2016,
+  tm_mon
+  =
+  1,
+  tm_mday
+  =
+  29,
+  tm_hour
+  =
+  17,
+  tm_min
+  =
+  24,
+  tm_sec
+  =
+  34,
+  tm_wday
+  =
+  4,
+  tm_yday
+  =
+  29,
+  tm_isdst
+  =
+  0
+  ),
+  'namespaces': {
+    '': 'http://www.w3.org/2005/Atom',
+    'media': 'http://search.yahoo.com/mrss/',
+    'content': 'http://purl.org/rss/1.0/modules/content/',
+    'xhtml': 'http://www.w3.org/1999/xhtml'
+  },
+  'status': 200,
+  'version': 'rss20',
+  'entries': [
+    {
+      'tags': [
+        {
+          'term': 'Industrie',
+          'scheme': None,
+          'label': None
+        }
+      ],
+      'content': [
+        {
+          'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+          'language': None,
+          'type': 'text/html',
+          'value': '<a href="http://www.handelsblatt.com/unternehmen/industrie/hauptversammlung-thyssen-krupp-keine-revolution-in-bochum/12897486.html"><img alt="" src="http://www.handelsblatt.com/images/heinrich-hiesinger/12897546/2-format7.jpg?format=format7"/></a>Der große Showdown ist ausgeblieben: Ernsthaften Gegenwind für die Strategie von Vorstandschef Hiesinger gab es auf der Hauptversammlung von Thyssen-Krupp nicht. Gestritten wurde allerdings über die Dividende.'
+        }
+      ],
+      'guidislink': False,
+      'summary_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/html',
+        'value': 'Der große Showdown ist ausgeblieben: Ernsthaften Gegenwind für die Strategie von Vorstandschef Hiesinger gab es auf der Hauptversammlung von Thyssen-Krupp nicht. Gestritten wurde allerdings über die Dividende.'
+      },
+      'link': 'http://www.handelsblatt.com/unternehmen/industrie/hauptversammlung-thyssen-krupp-keine-revolution-in-bochum/12897486.html',
+      'title_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/plain',
+        'value': 'Hauptversammlung Thyssen-Krupp: Keine Revolution in Bochum'
+      },
+      'links': [
+        {
+          'rel': 'alternate',
+          'type': 'text/html',
+          'href': 'http://www.handelsblatt.com/unternehmen/industrie/hauptversammlung-thyssen-krupp-keine-revolution-in-bochum/12897486.html'
+        },
+        {
+          'length': '106394',
+          'type': 'image/jpeg',
+          'href': 'http://www.handelsblatt.com/images/heinrich-hiesinger/12897546/2-format7.jpg?format=format7',
+          'rel': 'enclosure'
+        }
+      ],
+      'title': 'Hauptversammlung Thyssen-Krupp: Keine Revolution in Bochum',
+      'published_parsed': time
+      .
+      struct_time
+      (
+      tm_year
+      =
+      2016,
+      tm_mon
+      =
+      1,
+      tm_mday
+      =
+      29,
+      tm_hour
+      =
+      14,
+      tm_min
+      =
+      9,
+      tm_sec
+      =
+      51,
+      tm_wday
+      =
+      4,
+      tm_yday
+      =
+      29,
+      tm_isdst
+      =
+      0
+      ),
+      'id': 'http://www.handelsblatt.com/unternehmen/industrie/hauptversammlung-thyssen-krupp-keine-revolution-in-bochum/12897486.html',
+      'summary': 'Der große Showdown ist ausgeblieben: Ernsthaften Gegenwind für die Strategie von Vorstandschef Hiesinger gab es auf der Hauptversammlung von Thyssen-Krupp nicht. Gestritten wurde allerdings über die Dividende.',
+      'published': 'Fri, 29 Jan 2016 15:09:51 +0100'
+    },
+    {
+      'tags': [
+        {
+          'term': 'Banken + Versicherungen',
+          'scheme': None,
+          'label': None
+        }
+      ],
+      'content': [
+        {
+          'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+          'language': None,
+          'type': 'text/html',
+          'value': '<a href="http://www.handelsblatt.com/unternehmen/banken-versicherungen/societe-generale-gericht-setzt-neuen-prozess-gegen-ex-banker-kerviel-an/12899178.html"><img alt="" src="http://www.handelsblatt.com/images/jerome-kerviel/12899198/2-format7.jpg?format=format7"/></a>Einst hatte er seinen Arbeitgeber, die Société Générale beinahe in die Pleite getrieben, dann wurde er zu drei Jahren Haft und 4,9 Milliarden Euro Schadenersatz verurteilt. Nun soll die Summe neu verhandelt werden.'
+        }
+      ],
+      'guidislink': False,
+      'summary_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/html',
+        'value': 'Einst hatte er seinen Arbeitgeber, die Société Générale beinahe in die Pleite getrieben, dann wurde er zu drei Jahren Haft und 4,9 Milliarden Euro Schadenersatz verurteilt. Nun soll die Summe neu verhandelt werden.'
+      },
+      'link': 'http://www.handelsblatt.com/unternehmen/banken-versicherungen/societe-generale-gericht-setzt-neuen-prozess-gegen-ex-banker-kerviel-an/12899178.html',
+      'title_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/plain',
+        'value': 'Société Générale: Gericht setzt neuen Prozess gegen Ex-Banker Kerviel an'
+      },
+      'links': [
+        {
+          'rel': 'alternate',
+          'type': 'text/html',
+          'href': 'http://www.handelsblatt.com/unternehmen/banken-versicherungen/societe-generale-gericht-setzt-neuen-prozess-gegen-ex-banker-kerviel-an/12899178.html'
+        },
+        {
+          'length': '198962',
+          'type': 'image/jpeg',
+          'href': 'http://www.handelsblatt.com/images/jerome-kerviel/12899198/2-format7.jpg?format=format7',
+          'rel': 'enclosure'
+        }
+      ],
+      'title': 'Société Générale: Gericht setzt neuen Prozess gegen Ex-Banker Kerviel an',
+      'published_parsed': time
+      .
+      struct_time
+      (
+      tm_year
+      =
+      2016,
+      tm_mon
+      =
+      1,
+      tm_mday
+      =
+      29,
+      tm_hour
+      =
+      17,
+      tm_min
+      =
+      21,
+      tm_sec
+      =
+      50,
+      tm_wday
+      =
+      4,
+      tm_yday
+      =
+      29,
+      tm_isdst
+      =
+      0
+      ),
+      'id': 'http://www.handelsblatt.com/unternehmen/banken-versicherungen/societe-generale-gericht-setzt-neuen-prozess-gegen-ex-banker-kerviel-an/12899178.html',
+      'summary': 'Einst hatte er seinen Arbeitgeber, die Société Générale beinahe in die Pleite getrieben, dann wurde er zu drei Jahren Haft und 4,9 Milliarden Euro Schadenersatz verurteilt. Nun soll die Summe neu verhandelt werden.',
+      'published': 'Fri, 29 Jan 2016 18:21:50 +0100'
+    },
+    {
+      'tags': [
+        {
+          'term': 'Handel + Konsumgüter',
+          'scheme': None,
+          'label': None
+        }
+      ],
+      'content': [
+        {
+          'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+          'language': None,
+          'type': 'text/html',
+          'value': '<a href="http://www.handelsblatt.com/unternehmen/handel-konsumgueter/monkey-47-und-pernod-ricard-franzosen-setzen-auf-den-schwarzwald-gin/12897826.html"><img alt="" src="http://www.handelsblatt.com/images/monkey-47/12897872/4-format7.jpg?format=format7"/></a>Monkey 47 zählt in Deutschland zu den großen Gewinnern des Gin-Booms. Das bleibt auch dem Getränkeriesen Pernord Ricard nicht verborgen. Die Franzosen steigen jetzt bei der Brennerei aus dem Schwarzwald ein.'
+        }
+      ],
+      'guidislink': False,
+      'summary_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/html',
+        'value': 'Monkey 47 zählt in Deutschland zu den großen Gewinnern des Gin-Booms. Das bleibt auch dem Getränkeriesen Pernord Ricard nicht verborgen. Die Franzosen steigen jetzt bei der Brennerei aus dem Schwarzwald ein.'
+      },
+      'link': 'http://www.handelsblatt.com/unternehmen/handel-konsumgueter/monkey-47-und-pernod-ricard-franzosen-setzen-auf-den-schwarzwald-gin/12897826.html',
+      'title_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/plain',
+        'value': 'Monkey 47 und Pernod Ricard: Franzosen setzen auf den Schwarzwald-Gin'
+      },
+      'links': [
+        {
+          'rel': 'alternate',
+          'type': 'text/html',
+          'href': 'http://www.handelsblatt.com/unternehmen/handel-konsumgueter/monkey-47-und-pernod-ricard-franzosen-setzen-auf-den-schwarzwald-gin/12897826.html'
+        },
+        {
+          'length': '1475081',
+          'type': 'image/jpeg',
+          'href': 'http://www.handelsblatt.com/images/monkey-47/12897872/4-format7.jpg?format=format7',
+          'rel': 'enclosure'
+        }
+      ],
+      'title': 'Monkey 47 und Pernod Ricard: Franzosen setzen auf den Schwarzwald-Gin',
+      'published_parsed': time
+      .
+      struct_time
+      (
+      tm_year
+      =
+      2016,
+      tm_mon
+      =
+      1,
+      tm_mday
+      =
+      29,
+      tm_hour
+      =
+      14,
+      tm_min
+      =
+      39,
+      tm_sec
+      =
+      22,
+      tm_wday
+      =
+      4,
+      tm_yday
+      =
+      29,
+      tm_isdst
+      =
+      0
+      ),
+      'id': 'http://www.handelsblatt.com/unternehmen/handel-konsumgueter/monkey-47-und-pernod-ricard-franzosen-setzen-auf-den-schwarzwald-gin/12897826.html',
+      'summary': 'Monkey 47 zählt in Deutschland zu den großen Gewinnern des Gin-Booms. Das bleibt auch dem Getränkeriesen Pernord Ricard nicht verborgen. Die Franzosen steigen jetzt bei der Brennerei aus dem Schwarzwald ein.',
+      'published': 'Fri, 29 Jan 2016 15:39:22 +0100'
+    },
+    {
+      'tags': [
+        {
+          'term': 'Handel + Konsumgüter',
+          'scheme': None,
+          'label': None
+        }
+      ],
+      'content': [
+        {
+          'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+          'language': None,
+          'type': 'text/html',
+          'value': '<a href="http://www.handelsblatt.com/unternehmen/handel-konsumgueter/deutsche-post-sonntagsleerungen-werden-seltener/12898596.html"><img alt="" src="http://www.handelsblatt.com/images/deutsche-post/12898622/4-format7.jpg?format=format7"/></a>Email, SMS und Co. machen dem Briefgeschäft der Deutschen Post Konkurrenz. Jetzt streicht der gelbe Riese die Sonntagsleerung von Briefkästen zusammen. Zu geringe Mengen machten viele Fahrten schlicht nutzlos.'
+        }
+      ],
+      'guidislink': False,
+      'summary_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/html',
+        'value': 'Email, SMS und Co. machen dem Briefgeschäft der Deutschen Post Konkurrenz. Jetzt streicht der gelbe Riese die Sonntagsleerung von Briefkästen zusammen. Zu geringe Mengen machten viele Fahrten schlicht nutzlos.'
+      },
+      'link': 'http://www.handelsblatt.com/unternehmen/handel-konsumgueter/deutsche-post-sonntagsleerungen-werden-seltener/12898596.html',
+      'title_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/plain',
+        'value': 'Deutsche Post: Sonntagsleerungen werden seltener'
+      },
+      'links': [
+        {
+          'rel': 'alternate',
+          'type': 'text/html',
+          'href': 'http://www.handelsblatt.com/unternehmen/handel-konsumgueter/deutsche-post-sonntagsleerungen-werden-seltener/12898596.html'
+        },
+        {
+          'length': '129995',
+          'type': 'image/jpeg',
+          'href': 'http://www.handelsblatt.com/images/deutsche-post/12898622/4-format7.jpg?format=format7',
+          'rel': 'enclosure'
+        }
+      ],
+      'title': 'Deutsche Post: Sonntagsleerungen werden seltener',
+      'published_parsed': time
+      .
+      struct_time
+      (
+      tm_year
+      =
+      2016,
+      tm_mon
+      =
+      1,
+      tm_mday
+      =
+      29,
+      tm_hour
+      =
+      15,
+      tm_min
+      =
+      44,
+      tm_sec
+      =
+      6,
+      tm_wday
+      =
+      4,
+      tm_yday
+      =
+      29,
+      tm_isdst
+      =
+      0
+      ),
+      'id': 'http://www.handelsblatt.com/unternehmen/handel-konsumgueter/deutsche-post-sonntagsleerungen-werden-seltener/12898596.html',
+      'summary': 'Email, SMS und Co. machen dem Briefgeschäft der Deutschen Post Konkurrenz. Jetzt streicht der gelbe Riese die Sonntagsleerung von Briefkästen zusammen. Zu geringe Mengen machten viele Fahrten schlicht nutzlos.',
+      'published': 'Fri, 29 Jan 2016 16:44:06 +0100'
+    },
+    {
+      'tags': [
+        {
+          'term': 'Herr K. – der moderne Mann',
+          'scheme': None,
+          'label': None
+        }
+      ],
+      'content': [
+        {
+          'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+          'language': None,
+          'type': 'text/html',
+          'value': '<a href="http://www.handelsblatt.com/unternehmen/beruf-und-buero/herrk/der-moderne-mann-koerper-klaus-im-dschihad-camp/12874080.html"><img alt="" src="http://www.handelsblatt.com/images/herr_k_klein/10781648/3-format7.png?format=format7"/></a>Herr K. will mehr Sport machen, aber er weiß nicht genau was. Deshalb entscheidet er sich für das örtliche Fitnessstudio. So ganz wohl fühlt sich Herr K. zwischen den jungen Männern nicht. Doch er muss durchhalten.'
+        }
+      ],
+      'guidislink': False,
+      'summary_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/html',
+        'value': 'Herr K. will mehr Sport machen, aber er weiß nicht genau was. Deshalb entscheidet er sich für das örtliche Fitnessstudio. So ganz wohl fühlt sich Herr K. zwischen den jungen Männern nicht. Doch er muss durchhalten.'
+      },
+      'link': 'http://www.handelsblatt.com/unternehmen/beruf-und-buero/herrk/der-moderne-mann-koerper-klaus-im-dschihad-camp/12874080.html',
+      'title_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/plain',
+        'value': 'Der moderne Mann: Körper-Klaus im Dschihad-Camp'
+      },
+      'links': [
+        {
+          'rel': 'alternate',
+          'type': 'text/html',
+          'href': 'http://www.handelsblatt.com/unternehmen/beruf-und-buero/herrk/der-moderne-mann-koerper-klaus-im-dschihad-camp/12874080.html'
+        },
+        {
+          'length': '114172',
+          'type': 'image/png',
+          'href': 'http://www.handelsblatt.com/images/herr_k_klein/10781648/3-format7.png?format=format7',
+          'rel': 'enclosure'
+        }
+      ],
+      'title': 'Der moderne Mann: Körper-Klaus im Dschihad-Camp',
+      'published_parsed': time
+      .
+      struct_time
+      (
+      tm_year
+      =
+      2016,
+      tm_mon
+      =
+      1,
+      tm_mday
+      =
+      29,
+      tm_hour
+      =
+      16,
+      tm_min
+      =
+      16,
+      tm_sec
+      =
+      48,
+      tm_wday
+      =
+      4,
+      tm_yday
+      =
+      29,
+      tm_isdst
+      =
+      0
+      ),
+      'id': 'http://www.handelsblatt.com/unternehmen/beruf-und-buero/herrk/der-moderne-mann-koerper-klaus-im-dschihad-camp/12874080.html',
+      'summary': 'Herr K. will mehr Sport machen, aber er weiß nicht genau was. Deshalb entscheidet er sich für das örtliche Fitnessstudio. So ganz wohl fühlt sich Herr K. zwischen den jungen Männern nicht. Doch er muss durchhalten.',
+      'published': 'Fri, 29 Jan 2016 17:16:48 +0100'
+    },
+    {
+      'tags': [
+        {
+          'term': 'Mittelstand',
+          'scheme': None,
+          'label': None
+        }
+      ],
+      'content': [
+        {
+          'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+          'language': None,
+          'type': 'text/html',
+          'value': '<a href="http://www.handelsblatt.com/unternehmen/mittelstand/balda-wettbieten-um-den-kunststoffhersteller/12898654.html"><img alt="" src="http://www.handelsblatt.com/images/balda/12898796/2-format7.jpg?format=format7"/></a>Der Verpackungshersteller Stevanato aus Italien hat sein Angebot auf 95 Millionen Euro hochgeschraubt. Damit reagiert Heitkamp &amp; Thumann ins Hintertreffen. Ein Showdown auf der Hauptversammlung.'
+        }
+      ],
+      'guidislink': False,
+      'summary_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/html',
+        'value': 'Der Verpackungshersteller Stevanato aus Italien hat sein Angebot auf 95 Millionen Euro hochgeschraubt. Damit reagiert Heitkamp & Thumann ins Hintertreffen. Ein Showdown auf der Hauptversammlung.'
+      },
+      'link': 'http://www.handelsblatt.com/unternehmen/mittelstand/balda-wettbieten-um-den-kunststoffhersteller/12898654.html',
+      'title_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/plain',
+        'value': 'Balda: Wettbieten um den Kunststoffhersteller'
+      },
+      'links': [
+        {
+          'rel': 'alternate',
+          'type': 'text/html',
+          'href': 'http://www.handelsblatt.com/unternehmen/mittelstand/balda-wettbieten-um-den-kunststoffhersteller/12898654.html'
+        },
+        {
+          'length': '323007',
+          'type': 'image/jpeg',
+          'href': 'http://www.handelsblatt.com/images/balda/12898796/2-format7.jpg?format=format7',
+          'rel': 'enclosure'
+        }
+      ],
+      'title': 'Balda: Wettbieten um den Kunststoffhersteller',
+      'published_parsed': time
+      .
+      struct_time
+      (
+      tm_year
+      =
+      2016,
+      tm_mon
+      =
+      1,
+      tm_mday
+      =
+      29,
+      tm_hour
+      =
+      16,
+      tm_min
+      =
+      10,
+      tm_sec
+      =
+      0,
+      tm_wday
+      =
+      4,
+      tm_yday
+      =
+      29,
+      tm_isdst
+      =
+      0
+      ),
+      'id': 'http://www.handelsblatt.com/unternehmen/mittelstand/balda-wettbieten-um-den-kunststoffhersteller/12898654.html',
+      'summary': 'Der Verpackungshersteller Stevanato aus Italien hat sein Angebot auf 95 Millionen Euro hochgeschraubt. Damit reagiert Heitkamp & Thumann ins Hintertreffen. Ein Showdown auf der Hauptversammlung.',
+      'published': 'Fri, 29 Jan 2016 17:10:00 +0100'
+    },
+    {
+      'tags': [
+        {
+          'term': 'Handel + Konsumgüter',
+          'scheme': None,
+          'label': None
+        }
+      ],
+      'content': [
+        {
+          'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+          'language': None,
+          'type': 'text/html',
+          'value': '<a href="http://www.handelsblatt.com/unternehmen/handel-konsumgueter/deutscher-einzelhandel-haendler-erzielen-hoechstes-plus-seit-21-jahren/12898712.html"><img alt="" src="http://www.handelsblatt.com/images/gute-geschaefte/12898774/2-format7.jpg?format=format7"/></a>Der deutsche Einzelhandel hat 2015 das sechste Jahr in Folge zugelegt – und das so stark, wie zuletzt vor 21 Jahren. Doch auch die schönsten Zuwachszahlen verblassen gegen die der Internet- und Versandhändler.'
+        }
+      ],
+      'guidislink': False,
+      'summary_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/html',
+        'value': 'Der deutsche Einzelhandel hat 2015 das sechste Jahr in Folge zugelegt – und das so stark, wie zuletzt vor 21 Jahren. Doch auch die schönsten Zuwachszahlen verblassen gegen die der Internet- und Versandhändler.'
+      },
+      'link': 'http://www.handelsblatt.com/unternehmen/handel-konsumgueter/deutscher-einzelhandel-haendler-erzielen-hoechstes-plus-seit-21-jahren/12898712.html',
+      'title_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/plain',
+        'value': 'Deutscher Einzelhandel: Händler erzielen höchstes Plus seit 21 Jahren'
+      },
+      'links': [
+        {
+          'rel': 'alternate',
+          'type': 'text/html',
+          'href': 'http://www.handelsblatt.com/unternehmen/handel-konsumgueter/deutscher-einzelhandel-haendler-erzielen-hoechstes-plus-seit-21-jahren/12898712.html'
+        },
+        {
+          'length': '233753',
+          'type': 'image/jpeg',
+          'href': 'http://www.handelsblatt.com/images/gute-geschaefte/12898774/2-format7.jpg?format=format7',
+          'rel': 'enclosure'
+        }
+      ],
+      'title': 'Deutscher Einzelhandel: Händler erzielen höchstes Plus seit 21 Jahren',
+      'published_parsed': time
+      .
+      struct_time
+      (
+      tm_year
+      =
+      2016,
+      tm_mon
+      =
+      1,
+      tm_mday
+      =
+      29,
+      tm_hour
+      =
+      16,
+      tm_min
+      =
+      9,
+      tm_sec
+      =
+      0,
+      tm_wday
+      =
+      4,
+      tm_yday
+      =
+      29,
+      tm_isdst
+      =
+      0
+      ),
+      'id': 'http://www.handelsblatt.com/unternehmen/handel-konsumgueter/deutscher-einzelhandel-haendler-erzielen-hoechstes-plus-seit-21-jahren/12898712.html',
+      'summary': 'Der deutsche Einzelhandel hat 2015 das sechste Jahr in Folge zugelegt – und das so stark, wie zuletzt vor 21 Jahren. Doch auch die schönsten Zuwachszahlen verblassen gegen die der Internet- und Versandhändler.',
+      'published': 'Fri, 29 Jan 2016 17:09:00 +0100'
+    },
+    {
+      'tags': [
+        {
+          'term': 'Banken + Versicherungen',
+          'scheme': None,
+          'label': None
+        }
+      ],
+      'content': [
+        {
+          'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+          'language': None,
+          'type': 'text/html',
+          'value': '<a href="http://www.handelsblatt.com/unternehmen/banken-versicherungen/volksbanken-sparda-bank-knausert-bei-der-dividende/12898656.html"><img alt="" src="http://www.handelsblatt.com/images/claim-der-sparda-banken/12898770/2-format7.jpg?format=format7"/></a>Die Genossenschaftsbanken sind für attraktive Dividenden bekannt. Doch jetzt kürzen einige der Geldhäuser die Ausschüttung an ihre Mitglieder – zum Beispiel die Sparda-Bank Baden-Württemberg.'
+        }
+      ],
+      'guidislink': False,
+      'summary_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/html',
+        'value': 'Die Genossenschaftsbanken sind für attraktive Dividenden bekannt. Doch jetzt kürzen einige der Geldhäuser die Ausschüttung an ihre Mitglieder – zum Beispiel die Sparda-Bank Baden-Württemberg.'
+      },
+      'link': 'http://www.handelsblatt.com/unternehmen/banken-versicherungen/volksbanken-sparda-bank-knausert-bei-der-dividende/12898656.html',
+      'title_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/plain',
+        'value': 'Volksbanken: Sparda-Bank knausert bei der Dividende'
+      },
+      'links': [
+        {
+          'rel': 'alternate',
+          'type': 'text/html',
+          'href': 'http://www.handelsblatt.com/unternehmen/banken-versicherungen/volksbanken-sparda-bank-knausert-bei-der-dividende/12898656.html'
+        },
+        {
+          'length': '165952',
+          'type': 'image/jpeg',
+          'href': 'http://www.handelsblatt.com/images/claim-der-sparda-banken/12898770/2-format7.jpg?format=format7',
+          'rel': 'enclosure'
+        }
+      ],
+      'title': 'Volksbanken: Sparda-Bank knausert bei der Dividende',
+      'published_parsed': time
+      .
+      struct_time
+      (
+      tm_year
+      =
+      2016,
+      tm_mon
+      =
+      1,
+      tm_mday
+      =
+      29,
+      tm_hour
+      =
+      15,
+      tm_min
+      =
+      46,
+      tm_sec
+      =
+      0,
+      tm_wday
+      =
+      4,
+      tm_yday
+      =
+      29,
+      tm_isdst
+      =
+      0
+      ),
+      'id': 'http://www.handelsblatt.com/unternehmen/banken-versicherungen/volksbanken-sparda-bank-knausert-bei-der-dividende/12898656.html',
+      'summary': 'Die Genossenschaftsbanken sind für attraktive Dividenden bekannt. Doch jetzt kürzen einige der Geldhäuser die Ausschüttung an ihre Mitglieder – zum Beispiel die Sparda-Bank Baden-Württemberg.',
+      'published': 'Fri, 29 Jan 2016 16:46:00 +0100'
+    },
+    {
+      'tags': [
+        {
+          'term': 'Banken + Versicherungen',
+          'scheme': None,
+          'label': None
+        }
+      ],
+      'content': [
+        {
+          'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+          'language': None,
+          'type': 'text/html',
+          'value': '<a href="http://www.handelsblatt.com/unternehmen/banken-versicherungen/iban-wird-pflicht-so-kaempfen-sie-gegen-das-iban-system/12895968.html"><img alt="" src="http://www.handelsblatt.com/images/bye-bye-kontonummer-und-bankleitzahl/12896034/2-format7.jpg?format=format7"/></a>Wer eine Überweisung mit Kontonummer und Bankleitzahl durchführen möchte, muss schnell sein. Ab der kommenden Woche greift das flächendeckende IBAN-System. Doch das Verfahren kann man geschickt umgehen.'
+        }
+      ],
+      'guidislink': False,
+      'summary_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/html',
+        'value': 'Wer eine Überweisung mit Kontonummer und Bankleitzahl durchführen möchte, muss schnell sein. Ab der kommenden Woche greift das flächendeckende IBAN-System. Doch das Verfahren kann man geschickt umgehen.'
+      },
+      'link': 'http://www.handelsblatt.com/unternehmen/banken-versicherungen/iban-wird-pflicht-so-kaempfen-sie-gegen-das-iban-system/12895968.html',
+      'title_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/plain',
+        'value': 'IBAN wird Pflicht: So kämpfen Sie gegen das IBAN-System'
+      },
+      'links': [
+        {
+          'rel': 'alternate',
+          'type': 'text/html',
+          'href': 'http://www.handelsblatt.com/unternehmen/banken-versicherungen/iban-wird-pflicht-so-kaempfen-sie-gegen-das-iban-system/12895968.html'
+        },
+        {
+          'length': '775715',
+          'type': 'image/jpeg',
+          'href': 'http://www.handelsblatt.com/images/bye-bye-kontonummer-und-bankleitzahl/12896034/2-format7.jpg?format=format7',
+          'rel': 'enclosure'
+        }
+      ],
+      'title': 'IBAN wird Pflicht: So kämpfen Sie gegen das IBAN-System',
+      'published_parsed': time
+      .
+      struct_time
+      (
+      tm_year
+      =
+      2016,
+      tm_mon
+      =
+      1,
+      tm_mday
+      =
+      29,
+      tm_hour
+      =
+      15,
+      tm_min
+      =
+      19,
+      tm_sec
+      =
+      40,
+      tm_wday
+      =
+      4,
+      tm_yday
+      =
+      29,
+      tm_isdst
+      =
+      0
+      ),
+      'id': 'http://www.handelsblatt.com/unternehmen/banken-versicherungen/iban-wird-pflicht-so-kaempfen-sie-gegen-das-iban-system/12895968.html',
+      'summary': 'Wer eine Überweisung mit Kontonummer und Bankleitzahl durchführen möchte, muss schnell sein. Ab der kommenden Woche greift das flächendeckende IBAN-System. Doch das Verfahren kann man geschickt umgehen.',
+      'published': 'Fri, 29 Jan 2016 16:19:40 +0100'
+    },
+    {
+      'tags': [
+        {
+          'term': 'Handel + Konsumgüter',
+          'scheme': None,
+          'label': None
+        }
+      ],
+      'content': [
+        {
+          'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+          'language': None,
+          'type': 'text/html',
+          'value': '<a href="http://www.handelsblatt.com/my/unternehmen/handel-konsumgueter/heikle-details-im-dm-alnatura-streit-erbitterter-kampf-um-eine-marke/12897878.html"><img alt="" src="http://www.handelsblatt.com/images/alnatura-bio-supermarkt/12898060/3-format7.jpg?format=format7"/></a>Stück für Stück wird das ganze Ausmaß des Streits zwischen dem Drogerie-Imperium dm und seinem Lieferanten Alnatura deutlich: Der Klage von dm-Gründer Götz Werner hat sich auch Ex-Tegut-Chef Gutberlet angeschlossen.'
+        }
+      ],
+      'guidislink': False,
+      'summary_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/html',
+        'value': 'Stück für Stück wird das ganze Ausmaß des Streits zwischen dem Drogerie-Imperium dm und seinem Lieferanten Alnatura deutlich: Der Klage von dm-Gründer Götz Werner hat sich auch Ex-Tegut-Chef Gutberlet angeschlossen.'
+      },
+      'link': 'http://www.handelsblatt.com/my/unternehmen/handel-konsumgueter/heikle-details-im-dm-alnatura-streit-erbitterter-kampf-um-eine-marke/12897878.html',
+      'title_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/plain',
+        'value': 'Heikle Details im dm-Alnatura-Streit: Erbitterter Kampf um eine Marke'
+      },
+      'links': [
+        {
+          'rel': 'alternate',
+          'type': 'text/html',
+          'href': 'http://www.handelsblatt.com/my/unternehmen/handel-konsumgueter/heikle-details-im-dm-alnatura-streit-erbitterter-kampf-um-eine-marke/12897878.html'
+        },
+        {
+          'length': '415137',
+          'type': 'image/jpeg',
+          'href': 'http://www.handelsblatt.com/images/alnatura-bio-supermarkt/12898060/3-format7.jpg?format=format7',
+          'rel': 'enclosure'
+        }
+      ],
+      'title': 'Heikle Details im dm-Alnatura-Streit: Erbitterter Kampf um eine Marke',
+      'published_parsed': time
+      .
+      struct_time
+      (
+      tm_year
+      =
+      2016,
+      tm_mon
+      =
+      1,
+      tm_mday
+      =
+      29,
+      tm_hour
+      =
+      15,
+      tm_min
+      =
+      13,
+      tm_sec
+      =
+      21,
+      tm_wday
+      =
+      4,
+      tm_yday
+      =
+      29,
+      tm_isdst
+      =
+      0
+      ),
+      'id': 'http://www.handelsblatt.com/my/unternehmen/handel-konsumgueter/heikle-details-im-dm-alnatura-streit-erbitterter-kampf-um-eine-marke/12897878.html',
+      'summary': 'Stück für Stück wird das ganze Ausmaß des Streits zwischen dem Drogerie-Imperium dm und seinem Lieferanten Alnatura deutlich: Der Klage von dm-Gründer Götz Werner hat sich auch Ex-Tegut-Chef Gutberlet angeschlossen.',
+      'published': 'Fri, 29 Jan 2016 16:13:21 +0100'
+    },
+    {
+      'tags': [
+        {
+          'term': 'Dienstleister',
+          'scheme': None,
+          'label': None
+        }
+      ],
+      'content': [
+        {
+          'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+          'language': None,
+          'type': 'text/html',
+          'value': '<a href="http://www.handelsblatt.com/unternehmen/dienstleister/goldman-sachs-jp-morgan-und-co-wall-street-kaempft-gegen-brexit/12897944.html"><img alt="" src="http://www.handelsblatt.com/images/canary-wharf/12898040/3-format7.jpg?format=format7"/></a>Erst sprach sich der Deutsche Bank-Chefvolkswirt gegen den Brexit aus, jetzt mischen sich auch die US-Banken in die Debatte ein. Sie unterstützen wohl politische Pro-EU-Kampagnen. Der Grund ist ein ganz praktischer.'
+        }
+      ],
+      'guidislink': False,
+      'summary_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/html',
+        'value': 'Erst sprach sich der Deutsche Bank-Chefvolkswirt gegen den Brexit aus, jetzt mischen sich auch die US-Banken in die Debatte ein. Sie unterstützen wohl politische Pro-EU-Kampagnen. Der Grund ist ein ganz praktischer.'
+      },
+      'link': 'http://www.handelsblatt.com/unternehmen/dienstleister/goldman-sachs-jp-morgan-und-co-wall-street-kaempft-gegen-brexit/12897944.html',
+      'title_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/plain',
+        'value': 'Goldman Sachs, JP Morgan & Co.: Wall Street kämpft gegen Brexit'
+      },
+      'links': [
+        {
+          'rel': 'alternate',
+          'type': 'text/html',
+          'href': 'http://www.handelsblatt.com/unternehmen/dienstleister/goldman-sachs-jp-morgan-und-co-wall-street-kaempft-gegen-brexit/12897944.html'
+        },
+        {
+          'length': '2180204',
+          'type': 'image/jpeg',
+          'href': 'http://www.handelsblatt.com/images/canary-wharf/12898040/3-format7.jpg?format=format7',
+          'rel': 'enclosure'
+        }
+      ],
+      'title': 'Goldman Sachs, JP Morgan & Co.: Wall Street kämpft gegen Brexit',
+      'published_parsed': time
+      .
+      struct_time
+      (
+      tm_year
+      =
+      2016,
+      tm_mon
+      =
+      1,
+      tm_mday
+      =
+      29,
+      tm_hour
+      =
+      15,
+      tm_min
+      =
+      0,
+      tm_sec
+      =
+      25,
+      tm_wday
+      =
+      4,
+      tm_yday
+      =
+      29,
+      tm_isdst
+      =
+      0
+      ),
+      'id': 'http://www.handelsblatt.com/unternehmen/dienstleister/goldman-sachs-jp-morgan-und-co-wall-street-kaempft-gegen-brexit/12897944.html',
+      'summary': 'Erst sprach sich der Deutsche Bank-Chefvolkswirt gegen den Brexit aus, jetzt mischen sich auch die US-Banken in die Debatte ein. Sie unterstützen wohl politische Pro-EU-Kampagnen. Der Grund ist ein ganz praktischer.',
+      'published': 'Fri, 29 Jan 2016 16:00:25 +0100'
+    },
+    {
+      'tags': [
+        {
+          'term': 'Dienstleister',
+          'scheme': None,
+          'label': None
+        }
+      ],
+      'content': [
+        {
+          'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+          'language': None,
+          'type': 'text/html',
+          'value': '<a href="http://www.handelsblatt.com/unternehmen/dienstleister/kreditkarten-visa-und-mastercard-verdienen-deutlich-mehr/12897794.html"><img alt="" src="http://www.handelsblatt.com/images/mastercard-und-visa/12897866/2-format7.jpg?format=format7"/></a>Die Kreditkartenanbieter machen dank gutem Weihnachtsgeschäft ordentlich Umsatz. Für Master klettern die Gewinne im vierten Quartal 2015 um elf Prozent, bei Visa gar um ein Viertel.'
+        }
+      ],
+      'guidislink': False,
+      'summary_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/html',
+        'value': 'Die Kreditkartenanbieter machen dank gutem Weihnachtsgeschäft ordentlich Umsatz. Für Master klettern die Gewinne im vierten Quartal 2015 um elf Prozent, bei Visa gar um ein Viertel.'
+      },
+      'link': 'http://www.handelsblatt.com/unternehmen/dienstleister/kreditkarten-visa-und-mastercard-verdienen-deutlich-mehr/12897794.html',
+      'title_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/plain',
+        'value': 'Kreditkarten: Visa und Mastercard verdienen deutlich mehr'
+      },
+      'links': [
+        {
+          'rel': 'alternate',
+          'type': 'text/html',
+          'href': 'http://www.handelsblatt.com/unternehmen/dienstleister/kreditkarten-visa-und-mastercard-verdienen-deutlich-mehr/12897794.html'
+        },
+        {
+          'length': '357902',
+          'type': 'image/jpeg',
+          'href': 'http://www.handelsblatt.com/images/mastercard-und-visa/12897866/2-format7.jpg?format=format7',
+          'rel': 'enclosure'
+        }
+      ],
+      'title': 'Kreditkarten: Visa und Mastercard verdienen deutlich mehr',
+      'published_parsed': time
+      .
+      struct_time
+      (
+      tm_year
+      =
+      2016,
+      tm_mon
+      =
+      1,
+      tm_mday
+      =
+      29,
+      tm_hour
+      =
+      14,
+      tm_min
+      =
+      34,
+      tm_sec
+      =
+      17,
+      tm_wday
+      =
+      4,
+      tm_yday
+      =
+      29,
+      tm_isdst
+      =
+      0
+      ),
+      'id': 'http://www.handelsblatt.com/unternehmen/dienstleister/kreditkarten-visa-und-mastercard-verdienen-deutlich-mehr/12897794.html',
+      'summary': 'Die Kreditkartenanbieter machen dank gutem Weihnachtsgeschäft ordentlich Umsatz. Für Master klettern die Gewinne im vierten Quartal 2015 um elf Prozent, bei Visa gar um ein Viertel.',
+      'published': 'Fri, 29 Jan 2016 15:34:17 +0100'
+    },
+    {
+      'tags': [
+        {
+          'term': 'Industrie',
+          'scheme': None,
+          'label': None
+        }
+      ],
+      'content': [
+        {
+          'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+          'language': None,
+          'type': 'text/html',
+          'value': '<a href="http://www.handelsblatt.com/unternehmen/industrie/gamesa-siemens-will-windturbinenhersteller-schlucken/12897256.html"><img alt="" src="http://www.handelsblatt.com/images/siemens-setzt-auf-windkraft/12897312/2-format7.jpg?format=format7"/></a>Der spanische Windturbinenhersteller Gamesa gehört zu den größten der Welt – einem Bericht zufolge plant Siemens nun dessen Übernahme. Der deutsche Industriekonzern soll bereits Gespräche mit dem größten Aktionär führen.'
+        }
+      ],
+      'guidislink': False,
+      'summary_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/html',
+        'value': 'Der spanische Windturbinenhersteller Gamesa gehört zu den größten der Welt – einem Bericht zufolge plant Siemens nun dessen Übernahme. Der deutsche Industriekonzern soll bereits Gespräche mit dem größten Aktionär führen.'
+      },
+      'link': 'http://www.handelsblatt.com/unternehmen/industrie/gamesa-siemens-will-windturbinenhersteller-schlucken/12897256.html',
+      'title_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/plain',
+        'value': 'Gamesa: Siemens will Windturbinenhersteller schlucken'
+      },
+      'links': [
+        {
+          'rel': 'alternate',
+          'type': 'text/html',
+          'href': 'http://www.handelsblatt.com/unternehmen/industrie/gamesa-siemens-will-windturbinenhersteller-schlucken/12897256.html'
+        },
+        {
+          'length': '202878',
+          'type': 'image/jpeg',
+          'href': 'http://www.handelsblatt.com/images/siemens-setzt-auf-windkraft/12897312/2-format7.jpg?format=format7',
+          'rel': 'enclosure'
+        }
+      ],
+      'title': 'Gamesa: Siemens will Windturbinenhersteller schlucken',
+      'published_parsed': time
+      .
+      struct_time
+      (
+      tm_year
+      =
+      2016,
+      tm_mon
+      =
+      1,
+      tm_mday
+      =
+      29,
+      tm_hour
+      =
+      13,
+      tm_min
+      =
+      21,
+      tm_sec
+      =
+      4,
+      tm_wday
+      =
+      4,
+      tm_yday
+      =
+      29,
+      tm_isdst
+      =
+      0
+      ),
+      'id': 'http://www.handelsblatt.com/unternehmen/industrie/gamesa-siemens-will-windturbinenhersteller-schlucken/12897256.html',
+      'summary': 'Der spanische Windturbinenhersteller Gamesa gehört zu den größten der Welt – einem Bericht zufolge plant Siemens nun dessen Übernahme. Der deutsche Industriekonzern soll bereits Gespräche mit dem größten Aktionär führen.',
+      'published': 'Fri, 29 Jan 2016 14:21:04 +0100'
+    },
+    {
+      'tags': [
+        {
+          'term': 'Industrie',
+          'scheme': None,
+          'label': None
+        }
+      ],
+      'content': [
+        {
+          'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+          'language': None,
+          'type': 'text/html',
+          'value': '<a href="http://www.handelsblatt.com/unternehmen/industrie/honda-autobauer-meldet-starkes-quartal/12897174.html"><img alt="" src="http://www.handelsblatt.com/images/honda/12897208/2-format7.jpg?format=format7"/></a>Gute Geschäfte in Nordamerika und auf vielen asiatischen Märkten beflügeln Honda – selbst wenn es ausgerechnet in der japanischen Heimat mehr schlecht als recht läuft. Der Konzern hebt seine Umsatzprognose leicht an.'
+        }
+      ],
+      'guidislink': False,
+      'summary_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/html',
+        'value': 'Gute Geschäfte in Nordamerika und auf vielen asiatischen Märkten beflügeln Honda – selbst wenn es ausgerechnet in der japanischen Heimat mehr schlecht als recht läuft. Der Konzern hebt seine Umsatzprognose leicht an.'
+      },
+      'link': 'http://www.handelsblatt.com/unternehmen/industrie/honda-autobauer-meldet-starkes-quartal/12897174.html',
+      'title_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/plain',
+        'value': 'Honda: Autobauer meldet starkes Quartal'
+      },
+      'links': [
+        {
+          'rel': 'alternate',
+          'type': 'text/html',
+          'href': 'http://www.handelsblatt.com/unternehmen/industrie/honda-autobauer-meldet-starkes-quartal/12897174.html'
+        },
+        {
+          'length': '278059',
+          'type': 'image/jpeg',
+          'href': 'http://www.handelsblatt.com/images/honda/12897208/2-format7.jpg?format=format7',
+          'rel': 'enclosure'
+        }
+      ],
+      'title': 'Honda: Autobauer meldet starkes Quartal',
+      'published_parsed': time
+      .
+      struct_time
+      (
+      tm_year
+      =
+      2016,
+      tm_mon
+      =
+      1,
+      tm_mday
+      =
+      29,
+      tm_hour
+      =
+      13,
+      tm_min
+      =
+      19,
+      tm_sec
+      =
+      38,
+      tm_wday
+      =
+      4,
+      tm_yday
+      =
+      29,
+      tm_isdst
+      =
+      0
+      ),
+      'id': 'http://www.handelsblatt.com/unternehmen/industrie/honda-autobauer-meldet-starkes-quartal/12897174.html',
+      'summary': 'Gute Geschäfte in Nordamerika und auf vielen asiatischen Märkten beflügeln Honda – selbst wenn es ausgerechnet in der japanischen Heimat mehr schlecht als recht läuft. Der Konzern hebt seine Umsatzprognose leicht an.',
+      'published': 'Fri, 29 Jan 2016 14:19:38 +0100'
+    },
+    {
+      'tags': [
+        {
+          'term': 'Handel + Konsumgüter',
+          'scheme': None,
+          'label': None
+        }
+      ],
+      'content': [
+        {
+          'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+          'language': None,
+          'type': 'text/html',
+          'value': '<a href="http://www.handelsblatt.com/unternehmen/handel-konsumgueter/mcdonalds-konkurrent-hans-nicht-mehr-im-glueck-/12896782.html"><img alt="" src="http://www.handelsblatt.com/images/burger-laeden/12897376/3-format7.jpg?format=format7"/></a>„Hans-im-Glück“ hat einen Burger-Boom ausgelöst. Doch aus 43 Läden sind 31 geworden. Schuld ist ein Streit zwischen Geschäftspartnern. Beteiligt ist ein Bäckerei-Erbe aus Lübeck, der nun eine Konkurrenz-Kette plant.'
+        }
+      ],
+      'guidislink': False,
+      'summary_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/html',
+        'value': '„Hans-im-Glück“ hat einen Burger-Boom ausgelöst. Doch aus 43 Läden sind 31 geworden. Schuld ist ein Streit zwischen Geschäftspartnern. Beteiligt ist ein Bäckerei-Erbe aus Lübeck, der nun eine Konkurrenz-Kette plant.'
+      },
+      'link': 'http://www.handelsblatt.com/unternehmen/handel-konsumgueter/mcdonalds-konkurrent-hans-nicht-mehr-im-glueck-/12896782.html',
+      'title_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/plain',
+        'value': "McDonald's-Konkurrent: Hans nicht mehr im Glück"
+      },
+      'links': [
+        {
+          'rel': 'alternate',
+          'type': 'text/html',
+          'href': 'http://www.handelsblatt.com/unternehmen/handel-konsumgueter/mcdonalds-konkurrent-hans-nicht-mehr-im-glueck-/12896782.html'
+        },
+        {
+          'length': '710097',
+          'type': 'image/jpeg',
+          'href': 'http://www.handelsblatt.com/images/burger-laeden/12897376/3-format7.jpg?format=format7',
+          'rel': 'enclosure'
+        }
+      ],
+      'title': "McDonald's-Konkurrent: Hans nicht mehr im Glück",
+      'published_parsed': time
+      .
+      struct_time
+      (
+      tm_year
+      =
+      2016,
+      tm_mon
+      =
+      1,
+      tm_mday
+      =
+      29,
+      tm_hour
+      =
+      13,
+      tm_min
+      =
+      18,
+      tm_sec
+      =
+      39,
+      tm_wday
+      =
+      4,
+      tm_yday
+      =
+      29,
+      tm_isdst
+      =
+      0
+      ),
+      'id': 'http://www.handelsblatt.com/unternehmen/handel-konsumgueter/mcdonalds-konkurrent-hans-nicht-mehr-im-glueck-/12896782.html',
+      'summary': '„Hans-im-Glück“ hat einen Burger-Boom ausgelöst. Doch aus 43 Läden sind 31 geworden. Schuld ist ein Streit zwischen Geschäftspartnern. Beteiligt ist ein Bäckerei-Erbe aus Lübeck, der nun eine Konkurrenz-Kette plant.',
+      'published': 'Fri, 29 Jan 2016 14:18:39 +0100'
+    },
+    {
+      'tags': [
+        {
+          'term': 'Kai-Hinrich Renner: Medienmacher',
+          'scheme': None,
+          'label': None
+        }
+      ],
+      'content': [
+        {
+          'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+          'language': None,
+          'type': 'text/html',
+          'value': '<a href="http://www.handelsblatt.com/unternehmen/it-medien/medienmacher/medienmacher-die-kef-hat-ein-herz-fuer-programm-macher/12897336.html"><img alt="" src="http://www.handelsblatt.com/images/kai-hinrich-renner/11271628/8-format7.png?format=format7"/></a>Wo die Finanzkontrolleure der Öffentlich-Rechtlichen nicht sparen wollen. Was Georg Kofler mit schminkwütigen jungen Mädchen zu tun hat. Und wer so alles für die Geschäftsführung der „Spiegel“-Mitarbeiter KG kandidiert.'
+        }
+      ],
+      'guidislink': False,
+      'summary_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/html',
+        'value': 'Wo die Finanzkontrolleure der Öffentlich-Rechtlichen nicht sparen wollen. Was Georg Kofler mit schminkwütigen jungen Mädchen zu tun hat. Und wer so alles für die Geschäftsführung der „Spiegel“-Mitarbeiter KG kandidiert.'
+      },
+      'link': 'http://www.handelsblatt.com/unternehmen/it-medien/medienmacher/medienmacher-die-kef-hat-ein-herz-fuer-programm-macher/12897336.html',
+      'title_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/plain',
+        'value': 'Medienmacher: Die KEF hat ein Herz für Programm-Macher'
+      },
+      'links': [
+        {
+          'rel': 'alternate',
+          'type': 'text/html',
+          'href': 'http://www.handelsblatt.com/unternehmen/it-medien/medienmacher/medienmacher-die-kef-hat-ein-herz-fuer-programm-macher/12897336.html'
+        },
+        {
+          'length': '225300',
+          'type': 'image/png',
+          'href': 'http://www.handelsblatt.com/images/kai-hinrich-renner/11271628/8-format7.png?format=format7',
+          'rel': 'enclosure'
+        }
+      ],
+      'title': 'Medienmacher: Die KEF hat ein Herz für Programm-Macher',
+      'published_parsed': time
+      .
+      struct_time
+      (
+      tm_year
+      =
+      2016,
+      tm_mon
+      =
+      1,
+      tm_mday
+      =
+      29,
+      tm_hour
+      =
+      13,
+      tm_min
+      =
+      15,
+      tm_sec
+      =
+      30,
+      tm_wday
+      =
+      4,
+      tm_yday
+      =
+      29,
+      tm_isdst
+      =
+      0
+      ),
+      'id': 'http://www.handelsblatt.com/unternehmen/it-medien/medienmacher/medienmacher-die-kef-hat-ein-herz-fuer-programm-macher/12897336.html',
+      'summary': 'Wo die Finanzkontrolleure der Öffentlich-Rechtlichen nicht sparen wollen. Was Georg Kofler mit schminkwütigen jungen Mädchen zu tun hat. Und wer so alles für die Geschäftsführung der „Spiegel“-Mitarbeiter KG kandidiert.',
+      'published': 'Fri, 29 Jan 2016 14:15:30 +0100'
+    },
+    {
+      'tags': [
+        {
+          'term': 'Management',
+          'scheme': None,
+          'label': None
+        }
+      ],
+      'content': [
+        {
+          'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+          'language': None,
+          'type': 'text/html',
+          'value': '<a href="http://www.handelsblatt.com/unternehmen/management/james-murdoch-bei-sky-der-verlorene-sohn-ist-wieder-da/12896950.html"><img alt="" src="http://www.handelsblatt.com/images/james-murdoch-links-mit-vater-rupert/12897142/2-format7.jpg?format=format7"/></a>Vier Jahre ist es her, da musste James Murdoch im britischen Abhörskandal seine Ämter räumen. Nun kehrt er an die Spitze des Bezahlsenders Sky zurück. Damit deutet sich an, wie Rupert Murdoch seine Nachfolge regeln will:'
+        }
+      ],
+      'guidislink': False,
+      'summary_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/html',
+        'value': 'Vier Jahre ist es her, da musste James Murdoch im britischen Abhörskandal seine Ämter räumen. Nun kehrt er an die Spitze des Bezahlsenders Sky zurück. Damit deutet sich an, wie Rupert Murdoch seine Nachfolge regeln will:'
+      },
+      'link': 'http://www.handelsblatt.com/unternehmen/management/james-murdoch-bei-sky-der-verlorene-sohn-ist-wieder-da/12896950.html',
+      'title_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/plain',
+        'value': 'James Murdoch bei Sky: Der verlorene Sohn ist wieder da'
+      },
+      'links': [
+        {
+          'rel': 'alternate',
+          'type': 'text/html',
+          'href': 'http://www.handelsblatt.com/unternehmen/management/james-murdoch-bei-sky-der-verlorene-sohn-ist-wieder-da/12896950.html'
+        },
+        {
+          'length': '255567',
+          'type': 'image/jpeg',
+          'href': 'http://www.handelsblatt.com/images/james-murdoch-links-mit-vater-rupert/12897142/2-format7.jpg?format=format7',
+          'rel': 'enclosure'
+        }
+      ],
+      'title': 'James Murdoch bei Sky: Der verlorene Sohn ist wieder da',
+      'published_parsed': time
+      .
+      struct_time
+      (
+      tm_year
+      =
+      2016,
+      tm_mon
+      =
+      1,
+      tm_mday
+      =
+      29,
+      tm_hour
+      =
+      12,
+      tm_min
+      =
+      42,
+      tm_sec
+      =
+      10,
+      tm_wday
+      =
+      4,
+      tm_yday
+      =
+      29,
+      tm_isdst
+      =
+      0
+      ),
+      'id': 'http://www.handelsblatt.com/unternehmen/management/james-murdoch-bei-sky-der-verlorene-sohn-ist-wieder-da/12896950.html',
+      'summary': 'Vier Jahre ist es her, da musste James Murdoch im britischen Abhörskandal seine Ämter räumen. Nun kehrt er an die Spitze des Bezahlsenders Sky zurück. Damit deutet sich an, wie Rupert Murdoch seine Nachfolge regeln will:',
+      'published': 'Fri, 29 Jan 2016 13:42:10 +0100'
+    },
+    {
+      'tags': [
+        {
+          'term': 'Handel + Konsumgüter',
+          'scheme': None,
+          'label': None
+        }
+      ],
+      'content': [
+        {
+          'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+          'language': None,
+          'type': 'text/html',
+          'value': '<a href="http://www.handelsblatt.com/my/unternehmen/handel-konsumgueter/deutsche-bahn-ice-flotte-muss-zum-fruehjahrsputz/12896742.html"><img alt="" src="http://www.handelsblatt.com/images/ice/12896796/2-format7.jpg?format=format7"/></a>Verkehrsvorstand Berthold Huber will, dass Züge deutlich pünktlicher werden. Nach Ostern sollen deshalb alle 253 ICE für eine Generalüberholung in die Werkstatt – was wohl für Verspätungen von Fernzügen sorgen wird.'
+        }
+      ],
+      'guidislink': False,
+      'summary_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/html',
+        'value': 'Verkehrsvorstand Berthold Huber will, dass Züge deutlich pünktlicher werden. Nach Ostern sollen deshalb alle 253 ICE für eine Generalüberholung in die Werkstatt – was wohl für Verspätungen von Fernzügen sorgen wird.'
+      },
+      'link': 'http://www.handelsblatt.com/my/unternehmen/handel-konsumgueter/deutsche-bahn-ice-flotte-muss-zum-fruehjahrsputz/12896742.html',
+      'title_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/plain',
+        'value': 'Deutsche Bahn: ICE-Flotte muss zum Frühjahrsputz'
+      },
+      'links': [
+        {
+          'rel': 'alternate',
+          'type': 'text/html',
+          'href': 'http://www.handelsblatt.com/my/unternehmen/handel-konsumgueter/deutsche-bahn-ice-flotte-muss-zum-fruehjahrsputz/12896742.html'
+        },
+        {
+          'length': '213880',
+          'type': 'image/jpeg',
+          'href': 'http://www.handelsblatt.com/images/ice/12896796/2-format7.jpg?format=format7',
+          'rel': 'enclosure'
+        }
+      ],
+      'title': 'Deutsche Bahn: ICE-Flotte muss zum Frühjahrsputz',
+      'published_parsed': time
+      .
+      struct_time
+      (
+      tm_year
+      =
+      2016,
+      tm_mon
+      =
+      1,
+      tm_mday
+      =
+      29,
+      tm_hour
+      =
+      12,
+      tm_min
+      =
+      37,
+      tm_sec
+      =
+      35,
+      tm_wday
+      =
+      4,
+      tm_yday
+      =
+      29,
+      tm_isdst
+      =
+      0
+      ),
+      'id': 'http://www.handelsblatt.com/my/unternehmen/handel-konsumgueter/deutsche-bahn-ice-flotte-muss-zum-fruehjahrsputz/12896742.html',
+      'summary': 'Verkehrsvorstand Berthold Huber will, dass Züge deutlich pünktlicher werden. Nach Ostern sollen deshalb alle 253 ICE für eine Generalüberholung in die Werkstatt – was wohl für Verspätungen von Fernzügen sorgen wird.',
+      'published': 'Fri, 29 Jan 2016 13:37:35 +0100'
+    },
+    {
+      'tags': [
+        {
+          'term': 'Banken + Versicherungen',
+          'scheme': None,
+          'label': None
+        }
+      ],
+      'content': [
+        {
+          'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+          'language': None,
+          'type': 'text/html',
+          'value': '<a href="http://www.handelsblatt.com/unternehmen/banken-versicherungen/banken-und-ihr-ansehen-commerzbank-schlaegt-die-deutsche-bank/12895722.html"><img alt="" src="http://www.handelsblatt.com/images/commerzbank/12895762/2-format7.jpg?format=format7"/></a>Die Finanzkrise war Gift für die Reputation aller Banken. Doch das Ansehen der Deutschen Bank hat besonders stark gelitten, wie eine Studie zeigt. Ausgerechnet der kleinere Rivale überholt sie jetzt.'
+        }
+      ],
+      'guidislink': False,
+      'summary_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/html',
+        'value': 'Die Finanzkrise war Gift für die Reputation aller Banken. Doch das Ansehen der Deutschen Bank hat besonders stark gelitten, wie eine Studie zeigt. Ausgerechnet der kleinere Rivale überholt sie jetzt.'
+      },
+      'link': 'http://www.handelsblatt.com/unternehmen/banken-versicherungen/banken-und-ihr-ansehen-commerzbank-schlaegt-die-deutsche-bank/12895722.html',
+      'title_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/plain',
+        'value': 'Banken und ihr Ansehen: Commerzbank schlägt die Deutsche Bank'
+      },
+      'links': [
+        {
+          'rel': 'alternate',
+          'type': 'text/html',
+          'href': 'http://www.handelsblatt.com/unternehmen/banken-versicherungen/banken-und-ihr-ansehen-commerzbank-schlaegt-die-deutsche-bank/12895722.html'
+        },
+        {
+          'length': '228946',
+          'type': 'image/jpeg',
+          'href': 'http://www.handelsblatt.com/images/commerzbank/12895762/2-format7.jpg?format=format7',
+          'rel': 'enclosure'
+        }
+      ],
+      'title': 'Banken und ihr Ansehen: Commerzbank schlägt die Deutsche Bank',
+      'published_parsed': time
+      .
+      struct_time
+      (
+      tm_year
+      =
+      2016,
+      tm_mon
+      =
+      1,
+      tm_mday
+      =
+      29,
+      tm_hour
+      =
+      12,
+      tm_min
+      =
+      36,
+      tm_sec
+      =
+      23,
+      tm_wday
+      =
+      4,
+      tm_yday
+      =
+      29,
+      tm_isdst
+      =
+      0
+      ),
+      'id': 'http://www.handelsblatt.com/unternehmen/banken-versicherungen/banken-und-ihr-ansehen-commerzbank-schlaegt-die-deutsche-bank/12895722.html',
+      'summary': 'Die Finanzkrise war Gift für die Reputation aller Banken. Doch das Ansehen der Deutschen Bank hat besonders stark gelitten, wie eine Studie zeigt. Ausgerechnet der kleinere Rivale überholt sie jetzt.',
+      'published': 'Fri, 29 Jan 2016 13:36:23 +0100'
+    },
+    {
+      'tags': [
+        {
+          'term': 'Handel + Konsumgüter',
+          'scheme': None,
+          'label': None
+        }
+      ],
+      'content': [
+        {
+          'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+          'language': None,
+          'type': 'text/html',
+          'value': '<a href="http://www.handelsblatt.com/unternehmen/handel-konsumgueter/bier-exporte-immer-mehr-auslaender-stossen-mit-deutschem-bier-an/12896526.html"><img alt="" src="http://www.handelsblatt.com/images/biermarkt/12896702/2-format7.jpg?format=format7"/></a>Während die Deutschen immer weniger Durst auf Bier haben, kommen immer mehr Ausländer auf den Geschmack. Vor allem in Länder in Übersee gab es einen Export-Boom. Was Bier und Fußball miteinander verbindet.'
+        }
+      ],
+      'guidislink': False,
+      'summary_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/html',
+        'value': 'Während die Deutschen immer weniger Durst auf Bier haben, kommen immer mehr Ausländer auf den Geschmack. Vor allem in Länder in Übersee gab es einen Export-Boom. Was Bier und Fußball miteinander verbindet.'
+      },
+      'link': 'http://www.handelsblatt.com/unternehmen/handel-konsumgueter/bier-exporte-immer-mehr-auslaender-stossen-mit-deutschem-bier-an/12896526.html',
+      'title_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/plain',
+        'value': 'Bier-Exporte: Immer mehr Ausländer stoßen mit deutschem Bier an'
+      },
+      'links': [
+        {
+          'rel': 'alternate',
+          'type': 'text/html',
+          'href': 'http://www.handelsblatt.com/unternehmen/handel-konsumgueter/bier-exporte-immer-mehr-auslaender-stossen-mit-deutschem-bier-an/12896526.html'
+        },
+        {
+          'length': '218039',
+          'type': 'image/jpeg',
+          'href': 'http://www.handelsblatt.com/images/biermarkt/12896702/2-format7.jpg?format=format7',
+          'rel': 'enclosure'
+        }
+      ],
+      'title': 'Bier-Exporte: Immer mehr Ausländer stoßen mit deutschem Bier an',
+      'published_parsed': time
+      .
+      struct_time
+      (
+      tm_year
+      =
+      2016,
+      tm_mon
+      =
+      1,
+      tm_mday
+      =
+      29,
+      tm_hour
+      =
+      11,
+      tm_min
+      =
+      11,
+      tm_sec
+      =
+      0,
+      tm_wday
+      =
+      4,
+      tm_yday
+      =
+      29,
+      tm_isdst
+      =
+      0
+      ),
+      'id': 'http://www.handelsblatt.com/unternehmen/handel-konsumgueter/bier-exporte-immer-mehr-auslaender-stossen-mit-deutschem-bier-an/12896526.html',
+      'summary': 'Während die Deutschen immer weniger Durst auf Bier haben, kommen immer mehr Ausländer auf den Geschmack. Vor allem in Länder in Übersee gab es einen Export-Boom. Was Bier und Fußball miteinander verbindet.',
+      'published': 'Fri, 29 Jan 2016 12:11:00 +0100'
+    },
+    {
+      'tags': [
+        {
+          'term': 'Handel + Konsumgüter',
+          'scheme': None,
+          'label': None
+        }
+      ],
+      'content': [
+        {
+          'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+          'language': None,
+          'type': 'text/html',
+          'value': '<a href="http://www.handelsblatt.com/unternehmen/handel-konsumgueter/amazon-deutschland-versandhaendler-bricht-sein-schweigen/12895694.html"><img alt="" src="http://www.handelsblatt.com/images/amazon/12896184/3-format7.jpg?format=format7"/></a>Amazon macht grundsätzlich ein Geheimnis aus seinen Geschäftszahlen für den deutschen Markt. Doch nun gab es den ersten kleinen Hinweis. Der Erfolg ist hart erarbeitet.'
+        }
+      ],
+      'guidislink': False,
+      'summary_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/html',
+        'value': 'Amazon macht grundsätzlich ein Geheimnis aus seinen Geschäftszahlen für den deutschen Markt. Doch nun gab es den ersten kleinen Hinweis. Der Erfolg ist hart erarbeitet.'
+      },
+      'link': 'http://www.handelsblatt.com/unternehmen/handel-konsumgueter/amazon-deutschland-versandhaendler-bricht-sein-schweigen/12895694.html',
+      'title_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/plain',
+        'value': 'Amazon Deutschland: Versandhändler bricht sein Schweigen'
+      },
+      'links': [
+        {
+          'rel': 'alternate',
+          'type': 'text/html',
+          'href': 'http://www.handelsblatt.com/unternehmen/handel-konsumgueter/amazon-deutschland-versandhaendler-bricht-sein-schweigen/12895694.html'
+        },
+        {
+          'length': '360190',
+          'type': 'image/jpeg',
+          'href': 'http://www.handelsblatt.com/images/amazon/12896184/3-format7.jpg?format=format7',
+          'rel': 'enclosure'
+        }
+      ],
+      'title': 'Amazon Deutschland: Versandhändler bricht sein Schweigen',
+      'published_parsed': time
+      .
+      struct_time
+      (
+      tm_year
+      =
+      2016,
+      tm_mon
+      =
+      1,
+      tm_mday
+      =
+      29,
+      tm_hour
+      =
+      10,
+      tm_min
+      =
+      51,
+      tm_sec
+      =
+      38,
+      tm_wday
+      =
+      4,
+      tm_yday
+      =
+      29,
+      tm_isdst
+      =
+      0
+      ),
+      'id': 'http://www.handelsblatt.com/unternehmen/handel-konsumgueter/amazon-deutschland-versandhaendler-bricht-sein-schweigen/12895694.html',
+      'summary': 'Amazon macht grundsätzlich ein Geheimnis aus seinen Geschäftszahlen für den deutschen Markt. Doch nun gab es den ersten kleinen Hinweis. Der Erfolg ist hart erarbeitet.',
+      'published': 'Fri, 29 Jan 2016 11:51:38 +0100'
+    },
+    {
+      'tags': [
+        {
+          'term': 'Industrie',
+          'scheme': None,
+          'label': None
+        }
+      ],
+      'content': [
+        {
+          'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+          'language': None,
+          'type': 'text/html',
+          'value': '<a href="http://www.handelsblatt.com/my/unternehmen/industrie/energy-from-waste-chinesen-greifen-nach-deutschem-muell/12895642.html"><img alt="" src="http://www.handelsblatt.com/images/muellverbrennungsanlage-von-eew/12895720/2-format7.jpg?format=format7"/></a>Gleich zwei Firmen aus dem Reich der Mitte haben gute Chancen, den deutschen Müllverbrenner EEW zu schlucken. Es wäre der größte Zukauf aus Fernost in Deutschland aller Zeiten. Doch die Chinesen haben noch Konkurrenz.'
+        }
+      ],
+      'guidislink': False,
+      'summary_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/html',
+        'value': 'Gleich zwei Firmen aus dem Reich der Mitte haben gute Chancen, den deutschen Müllverbrenner EEW zu schlucken. Es wäre der größte Zukauf aus Fernost in Deutschland aller Zeiten. Doch die Chinesen haben noch Konkurrenz.'
+      },
+      'link': 'http://www.handelsblatt.com/my/unternehmen/industrie/energy-from-waste-chinesen-greifen-nach-deutschem-muell/12895642.html',
+      'title_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/plain',
+        'value': 'Energy from Waste: Chinesen greifen nach deutschem Müll'
+      },
+      'links': [
+        {
+          'rel': 'alternate',
+          'type': 'text/html',
+          'href': 'http://www.handelsblatt.com/my/unternehmen/industrie/energy-from-waste-chinesen-greifen-nach-deutschem-muell/12895642.html'
+        },
+        {
+          'length': '293411',
+          'type': 'image/jpeg',
+          'href': 'http://www.handelsblatt.com/images/muellverbrennungsanlage-von-eew/12895720/2-format7.jpg?format=format7',
+          'rel': 'enclosure'
+        }
+      ],
+      'title': 'Energy from Waste: Chinesen greifen nach deutschem Müll',
+      'published_parsed': time
+      .
+      struct_time
+      (
+      tm_year
+      =
+      2016,
+      tm_mon
+      =
+      1,
+      tm_mday
+      =
+      29,
+      tm_hour
+      =
+      10,
+      tm_min
+      =
+      29,
+      tm_sec
+      =
+      10,
+      tm_wday
+      =
+      4,
+      tm_yday
+      =
+      29,
+      tm_isdst
+      =
+      0
+      ),
+      'id': 'http://www.handelsblatt.com/my/unternehmen/industrie/energy-from-waste-chinesen-greifen-nach-deutschem-muell/12895642.html',
+      'summary': 'Gleich zwei Firmen aus dem Reich der Mitte haben gute Chancen, den deutschen Müllverbrenner EEW zu schlucken. Es wäre der größte Zukauf aus Fernost in Deutschland aller Zeiten. Doch die Chinesen haben noch Konkurrenz.',
+      'published': 'Fri, 29 Jan 2016 11:29:10 +0100'
+    },
+    {
+      'tags': [
+        {
+          'term': 'Mittelstand',
+          'scheme': None,
+          'label': None
+        }
+      ],
+      'content': [
+        {
+          'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+          'language': None,
+          'type': 'text/html',
+          'value': '<a href="http://www.handelsblatt.com/unternehmen/mittelstand/artur-fischer-ein-patentkoenig-und-duebel-revolutionaer/12896006.html"><img alt="" src="http://www.handelsblatt.com/images/hugo-bildid-24177001hall-of-fame/5900380/2-format7.jpg?format=format7"/></a>Blitzlichtgeräte, Dübel, Spielzeugbausätze - und Managementmethoden: Artur Fischer und seine Fischerwerke sind über Jahrzehnte immer kreativ geblieben. Ein Rückblick auf ein erfolgreiches Unternehmerleben.'
+        }
+      ],
+      'guidislink': False,
+      'summary_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/html',
+        'value': 'Blitzlichtgeräte, Dübel, Spielzeugbausätze - und Managementmethoden: Artur Fischer und seine Fischerwerke sind über Jahrzehnte immer kreativ geblieben. Ein Rückblick auf ein erfolgreiches Unternehmerleben.'
+      },
+      'link': 'http://www.handelsblatt.com/unternehmen/mittelstand/artur-fischer-ein-patentkoenig-und-duebel-revolutionaer/12896006.html',
+      'title_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/plain',
+        'value': 'Artur Fischer: Ein Patentkönig und Dübel-Revolutionär'
+      },
+      'links': [
+        {
+          'rel': 'alternate',
+          'type': 'text/html',
+          'href': 'http://www.handelsblatt.com/unternehmen/mittelstand/artur-fischer-ein-patentkoenig-und-duebel-revolutionaer/12896006.html'
+        },
+        {
+          'length': '314086',
+          'type': 'image/jpeg',
+          'href': 'http://www.handelsblatt.com/images/hugo-bildid-24177001hall-of-fame/5900380/2-format7.jpg?format=format7',
+          'rel': 'enclosure'
+        }
+      ],
+      'title': 'Artur Fischer: Ein Patentkönig und Dübel-Revolutionär',
+      'published_parsed': time
+      .
+      struct_time
+      (
+      tm_year
+      =
+      2016,
+      tm_mon
+      =
+      1,
+      tm_mday
+      =
+      29,
+      tm_hour
+      =
+      10,
+      tm_min
+      =
+      15,
+      tm_sec
+      =
+      29,
+      tm_wday
+      =
+      4,
+      tm_yday
+      =
+      29,
+      tm_isdst
+      =
+      0
+      ),
+      'id': 'http://www.handelsblatt.com/unternehmen/mittelstand/artur-fischer-ein-patentkoenig-und-duebel-revolutionaer/12896006.html',
+      'summary': 'Blitzlichtgeräte, Dübel, Spielzeugbausätze - und Managementmethoden: Artur Fischer und seine Fischerwerke sind über Jahrzehnte immer kreativ geblieben. Ein Rückblick auf ein erfolgreiches Unternehmerleben.',
+      'published': 'Fri, 29 Jan 2016 11:15:29 +0100'
+    },
+    {
+      'tags': [
+        {
+          'term': 'Handel + Konsumgüter',
+          'scheme': None,
+          'label': None
+        }
+      ],
+      'content': [
+        {
+          'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+          'language': None,
+          'type': 'text/html',
+          'value': '<a href="http://www.handelsblatt.com/unternehmen/handel-konsumgueter/spielzeug-von-mattel-barbie-hat-jetzt-kurven/12895740.html"><img alt="" src="http://www.handelsblatt.com/images/vorbild-/12895908/2-format7.jpg?format=format7"/></a>Barbie hat an Gewicht zugelegt. Statt Models ähnelt die Puppe nun mehr den Durchschnittsfrauen. Hersteller Mattel reagiert mit dem Facelift auf Kritik an der neuen Modellserie. Was Barbie mit Kim Kardashian zutun hat.'
+        }
+      ],
+      'guidislink': False,
+      'summary_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/html',
+        'value': 'Barbie hat an Gewicht zugelegt. Statt Models ähnelt die Puppe nun mehr den Durchschnittsfrauen. Hersteller Mattel reagiert mit dem Facelift auf Kritik an der neuen Modellserie. Was Barbie mit Kim Kardashian zutun hat.'
+      },
+      'link': 'http://www.handelsblatt.com/unternehmen/handel-konsumgueter/spielzeug-von-mattel-barbie-hat-jetzt-kurven/12895740.html',
+      'title_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/plain',
+        'value': 'Spielzeug von Mattel: Barbie hat jetzt Kurven'
+      },
+      'links': [
+        {
+          'rel': 'alternate',
+          'type': 'text/html',
+          'href': 'http://www.handelsblatt.com/unternehmen/handel-konsumgueter/spielzeug-von-mattel-barbie-hat-jetzt-kurven/12895740.html'
+        },
+        {
+          'length': '170417',
+          'type': 'image/jpeg',
+          'href': 'http://www.handelsblatt.com/images/vorbild-/12895908/2-format7.jpg?format=format7',
+          'rel': 'enclosure'
+        }
+      ],
+      'title': 'Spielzeug von Mattel: Barbie hat jetzt Kurven',
+      'published_parsed': time
+      .
+      struct_time
+      (
+      tm_year
+      =
+      2016,
+      tm_mon
+      =
+      1,
+      tm_mday
+      =
+      29,
+      tm_hour
+      =
+      9,
+      tm_min
+      =
+      57,
+      tm_sec
+      =
+      7,
+      tm_wday
+      =
+      4,
+      tm_yday
+      =
+      29,
+      tm_isdst
+      =
+      0
+      ),
+      'id': 'http://www.handelsblatt.com/unternehmen/handel-konsumgueter/spielzeug-von-mattel-barbie-hat-jetzt-kurven/12895740.html',
+      'summary': 'Barbie hat an Gewicht zugelegt. Statt Models ähnelt die Puppe nun mehr den Durchschnittsfrauen. Hersteller Mattel reagiert mit dem Facelift auf Kritik an der neuen Modellserie. Was Barbie mit Kim Kardashian zutun hat.',
+      'published': 'Fri, 29 Jan 2016 10:57:07 +0100'
+    },
+    {
+      'tags': [
+        {
+          'term': 'Management',
+          'scheme': None,
+          'label': None
+        }
+      ],
+      'content': [
+        {
+          'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+          'language': None,
+          'type': 'text/html',
+          'value': '<a href="http://www.handelsblatt.com/unternehmen/management/artur-fischer-der-erfinder-der-duebel-ist-tot/12895870.html"><img alt="" src="http://www.handelsblatt.com/images/artur-fischer/12895876/2-format7.jpg?format=format7"/></a>Er hat den Dübel erfunden und mehr als 1100 Patente angemeldet: Artur Fischer galt als Deutschlands erfolgreichster Erfinder – und war doch bescheiden geblieben. Nun ist er im Alter von 96 Jahren gestorben.'
+        }
+      ],
+      'guidislink': False,
+      'summary_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/html',
+        'value': 'Er hat den Dübel erfunden und mehr als 1100 Patente angemeldet: Artur Fischer galt als Deutschlands erfolgreichster Erfinder – und war doch bescheiden geblieben. Nun ist er im Alter von 96 Jahren gestorben.'
+      },
+      'link': 'http://www.handelsblatt.com/unternehmen/management/artur-fischer-der-erfinder-der-duebel-ist-tot/12895870.html',
+      'title_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/plain',
+        'value': 'Artur Fischer: Der Erfinder der Dübel ist tot'
+      },
+      'links': [
+        {
+          'rel': 'alternate',
+          'type': 'text/html',
+          'href': 'http://www.handelsblatt.com/unternehmen/management/artur-fischer-der-erfinder-der-duebel-ist-tot/12895870.html'
+        },
+        {
+          'length': '164627',
+          'type': 'image/jpeg',
+          'href': 'http://www.handelsblatt.com/images/artur-fischer/12895876/2-format7.jpg?format=format7',
+          'rel': 'enclosure'
+        }
+      ],
+      'title': 'Artur Fischer: Der Erfinder der Dübel ist tot',
+      'published_parsed': time
+      .
+      struct_time
+      (
+      tm_year
+      =
+      2016,
+      tm_mon
+      =
+      1,
+      tm_mday
+      =
+      29,
+      tm_hour
+      =
+      9,
+      tm_min
+      =
+      48,
+      tm_sec
+      =
+      23,
+      tm_wday
+      =
+      4,
+      tm_yday
+      =
+      29,
+      tm_isdst
+      =
+      0
+      ),
+      'id': 'http://www.handelsblatt.com/unternehmen/management/artur-fischer-der-erfinder-der-duebel-ist-tot/12895870.html',
+      'summary': 'Er hat den Dübel erfunden und mehr als 1100 Patente angemeldet: Artur Fischer galt als Deutschlands erfolgreichster Erfinder – und war doch bescheiden geblieben. Nun ist er im Alter von 96 Jahren gestorben.',
+      'published': 'Fri, 29 Jan 2016 10:48:23 +0100'
+    },
+    {
+      'tags': [
+        {
+          'term': 'Mittelstand',
+          'scheme': None,
+          'label': None
+        }
+      ],
+      'content': [
+        {
+          'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+          'language': None,
+          'type': 'text/html',
+          'value': '<a href="http://www.handelsblatt.com/unternehmen/mittelstand/restube-setzt-auf-crowdfunding-schon-100-000-euro-fuer-die-lebensretter/12895528.html"><img alt="" src="http://www.handelsblatt.com/images/restube/12895558/2-format7.jpg?format=format7"/></a>Mit einer tragbaren Rettungsboje für Surfer oder Schwimmer will das Start-up Restube groß herauskommen. Jetzt haben die Gründer eine Crowdfunding-Kampagne gestartet – und die erste Schwelle sofort geknackt.'
+        }
+      ],
+      'guidislink': False,
+      'summary_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/html',
+        'value': 'Mit einer tragbaren Rettungsboje für Surfer oder Schwimmer will das Start-up Restube groß herauskommen. Jetzt haben die Gründer eine Crowdfunding-Kampagne gestartet – und die erste Schwelle sofort geknackt.'
+      },
+      'link': 'http://www.handelsblatt.com/unternehmen/mittelstand/restube-setzt-auf-crowdfunding-schon-100-000-euro-fuer-die-lebensretter/12895528.html',
+      'title_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/plain',
+        'value': 'Restube setzt auf Crowdfunding: Schon 100.000 Euro für die Lebensretter'
+      },
+      'links': [
+        {
+          'rel': 'alternate',
+          'type': 'text/html',
+          'href': 'http://www.handelsblatt.com/unternehmen/mittelstand/restube-setzt-auf-crowdfunding-schon-100-000-euro-fuer-die-lebensretter/12895528.html'
+        },
+        {
+          'length': '217121',
+          'type': 'image/jpeg',
+          'href': 'http://www.handelsblatt.com/images/restube/12895558/2-format7.jpg?format=format7',
+          'rel': 'enclosure'
+        }
+      ],
+      'title': 'Restube setzt auf Crowdfunding: Schon 100.000 Euro für die Lebensretter',
+      'published_parsed': time
+      .
+      struct_time
+      (
+      tm_year
+      =
+      2016,
+      tm_mon
+      =
+      1,
+      tm_mday
+      =
+      29,
+      tm_hour
+      =
+      8,
+      tm_min
+      =
+      51,
+      tm_sec
+      =
+      40,
+      tm_wday
+      =
+      4,
+      tm_yday
+      =
+      29,
+      tm_isdst
+      =
+      0
+      ),
+      'id': 'http://www.handelsblatt.com/unternehmen/mittelstand/restube-setzt-auf-crowdfunding-schon-100-000-euro-fuer-die-lebensretter/12895528.html',
+      'summary': 'Mit einer tragbaren Rettungsboje für Surfer oder Schwimmer will das Start-up Restube groß herauskommen. Jetzt haben die Gründer eine Crowdfunding-Kampagne gestartet – und die erste Schwelle sofort geknackt.',
+      'published': 'Fri, 29 Jan 2016 09:51:40 +0100'
+    },
+    {
+      'tags': [
+        {
+          'term': 'IT + Medien',
+          'scheme': None,
+          'label': None
+        }
+      ],
+      'content': [
+        {
+          'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+          'language': None,
+          'type': 'text/html',
+          'value': '<a href="http://www.handelsblatt.com/unternehmen/it-medien/in-eigener-sache-handelsblatt-gruendet-wirtschaftsclub/12895526.html"><img alt="" src="http://www.handelsblatt.com/images/willkommen/12894386/2-format7.png?format=format7"/></a>Start frei für den Handelsblatt Wirtschaftsclub: Alle Abonnenten des Handelsblatts sind ab sofort Mitglieder im neuen Wirtschaftsclub und erhalten exklusiven Zugang zu einem in Europa einzigartigen Vorteilsprogramm.'
+        }
+      ],
+      'guidislink': False,
+      'summary_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/html',
+        'value': 'Start frei für den Handelsblatt Wirtschaftsclub: Alle Abonnenten des Handelsblatts sind ab sofort Mitglieder im neuen Wirtschaftsclub und erhalten exklusiven Zugang zu einem in Europa einzigartigen Vorteilsprogramm.'
+      },
+      'link': 'http://www.handelsblatt.com/unternehmen/it-medien/in-eigener-sache-handelsblatt-gruendet-wirtschaftsclub/12895526.html',
+      'title_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/plain',
+        'value': 'In eigener Sache: Handelsblatt gründet Wirtschaftsclub'
+      },
+      'links': [
+        {
+          'rel': 'alternate',
+          'type': 'text/html',
+          'href': 'http://www.handelsblatt.com/unternehmen/it-medien/in-eigener-sache-handelsblatt-gruendet-wirtschaftsclub/12895526.html'
+        },
+        {
+          'length': '161913',
+          'type': 'image/png',
+          'href': 'http://www.handelsblatt.com/images/willkommen/12894386/2-format7.png?format=format7',
+          'rel': 'enclosure'
+        }
+      ],
+      'title': 'In eigener Sache: Handelsblatt gründet Wirtschaftsclub',
+      'published_parsed': time
+      .
+      struct_time
+      (
+      tm_year
+      =
+      2016,
+      tm_mon
+      =
+      1,
+      tm_mday
+      =
+      29,
+      tm_hour
+      =
+      8,
+      tm_min
+      =
+      49,
+      tm_sec
+      =
+      56,
+      tm_wday
+      =
+      4,
+      tm_yday
+      =
+      29,
+      tm_isdst
+      =
+      0
+      ),
+      'id': 'http://www.handelsblatt.com/unternehmen/it-medien/in-eigener-sache-handelsblatt-gruendet-wirtschaftsclub/12895526.html',
+      'summary': 'Start frei für den Handelsblatt Wirtschaftsclub: Alle Abonnenten des Handelsblatts sind ab sofort Mitglieder im neuen Wirtschaftsclub und erhalten exklusiven Zugang zu einem in Europa einzigartigen Vorteilsprogramm.',
+      'published': 'Fri, 29 Jan 2016 09:49:56 +0100'
+    },
+    {
+      'tags': [
+        {
+          'term': 'Industrie',
+          'scheme': None,
+          'label': None
+        }
+      ],
+      'content': [
+        {
+          'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+          'language': None,
+          'type': 'text/html',
+          'value': '<a href="http://www.handelsblatt.com/unternehmen/industrie/oel-und-gas-preisverfall-hinterlaesst-bei-omv-tiefe-spuren/12895336.html"><img alt="" src="http://www.handelsblatt.com/images/omv/12895414/2-format7.jpg?format=format7"/></a>Der Energiekonzern OMV korrigiert erneut seine Erwartungen für die nächsten Jahre. Wegen des niedrigen Ölpreises schreiben die Österreicher 1,5 Milliarden Euro auf Vermögenswerte ab.'
+        }
+      ],
+      'guidislink': False,
+      'summary_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/html',
+        'value': 'Der Energiekonzern OMV korrigiert erneut seine Erwartungen für die nächsten Jahre. Wegen des niedrigen Ölpreises schreiben die Österreicher 1,5 Milliarden Euro auf Vermögenswerte ab.'
+      },
+      'link': 'http://www.handelsblatt.com/unternehmen/industrie/oel-und-gas-preisverfall-hinterlaesst-bei-omv-tiefe-spuren/12895336.html',
+      'title_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/plain',
+        'value': 'Öl und Gas: Preisverfall hinterlässt bei OMV tiefe Spuren'
+      },
+      'links': [
+        {
+          'rel': 'alternate',
+          'type': 'text/html',
+          'href': 'http://www.handelsblatt.com/unternehmen/industrie/oel-und-gas-preisverfall-hinterlaesst-bei-omv-tiefe-spuren/12895336.html'
+        },
+        {
+          'length': '226352',
+          'type': 'image/jpeg',
+          'href': 'http://www.handelsblatt.com/images/omv/12895414/2-format7.jpg?format=format7',
+          'rel': 'enclosure'
+        }
+      ],
+      'title': 'Öl und Gas: Preisverfall hinterlässt bei OMV tiefe Spuren',
+      'published_parsed': time
+      .
+      struct_time
+      (
+      tm_year
+      =
+      2016,
+      tm_mon
+      =
+      1,
+      tm_mday
+      =
+      29,
+      tm_hour
+      =
+      8,
+      tm_min
+      =
+      14,
+      tm_sec
+      =
+      19,
+      tm_wday
+      =
+      4,
+      tm_yday
+      =
+      29,
+      tm_isdst
+      =
+      0
+      ),
+      'id': 'http://www.handelsblatt.com/unternehmen/industrie/oel-und-gas-preisverfall-hinterlaesst-bei-omv-tiefe-spuren/12895336.html',
+      'summary': 'Der Energiekonzern OMV korrigiert erneut seine Erwartungen für die nächsten Jahre. Wegen des niedrigen Ölpreises schreiben die Österreicher 1,5 Milliarden Euro auf Vermögenswerte ab.',
+      'published': 'Fri, 29 Jan 2016 09:14:19 +0100'
+    },
+    {
+      'tags': [
+        {
+          'term': 'IT + Medien',
+          'scheme': None,
+          'label': None
+        }
+      ],
+      'content': [
+        {
+          'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+          'language': None,
+          'type': 'text/html',
+          'value': '<a href="http://www.handelsblatt.com/unternehmen/it-medien/playstation-hersteller-sony-spielt-wieder-gewinne-ein/12895218.html"><img alt="" src="http://www.handelsblatt.com/images/sony-zentrale-in-tokio/12895226/2-format7.jpg?format=format7"/></a>Ein schwacher Yen und starke Zahlen in der Spielesparte haben Sony wieder in die Spur gebracht. Der Elektronikriese aus Japan hat in den ersten neun Monaten des Geschäftsjahres schwarze Zahlen geschrieben.'
+        }
+      ],
+      'guidislink': False,
+      'summary_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/html',
+        'value': 'Ein schwacher Yen und starke Zahlen in der Spielesparte haben Sony wieder in die Spur gebracht. Der Elektronikriese aus Japan hat in den ersten neun Monaten des Geschäftsjahres schwarze Zahlen geschrieben.'
+      },
+      'link': 'http://www.handelsblatt.com/unternehmen/it-medien/playstation-hersteller-sony-spielt-wieder-gewinne-ein/12895218.html',
+      'title_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/plain',
+        'value': 'Playstation-Hersteller: Sony spielt wieder Gewinne ein'
+      },
+      'links': [
+        {
+          'rel': 'alternate',
+          'type': 'text/html',
+          'href': 'http://www.handelsblatt.com/unternehmen/it-medien/playstation-hersteller-sony-spielt-wieder-gewinne-ein/12895218.html'
+        },
+        {
+          'length': '244823',
+          'type': 'image/jpeg',
+          'href': 'http://www.handelsblatt.com/images/sony-zentrale-in-tokio/12895226/2-format7.jpg?format=format7',
+          'rel': 'enclosure'
+        }
+      ],
+      'title': 'Playstation-Hersteller: Sony spielt wieder Gewinne ein',
+      'published_parsed': time
+      .
+      struct_time
+      (
+      tm_year
+      =
+      2016,
+      tm_mon
+      =
+      1,
+      tm_mday
+      =
+      29,
+      tm_hour
+      =
+      7,
+      tm_min
+      =
+      48,
+      tm_sec
+      =
+      56,
+      tm_wday
+      =
+      4,
+      tm_yday
+      =
+      29,
+      tm_isdst
+      =
+      0
+      ),
+      'id': 'http://www.handelsblatt.com/unternehmen/it-medien/playstation-hersteller-sony-spielt-wieder-gewinne-ein/12895218.html',
+      'summary': 'Ein schwacher Yen und starke Zahlen in der Spielesparte haben Sony wieder in die Spur gebracht. Der Elektronikriese aus Japan hat in den ersten neun Monaten des Geschäftsjahres schwarze Zahlen geschrieben.',
+      'published': 'Fri, 29 Jan 2016 08:48:56 +0100'
+    },
+    {
+      'tags': [
+        {
+          'term': 'Industrie',
+          'scheme': None,
+          'label': None
+        }
+      ],
+      'content': [
+        {
+          'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+          'language': None,
+          'type': 'text/html',
+          'value': '<a href="http://www.handelsblatt.com/unternehmen/industrie/daihatsu-toyota-uebernimmt-miniautos-komplett/12895160.html"><img alt="" src="http://www.handelsblatt.com/images/daihatsu-praesentation-auf-dem-tokyo-auto-salon/12895184/2-format7.jpg?format=format7"/></a>Schon jetzt gehören Toyota 51 Prozent an Daihatsu. Nun will der japanische Autoriese den Hersteller von günstigen Kleinwagen komplett schlucken. Der Wert des Deals liegt bei etwa drei Milliarden Dollar.'
+        }
+      ],
+      'guidislink': False,
+      'summary_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/html',
+        'value': 'Schon jetzt gehören Toyota 51 Prozent an Daihatsu. Nun will der japanische Autoriese den Hersteller von günstigen Kleinwagen komplett schlucken. Der Wert des Deals liegt bei etwa drei Milliarden Dollar.'
+      },
+      'link': 'http://www.handelsblatt.com/unternehmen/industrie/daihatsu-toyota-uebernimmt-miniautos-komplett/12895160.html',
+      'title_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/plain',
+        'value': 'Daihatsu: Toyota übernimmt Miniautos komplett'
+      },
+      'links': [
+        {
+          'rel': 'alternate',
+          'type': 'text/html',
+          'href': 'http://www.handelsblatt.com/unternehmen/industrie/daihatsu-toyota-uebernimmt-miniautos-komplett/12895160.html'
+        },
+        {
+          'length': '366604',
+          'type': 'image/jpeg',
+          'href': 'http://www.handelsblatt.com/images/daihatsu-praesentation-auf-dem-tokyo-auto-salon/12895184/2-format7.jpg?format=format7',
+          'rel': 'enclosure'
+        }
+      ],
+      'title': 'Daihatsu: Toyota übernimmt Miniautos komplett',
+      'published_parsed': time
+      .
+      struct_time
+      (
+      tm_year
+      =
+      2016,
+      tm_mon
+      =
+      1,
+      tm_mday
+      =
+      29,
+      tm_hour
+      =
+      7,
+      tm_min
+      =
+      39,
+      tm_sec
+      =
+      25,
+      tm_wday
+      =
+      4,
+      tm_yday
+      =
+      29,
+      tm_isdst
+      =
+      0
+      ),
+      'id': 'http://www.handelsblatt.com/unternehmen/industrie/daihatsu-toyota-uebernimmt-miniautos-komplett/12895160.html',
+      'summary': 'Schon jetzt gehören Toyota 51 Prozent an Daihatsu. Nun will der japanische Autoriese den Hersteller von günstigen Kleinwagen komplett schlucken. Der Wert des Deals liegt bei etwa drei Milliarden Dollar.',
+      'published': 'Fri, 29 Jan 2016 08:39:25 +0100'
+    },
+    {
+      'tags': [
+        {
+          'term': 'IT + Medien',
+          'scheme': None,
+          'label': None
+        }
+      ],
+      'content': [
+        {
+          'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+          'language': None,
+          'type': 'text/html',
+          'value': '<a href="http://www.handelsblatt.com/unternehmen/it-medien/xerox-it-urgestein-spaltet-sich-au/12895102.html"><img alt="" src="http://www.handelsblatt.com/images/xerox-zentrale-in-stamford/12895120/3-format7.jpg?format=format7"/></a>Der IT-Konzern Xerox spaltet sich auf. Der US-Druckerhersteller bestätigte entsprechende Medienberichte. Der umtriebige Investor Carl Icahn bekommt drei Sitze im Verwaltungsrat der neuen Dienstleistungs-Firma.'
+        }
+      ],
+      'guidislink': False,
+      'summary_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/html',
+        'value': 'Der IT-Konzern Xerox spaltet sich auf. Der US-Druckerhersteller bestätigte entsprechende Medienberichte. Der umtriebige Investor Carl Icahn bekommt drei Sitze im Verwaltungsrat der neuen Dienstleistungs-Firma.'
+      },
+      'link': 'http://www.handelsblatt.com/unternehmen/it-medien/xerox-it-urgestein-spaltet-sich-au/12895102.html',
+      'title_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/plain',
+        'value': 'Xerox: IT-Urgestein spaltet sich au'
+      },
+      'links': [
+        {
+          'rel': 'alternate',
+          'type': 'text/html',
+          'href': 'http://www.handelsblatt.com/unternehmen/it-medien/xerox-it-urgestein-spaltet-sich-au/12895102.html'
+        },
+        {
+          'length': '233305',
+          'type': 'image/jpeg',
+          'href': 'http://www.handelsblatt.com/images/xerox-zentrale-in-stamford/12895120/3-format7.jpg?format=format7',
+          'rel': 'enclosure'
+        }
+      ],
+      'title': 'Xerox: IT-Urgestein spaltet sich au',
+      'published_parsed': time
+      .
+      struct_time
+      (
+      tm_year
+      =
+      2016,
+      tm_mon
+      =
+      1,
+      tm_mday
+      =
+      29,
+      tm_hour
+      =
+      7,
+      tm_min
+      =
+      29,
+      tm_sec
+      =
+      2,
+      tm_wday
+      =
+      4,
+      tm_yday
+      =
+      29,
+      tm_isdst
+      =
+      0
+      ),
+      'id': 'http://www.handelsblatt.com/unternehmen/it-medien/xerox-it-urgestein-spaltet-sich-au/12895102.html',
+      'summary': 'Der IT-Konzern Xerox spaltet sich auf. Der US-Druckerhersteller bestätigte entsprechende Medienberichte. Der umtriebige Investor Carl Icahn bekommt drei Sitze im Verwaltungsrat der neuen Dienstleistungs-Firma.',
+      'published': 'Fri, 29 Jan 2016 08:29:02 +0100'
+    },
+    {
+      'tags': [
+        {
+          'term': 'Beruf + Büro',
+          'scheme': None,
+          'label': None
+        }
+      ],
+      'content': [
+        {
+          'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+          'language': None,
+          'type': 'text/html',
+          'value': '<a href="http://www.handelsblatt.com/unternehmen/beruf-und-buero/buero-special/ceo-karriere-in-gefahr-wenn-der-chef-in-der-kommunikation-versagt/12887136.html"><img alt="" src="http://www.handelsblatt.com/images/ein-no-go/12892038/2-format7.png?format=format7"/></a>Scheinbare Konzeptlosigkeit, schlechter Führungsstil, misslungene Kommunikation: das wird Firmenlenkern wie bei VW oder dem DFB öfter zum Verhängnis. Das zeigt eine aktuelle Studie. Was die Chefetage jetzt tun sollte.'
+        }
+      ],
+      'guidislink': False,
+      'summary_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/html',
+        'value': 'Scheinbare Konzeptlosigkeit, schlechter Führungsstil, misslungene Kommunikation: das wird Firmenlenkern wie bei VW oder dem DFB öfter zum Verhängnis. Das zeigt eine aktuelle Studie. Was die Chefetage jetzt tun sollte.'
+      },
+      'link': 'http://www.handelsblatt.com/unternehmen/beruf-und-buero/buero-special/ceo-karriere-in-gefahr-wenn-der-chef-in-der-kommunikation-versagt/12887136.html',
+      'title_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/plain',
+        'value': 'CEO-Karriere in Gefahr: Wenn der Chef in der Kommunikation versagt'
+      },
+      'links': [
+        {
+          'rel': 'alternate',
+          'type': 'text/html',
+          'href': 'http://www.handelsblatt.com/unternehmen/beruf-und-buero/buero-special/ceo-karriere-in-gefahr-wenn-der-chef-in-der-kommunikation-versagt/12887136.html'
+        },
+        {
+          'length': '251399',
+          'type': 'image/png',
+          'href': 'http://www.handelsblatt.com/images/ein-no-go/12892038/2-format7.png?format=format7',
+          'rel': 'enclosure'
+        }
+      ],
+      'title': 'CEO-Karriere in Gefahr: Wenn der Chef in der Kommunikation versagt',
+      'published_parsed': time
+      .
+      struct_time
+      (
+      tm_year
+      =
+      2016,
+      tm_mon
+      =
+      1,
+      tm_mday
+      =
+      29,
+      tm_hour
+      =
+      7,
+      tm_min
+      =
+      23,
+      tm_sec
+      =
+      8,
+      tm_wday
+      =
+      4,
+      tm_yday
+      =
+      29,
+      tm_isdst
+      =
+      0
+      ),
+      'id': 'http://www.handelsblatt.com/unternehmen/beruf-und-buero/buero-special/ceo-karriere-in-gefahr-wenn-der-chef-in-der-kommunikation-versagt/12887136.html',
+      'summary': 'Scheinbare Konzeptlosigkeit, schlechter Führungsstil, misslungene Kommunikation: das wird Firmenlenkern wie bei VW oder dem DFB öfter zum Verhängnis. Das zeigt eine aktuelle Studie. Was die Chefetage jetzt tun sollte.',
+      'published': 'Fri, 29 Jan 2016 08:23:08 +0100'
+    },
+    {
+      'tags': [
+        {
+          'term': 'Beruf + Büro',
+          'scheme': None,
+          'label': None
+        }
+      ],
+      'content': [
+        {
+          'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+          'language': None,
+          'type': 'text/html',
+          'value': '<a href="http://www.handelsblatt.com/unternehmen/beruf-und-buero/buero-special/buero-freundschaften-lass-uns-lieber-kollegen-bleiben/12890282.html"><img alt="" src="http://www.handelsblatt.com/images/arbeitsalltag/12890484/2-format7.jpg?format=format7"/></a>Gute Freunde im Büro machen die Arbeit leichter? Kann sein, doch die Forschung zeigt: Manchmal ist mehr Distanz besser.'
+        }
+      ],
+      'guidislink': False,
+      'summary_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/html',
+        'value': 'Gute Freunde im Büro machen die Arbeit leichter? Kann sein, doch die Forschung zeigt: Manchmal ist mehr Distanz besser.'
+      },
+      'link': 'http://www.handelsblatt.com/unternehmen/beruf-und-buero/buero-special/buero-freundschaften-lass-uns-lieber-kollegen-bleiben/12890282.html',
+      'title_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/plain',
+        'value': 'Büro-Freundschaften: Lass uns lieber Kollegen bleiben'
+      },
+      'links': [
+        {
+          'rel': 'alternate',
+          'type': 'text/html',
+          'href': 'http://www.handelsblatt.com/unternehmen/beruf-und-buero/buero-special/buero-freundschaften-lass-uns-lieber-kollegen-bleiben/12890282.html'
+        },
+        {
+          'length': '998347',
+          'type': 'image/jpeg',
+          'href': 'http://www.handelsblatt.com/images/arbeitsalltag/12890484/2-format7.jpg?format=format7',
+          'rel': 'enclosure'
+        }
+      ],
+      'title': 'Büro-Freundschaften: Lass uns lieber Kollegen bleiben',
+      'published_parsed': time
+      .
+      struct_time
+      (
+      tm_year
+      =
+      2016,
+      tm_mon
+      =
+      1,
+      tm_mday
+      =
+      29,
+      tm_hour
+      =
+      6,
+      tm_min
+      =
+      42,
+      tm_sec
+      =
+      3,
+      tm_wday
+      =
+      4,
+      tm_yday
+      =
+      29,
+      tm_isdst
+      =
+      0
+      ),
+      'id': 'http://www.handelsblatt.com/unternehmen/beruf-und-buero/buero-special/buero-freundschaften-lass-uns-lieber-kollegen-bleiben/12890282.html',
+      'summary': 'Gute Freunde im Büro machen die Arbeit leichter? Kann sein, doch die Forschung zeigt: Manchmal ist mehr Distanz besser.',
+      'published': 'Fri, 29 Jan 2016 07:42:03 +0100'
+    },
+    {
+      'tags': [
+        {
+          'term': 'Handel + Konsumgüter',
+          'scheme': None,
+          'label': None
+        }
+      ],
+      'content': [
+        {
+          'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+          'language': None,
+          'type': 'text/html',
+          'value': '<a href="http://www.handelsblatt.com/unternehmen/handel-konsumgueter/aktie-stuerzt-ab-realitaetsschock-fuer-amazon-aktionaere/12894800.html"><img alt="" src="http://www.handelsblatt.com/images/-amazon/12894806/3-format7.jpg?format=format7"/></a>Das verspätete Weihnachtsgeschenk für die Amazon-Aktionäre ist ausgeblieben. Die Quartalszahlen haben die Wall Street auf dem falschen Fuß erwischt, mit der Aktie ging es rasant abwärts. Was ist schief gelaufen?'
+        }
+      ],
+      'guidislink': False,
+      'summary_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/html',
+        'value': 'Das verspätete Weihnachtsgeschenk für die Amazon-Aktionäre ist ausgeblieben. Die Quartalszahlen haben die Wall Street auf dem falschen Fuß erwischt, mit der Aktie ging es rasant abwärts. Was ist schief gelaufen?'
+      },
+      'link': 'http://www.handelsblatt.com/unternehmen/handel-konsumgueter/aktie-stuerzt-ab-realitaetsschock-fuer-amazon-aktionaere/12894800.html',
+      'title_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/plain',
+        'value': 'Aktie stürzt ab: Realitätsschock für Amazon-Aktionäre'
+      },
+      'links': [
+        {
+          'rel': 'alternate',
+          'type': 'text/html',
+          'href': 'http://www.handelsblatt.com/unternehmen/handel-konsumgueter/aktie-stuerzt-ab-realitaetsschock-fuer-amazon-aktionaere/12894800.html'
+        },
+        {
+          'length': '373261',
+          'type': 'image/jpeg',
+          'href': 'http://www.handelsblatt.com/images/-amazon/12894806/3-format7.jpg?format=format7',
+          'rel': 'enclosure'
+        }
+      ],
+      'title': 'Aktie stürzt ab: Realitätsschock für Amazon-Aktionäre',
+      'published_parsed': time
+      .
+      struct_time
+      (
+      tm_year
+      =
+      2016,
+      tm_mon
+      =
+      1,
+      tm_mday
+      =
+      29,
+      tm_hour
+      =
+      1,
+      tm_min
+      =
+      1,
+      tm_sec
+      =
+      0,
+      tm_wday
+      =
+      4,
+      tm_yday
+      =
+      29,
+      tm_isdst
+      =
+      0
+      ),
+      'id': 'http://www.handelsblatt.com/unternehmen/handel-konsumgueter/aktie-stuerzt-ab-realitaetsschock-fuer-amazon-aktionaere/12894800.html',
+      'summary': 'Das verspätete Weihnachtsgeschenk für die Amazon-Aktionäre ist ausgeblieben. Die Quartalszahlen haben die Wall Street auf dem falschen Fuß erwischt, mit der Aktie ging es rasant abwärts. Was ist schief gelaufen?',
+      'published': 'Fri, 29 Jan 2016 02:01:00 +0100'
+    },
+    {
+      'tags': [
+        {
+          'term': 'Handel + Konsumgüter',
+          'scheme': None,
+          'label': None
+        }
+      ],
+      'content': [
+        {
+          'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+          'language': None,
+          'type': 'text/html',
+          'value': '<a href="http://www.handelsblatt.com/unternehmen/handel-konsumgueter/kreditkartenanbieter-bei-visa-klingelt-die-kasse/12894788.html"><img alt="" src="http://www.handelsblatt.com/images/visa/12894794/3-format7.jpg?format=format7"/></a>Visa verdient besser als erwartet: Die Kauflust der Kunden im Weihnachtsgeschäft hat dem US-Kreditkartenanbieter einen satten Gewinn beschert. Die Überraschung der Analysten machte sich auch in der Aktienkurve bemerkbar.'
+        }
+      ],
+      'guidislink': False,
+      'summary_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/html',
+        'value': 'Visa verdient besser als erwartet: Die Kauflust der Kunden im Weihnachtsgeschäft hat dem US-Kreditkartenanbieter einen satten Gewinn beschert. Die Überraschung der Analysten machte sich auch in der Aktienkurve bemerkbar.'
+      },
+      'link': 'http://www.handelsblatt.com/unternehmen/handel-konsumgueter/kreditkartenanbieter-bei-visa-klingelt-die-kasse/12894788.html',
+      'title_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/plain',
+        'value': 'Kreditkartenanbieter: Bei Visa klingelt die Kasse'
+      },
+      'links': [
+        {
+          'rel': 'alternate',
+          'type': 'text/html',
+          'href': 'http://www.handelsblatt.com/unternehmen/handel-konsumgueter/kreditkartenanbieter-bei-visa-klingelt-die-kasse/12894788.html'
+        },
+        {
+          'length': '235763',
+          'type': 'image/jpeg',
+          'href': 'http://www.handelsblatt.com/images/visa/12894794/3-format7.jpg?format=format7',
+          'rel': 'enclosure'
+        }
+      ],
+      'title': 'Kreditkartenanbieter: Bei Visa klingelt die Kasse',
+      'published_parsed': time
+      .
+      struct_time
+      (
+      tm_year
+      =
+      2016,
+      tm_mon
+      =
+      1,
+      tm_mday
+      =
+      29,
+      tm_hour
+      =
+      0,
+      tm_min
+      =
+      16,
+      tm_sec
+      =
+      0,
+      tm_wday
+      =
+      4,
+      tm_yday
+      =
+      29,
+      tm_isdst
+      =
+      0
+      ),
+      'id': 'http://www.handelsblatt.com/unternehmen/handel-konsumgueter/kreditkartenanbieter-bei-visa-klingelt-die-kasse/12894788.html',
+      'summary': 'Visa verdient besser als erwartet: Die Kauflust der Kunden im Weihnachtsgeschäft hat dem US-Kreditkartenanbieter einen satten Gewinn beschert. Die Überraschung der Analysten machte sich auch in der Aktienkurve bemerkbar.',
+      'published': 'Fri, 29 Jan 2016 01:16:00 +0100'
+    },
+    {
+      'tags': [
+        {
+          'term': 'IT + Medien',
+          'scheme': None,
+          'label': None
+        }
+      ],
+      'content': [
+        {
+          'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+          'language': None,
+          'type': 'text/html',
+          'value': '<a href="http://www.handelsblatt.com/unternehmen/it-medien/windows-zieht-kaum-microsoft-punktet-mit-cloud-wachstum/12894714.html"><img alt="" src="http://www.handelsblatt.com/images/microsoft/12894716/3-format7.jpg?format=format7"/></a>Microsoft hat im abgelaufenen Quartal bei Gewinn und Umsatz eingebüßt. Analysten hatten jedoch weniger erwartet. Die Neuausrichtung des Konzerns scheint immer mehr Wirkung zu zeigen. Die Aktie legte nachbörslich zu.'
+        }
+      ],
+      'guidislink': False,
+      'summary_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/html',
+        'value': 'Microsoft hat im abgelaufenen Quartal bei Gewinn und Umsatz eingebüßt. Analysten hatten jedoch weniger erwartet. Die Neuausrichtung des Konzerns scheint immer mehr Wirkung zu zeigen. Die Aktie legte nachbörslich zu.'
+      },
+      'link': 'http://www.handelsblatt.com/unternehmen/it-medien/windows-zieht-kaum-microsoft-punktet-mit-cloud-wachstum/12894714.html',
+      'title_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/plain',
+        'value': 'Windows zieht kaum: Microsoft punktet mit Cloud-Wachstum'
+      },
+      'links': [
+        {
+          'rel': 'alternate',
+          'type': 'text/html',
+          'href': 'http://www.handelsblatt.com/unternehmen/it-medien/windows-zieht-kaum-microsoft-punktet-mit-cloud-wachstum/12894714.html'
+        },
+        {
+          'length': '139655',
+          'type': 'image/jpeg',
+          'href': 'http://www.handelsblatt.com/images/microsoft/12894716/3-format7.jpg?format=format7',
+          'rel': 'enclosure'
+        }
+      ],
+      'title': 'Windows zieht kaum: Microsoft punktet mit Cloud-Wachstum',
+      'published_parsed': time
+      .
+      struct_time
+      (
+      tm_year
+      =
+      2016,
+      tm_mon
+      =
+      1,
+      tm_mday
+      =
+      28,
+      tm_hour
+      =
+      22,
+      tm_min
+      =
+      44,
+      tm_sec
+      =
+      0,
+      tm_wday
+      =
+      3,
+      tm_yday
+      =
+      28,
+      tm_isdst
+      =
+      0
+      ),
+      'id': 'http://www.handelsblatt.com/unternehmen/it-medien/windows-zieht-kaum-microsoft-punktet-mit-cloud-wachstum/12894714.html',
+      'summary': 'Microsoft hat im abgelaufenen Quartal bei Gewinn und Umsatz eingebüßt. Analysten hatten jedoch weniger erwartet. Die Neuausrichtung des Konzerns scheint immer mehr Wirkung zu zeigen. Die Aktie legte nachbörslich zu.',
+      'published': 'Thu, 28 Jan 2016 23:44:00 +0100'
+    },
+    {
+      'tags': [
+        {
+          'term': 'Handel + Konsumgüter',
+          'scheme': None,
+          'label': None
+        }
+      ],
+      'content': [
+        {
+          'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+          'language': None,
+          'type': 'text/html',
+          'value': '<a href="http://www.handelsblatt.com/unternehmen/handel-konsumgueter/onlinehaendler-amazon-mit-gewinnsprung-aktie-faellt-nachboerslich/12894672.html"><img alt="" src="http://www.handelsblatt.com/images/amazon/12894674/3-format7.jpg?format=format7"/></a>Das Weihnachtsgeschäft hat Amazon ein besonders gutes Geschäfts beschert. Der Onlinehändler steigerte im abgelaufenen Quartal Gewinn und Umsatz deutlich. Doch Anleger haben mehr erwartet. Die Aktie fällt nachbörslich.'
+        }
+      ],
+      'guidislink': False,
+      'summary_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/html',
+        'value': 'Das Weihnachtsgeschäft hat Amazon ein besonders gutes Geschäfts beschert. Der Onlinehändler steigerte im abgelaufenen Quartal Gewinn und Umsatz deutlich. Doch Anleger haben mehr erwartet. Die Aktie fällt nachbörslich.'
+      },
+      'link': 'http://www.handelsblatt.com/unternehmen/handel-konsumgueter/onlinehaendler-amazon-mit-gewinnsprung-aktie-faellt-nachboerslich/12894672.html',
+      'title_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/plain',
+        'value': 'Onlinehändler: Amazon mit Gewinnsprung - Aktie fällt nachbörslich'
+      },
+      'links': [
+        {
+          'rel': 'alternate',
+          'type': 'text/html',
+          'href': 'http://www.handelsblatt.com/unternehmen/handel-konsumgueter/onlinehaendler-amazon-mit-gewinnsprung-aktie-faellt-nachboerslich/12894672.html'
+        },
+        {
+          'length': '209979',
+          'type': 'image/jpeg',
+          'href': 'http://www.handelsblatt.com/images/amazon/12894674/3-format7.jpg?format=format7',
+          'rel': 'enclosure'
+        }
+      ],
+      'title': 'Onlinehändler: Amazon mit Gewinnsprung - Aktie fällt nachbörslich',
+      'published_parsed': time
+      .
+      struct_time
+      (
+      tm_year
+      =
+      2016,
+      tm_mon
+      =
+      1,
+      tm_mday
+      =
+      28,
+      tm_hour
+      =
+      21,
+      tm_min
+      =
+      47,
+      tm_sec
+      =
+      0,
+      tm_wday
+      =
+      3,
+      tm_yday
+      =
+      28,
+      tm_isdst
+      =
+      0
+      ),
+      'id': 'http://www.handelsblatt.com/unternehmen/handel-konsumgueter/onlinehaendler-amazon-mit-gewinnsprung-aktie-faellt-nachboerslich/12894672.html',
+      'summary': 'Das Weihnachtsgeschäft hat Amazon ein besonders gutes Geschäfts beschert. Der Onlinehändler steigerte im abgelaufenen Quartal Gewinn und Umsatz deutlich. Doch Anleger haben mehr erwartet. Die Aktie fällt nachbörslich.',
+      'published': 'Thu, 28 Jan 2016 22:47:00 +0100'
+    },
+    {
+      'tags': [
+        {
+          'term': 'Der Werber-Rat',
+          'scheme': None,
+          'label': None
+        }
+      ],
+      'content': [
+        {
+          'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+          'language': None,
+          'type': 'text/html',
+          'value': '<a href="http://www.handelsblatt.com/unternehmen/dienstleister/werber-rat/der-werber-rat-neidvoller-blick-in-die-usa/12889952.html"><img alt="" src="http://www.handelsblatt.com/images/die-werbepause-als-highlight/12890002/2-format7.jpg?format=format7"/></a>So wie beim Superbowl, so sollte Werbung sein, findet nicht nur Britta Poetzsch. Neidisch und Sehnsuchtsvoll blicken die deutschen Kreativen daher in Richtung USA – und basteln dann den xsten 08/15-Spot nach Schema F.'
+        }
+      ],
+      'guidislink': False,
+      'summary_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/html',
+        'value': 'So wie beim Superbowl, so sollte Werbung sein, findet nicht nur Britta Poetzsch. Neidisch und Sehnsuchtsvoll blicken die deutschen Kreativen daher in Richtung USA – und basteln dann den xsten 08/15-Spot nach Schema F.'
+      },
+      'link': 'http://www.handelsblatt.com/unternehmen/dienstleister/werber-rat/der-werber-rat-neidvoller-blick-in-die-usa/12889952.html',
+      'title_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/plain',
+        'value': 'Der Werber-Rat: Neidvoller Blick in die USA'
+      },
+      'links': [
+        {
+          'rel': 'alternate',
+          'type': 'text/html',
+          'href': 'http://www.handelsblatt.com/unternehmen/dienstleister/werber-rat/der-werber-rat-neidvoller-blick-in-die-usa/12889952.html'
+        },
+        {
+          'length': '357274',
+          'type': 'image/jpeg',
+          'href': 'http://www.handelsblatt.com/images/die-werbepause-als-highlight/12890002/2-format7.jpg?format=format7',
+          'rel': 'enclosure'
+        }
+      ],
+      'title': 'Der Werber-Rat: Neidvoller Blick in die USA',
+      'published_parsed': time
+      .
+      struct_time
+      (
+      tm_year
+      =
+      2016,
+      tm_mon
+      =
+      1,
+      tm_mday
+      =
+      28,
+      tm_hour
+      =
+      20,
+      tm_min
+      =
+      48,
+      tm_sec
+      =
+      40,
+      tm_wday
+      =
+      3,
+      tm_yday
+      =
+      28,
+      tm_isdst
+      =
+      0
+      ),
+      'id': 'http://www.handelsblatt.com/unternehmen/dienstleister/werber-rat/der-werber-rat-neidvoller-blick-in-die-usa/12889952.html',
+      'summary': 'So wie beim Superbowl, so sollte Werbung sein, findet nicht nur Britta Poetzsch. Neidisch und Sehnsuchtsvoll blicken die deutschen Kreativen daher in Richtung USA – und basteln dann den xsten 08/15-Spot nach Schema F.',
+      'published': 'Thu, 28 Jan 2016 21:48:40 +0100'
+    },
+    {
+      'tags': [
+        {
+          'term': 'Industrie',
+          'scheme': None,
+          'label': None
+        }
+      ],
+      'content': [
+        {
+          'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+          'language': None,
+          'type': 'text/html',
+          'value': '<a href="http://www.handelsblatt.com/unternehmen/industrie/airbus-erhaelt-auftrag-iran-kauft-nach-sanktionsende-118-flugzeuge/12894472.html"><img alt="" src="http://www.handelsblatt.com/images/auftrag-erteilt/12894492/3-format7.jpg?format=format7"/></a>Die Sanktionen gegen den Iran sind kaum gefallen, da gibt die Führung in Teheran eine Großbestellung auf: Airbus soll 118 Flugzeuge verschiedener Modelle liefern – zum Listenpreis.'
+        }
+      ],
+      'guidislink': False,
+      'summary_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/html',
+        'value': 'Die Sanktionen gegen den Iran sind kaum gefallen, da gibt die Führung in Teheran eine Großbestellung auf: Airbus soll 118 Flugzeuge verschiedener Modelle liefern – zum Listenpreis.'
+      },
+      'link': 'http://www.handelsblatt.com/unternehmen/industrie/airbus-erhaelt-auftrag-iran-kauft-nach-sanktionsende-118-flugzeuge/12894472.html',
+      'title_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/plain',
+        'value': 'Airbus erhält Auftrag: Iran kauft nach Sanktionsende 118 Flugzeuge'
+      },
+      'links': [
+        {
+          'rel': 'alternate',
+          'type': 'text/html',
+          'href': 'http://www.handelsblatt.com/unternehmen/industrie/airbus-erhaelt-auftrag-iran-kauft-nach-sanktionsende-118-flugzeuge/12894472.html'
+        },
+        {
+          'length': '252546',
+          'type': 'image/jpeg',
+          'href': 'http://www.handelsblatt.com/images/auftrag-erteilt/12894492/3-format7.jpg?format=format7',
+          'rel': 'enclosure'
+        }
+      ],
+      'title': 'Airbus erhält Auftrag: Iran kauft nach Sanktionsende 118 Flugzeuge',
+      'published_parsed': time
+      .
+      struct_time
+      (
+      tm_year
+      =
+      2016,
+      tm_mon
+      =
+      1,
+      tm_mday
+      =
+      28,
+      tm_hour
+      =
+      19,
+      tm_min
+      =
+      7,
+      tm_sec
+      =
+      0,
+      tm_wday
+      =
+      3,
+      tm_yday
+      =
+      28,
+      tm_isdst
+      =
+      0
+      ),
+      'id': 'http://www.handelsblatt.com/unternehmen/industrie/airbus-erhaelt-auftrag-iran-kauft-nach-sanktionsende-118-flugzeuge/12894472.html',
+      'summary': 'Die Sanktionen gegen den Iran sind kaum gefallen, da gibt die Führung in Teheran eine Großbestellung auf: Airbus soll 118 Flugzeuge verschiedener Modelle liefern – zum Listenpreis.',
+      'published': 'Thu, 28 Jan 2016 20:07:00 +0100'
+    },
+    {
+      'tags': [
+        {
+          'term': 'Management',
+          'scheme': None,
+          'label': None
+        }
+      ],
+      'content': [
+        {
+          'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+          'language': None,
+          'type': 'text/html',
+          'value': '<a href="http://www.handelsblatt.com/unternehmen/management/grosser-wirtschaftsbetrug-erneute-haftstrafe-fuer-flowtex-gruender-schmider/12894346.html"><img alt="" src="http://www.handelsblatt.com/images/erneute-haftstrafe/12894362/2-format7.jpg?format=format7"/></a>Der Fall Flowtex ist einer der größten Betrugsfälle der deutschen Wirtschaftsgeschichte. Jahrelang saß Firmengründer „Big Manni“ Schmider in Deutschland in Haft. Nun soll er wieder hinter Gitter. Diesmal in der Schweiz.'
+        }
+      ],
+      'guidislink': False,
+      'summary_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/html',
+        'value': 'Der Fall Flowtex ist einer der größten Betrugsfälle der deutschen Wirtschaftsgeschichte. Jahrelang saß Firmengründer „Big Manni“ Schmider in Deutschland in Haft. Nun soll er wieder hinter Gitter. Diesmal in der Schweiz.'
+      },
+      'link': 'http://www.handelsblatt.com/unternehmen/management/grosser-wirtschaftsbetrug-erneute-haftstrafe-fuer-flowtex-gruender-schmider/12894346.html',
+      'title_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/plain',
+        'value': 'Großer Wirtschaftsbetrug: Erneute Haftstrafe für Flowtex-Gründer Schmider'
+      },
+      'links': [
+        {
+          'rel': 'alternate',
+          'type': 'text/html',
+          'href': 'http://www.handelsblatt.com/unternehmen/management/grosser-wirtschaftsbetrug-erneute-haftstrafe-fuer-flowtex-gruender-schmider/12894346.html'
+        },
+        {
+          'length': '356453',
+          'type': 'image/jpeg',
+          'href': 'http://www.handelsblatt.com/images/erneute-haftstrafe/12894362/2-format7.jpg?format=format7',
+          'rel': 'enclosure'
+        }
+      ],
+      'title': 'Großer Wirtschaftsbetrug: Erneute Haftstrafe für Flowtex-Gründer Schmider',
+      'published_parsed': time
+      .
+      struct_time
+      (
+      tm_year
+      =
+      2016,
+      tm_mon
+      =
+      1,
+      tm_mday
+      =
+      28,
+      tm_hour
+      =
+      18,
+      tm_min
+      =
+      23,
+      tm_sec
+      =
+      0,
+      tm_wday
+      =
+      3,
+      tm_yday
+      =
+      28,
+      tm_isdst
+      =
+      0
+      ),
+      'id': 'http://www.handelsblatt.com/unternehmen/management/grosser-wirtschaftsbetrug-erneute-haftstrafe-fuer-flowtex-gruender-schmider/12894346.html',
+      'summary': 'Der Fall Flowtex ist einer der größten Betrugsfälle der deutschen Wirtschaftsgeschichte. Jahrelang saß Firmengründer „Big Manni“ Schmider in Deutschland in Haft. Nun soll er wieder hinter Gitter. Diesmal in der Schweiz.',
+      'published': 'Thu, 28 Jan 2016 19:23:00 +0100'
+    },
+    {
+      'tags': [
+        {
+          'term': 'Banken + Versicherungen',
+          'scheme': None,
+          'label': None
+        }
+      ],
+      'content': [
+        {
+          'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+          'language': None,
+          'type': 'text/html',
+          'value': '<a href="http://www.handelsblatt.com/unternehmen/banken-versicherungen/sparkassen-paydirekt-wird-vollzaehlig/12893414.html"><img alt="" src="http://www.handelsblatt.com/images/sparkassen-logo/12893764/2-format7.jpg?format=format7"/></a>Alle Sparkassen werden bis Ende April an Paydirekt angeschlossen sein. Auch die Beteiligung an dem Gemeinschaftsunternehmen steht jetzt endlich. Doch bisher fehlen Paydirekt die großen Händler.'
+        }
+      ],
+      'guidislink': False,
+      'summary_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/html',
+        'value': 'Alle Sparkassen werden bis Ende April an Paydirekt angeschlossen sein. Auch die Beteiligung an dem Gemeinschaftsunternehmen steht jetzt endlich. Doch bisher fehlen Paydirekt die großen Händler.'
+      },
+      'link': 'http://www.handelsblatt.com/unternehmen/banken-versicherungen/sparkassen-paydirekt-wird-vollzaehlig/12893414.html',
+      'title_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/plain',
+        'value': 'Sparkassen: Paydirekt wird vollzählig'
+      },
+      'links': [
+        {
+          'rel': 'alternate',
+          'type': 'text/html',
+          'href': 'http://www.handelsblatt.com/unternehmen/banken-versicherungen/sparkassen-paydirekt-wird-vollzaehlig/12893414.html'
+        },
+        {
+          'length': '141211',
+          'type': 'image/jpeg',
+          'href': 'http://www.handelsblatt.com/images/sparkassen-logo/12893764/2-format7.jpg?format=format7',
+          'rel': 'enclosure'
+        }
+      ],
+      'title': 'Sparkassen: Paydirekt wird vollzählig',
+      'published_parsed': time
+      .
+      struct_time
+      (
+      tm_year
+      =
+      2016,
+      tm_mon
+      =
+      1,
+      tm_mday
+      =
+      28,
+      tm_hour
+      =
+      17,
+      tm_min
+      =
+      34,
+      tm_sec
+      =
+      10,
+      tm_wday
+      =
+      3,
+      tm_yday
+      =
+      28,
+      tm_isdst
+      =
+      0
+      ),
+      'id': 'http://www.handelsblatt.com/unternehmen/banken-versicherungen/sparkassen-paydirekt-wird-vollzaehlig/12893414.html',
+      'summary': 'Alle Sparkassen werden bis Ende April an Paydirekt angeschlossen sein. Auch die Beteiligung an dem Gemeinschaftsunternehmen steht jetzt endlich. Doch bisher fehlen Paydirekt die großen Händler.',
+      'published': 'Thu, 28 Jan 2016 18:34:10 +0100'
+    },
+    {
+      'tags': [
+        {
+          'term': 'Handel + Konsumgüter',
+          'scheme': None,
+          'label': None
+        }
+      ],
+      'content': [
+        {
+          'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+          'language': None,
+          'type': 'text/html',
+          'value': '<a href="http://www.handelsblatt.com/unternehmen/handel-konsumgueter/alnatura-im-streit-mit-dm-bio-haendler-will-partnerschaft-beibehalten/12894122.html"><img alt="" src="http://www.handelsblatt.com/images/alnatura/12894190/2-format7.jpg?format=format7"/></a>Der Streit mit dm kostet Alnatura bares Geld. Die Bio-Handelskette setzt zwar auch auf den Verkauf in Edeka-Märkten. Doch das reiche nicht, sagt Chef Götz Rehn. Er hält an der Partnerschaft mit der Drogeriekette fest.'
+        }
+      ],
+      'guidislink': False,
+      'summary_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/html',
+        'value': 'Der Streit mit dm kostet Alnatura bares Geld. Die Bio-Handelskette setzt zwar auch auf den Verkauf in Edeka-Märkten. Doch das reiche nicht, sagt Chef Götz Rehn. Er hält an der Partnerschaft mit der Drogeriekette fest.'
+      },
+      'link': 'http://www.handelsblatt.com/unternehmen/handel-konsumgueter/alnatura-im-streit-mit-dm-bio-haendler-will-partnerschaft-beibehalten/12894122.html',
+      'title_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/plain',
+        'value': 'Alnatura im Streit mit dm: Bio-Händler will Partnerschaft beibehalten'
+      },
+      'links': [
+        {
+          'rel': 'alternate',
+          'type': 'text/html',
+          'href': 'http://www.handelsblatt.com/unternehmen/handel-konsumgueter/alnatura-im-streit-mit-dm-bio-haendler-will-partnerschaft-beibehalten/12894122.html'
+        },
+        {
+          'length': '248353',
+          'type': 'image/jpeg',
+          'href': 'http://www.handelsblatt.com/images/alnatura/12894190/2-format7.jpg?format=format7',
+          'rel': 'enclosure'
+        }
+      ],
+      'title': 'Alnatura im Streit mit dm: Bio-Händler will Partnerschaft beibehalten',
+      'published_parsed': time
+      .
+      struct_time
+      (
+      tm_year
+      =
+      2016,
+      tm_mon
+      =
+      1,
+      tm_mday
+      =
+      28,
+      tm_hour
+      =
+      17,
+      tm_min
+      =
+      20,
+      tm_sec
+      =
+      0,
+      tm_wday
+      =
+      3,
+      tm_yday
+      =
+      28,
+      tm_isdst
+      =
+      0
+      ),
+      'id': 'http://www.handelsblatt.com/unternehmen/handel-konsumgueter/alnatura-im-streit-mit-dm-bio-haendler-will-partnerschaft-beibehalten/12894122.html',
+      'summary': 'Der Streit mit dm kostet Alnatura bares Geld. Die Bio-Handelskette setzt zwar auch auf den Verkauf in Edeka-Märkten. Doch das reiche nicht, sagt Chef Götz Rehn. Er hält an der Partnerschaft mit der Drogeriekette fest.',
+      'published': 'Thu, 28 Jan 2016 18:20:00 +0100'
+    },
+    {
+      'tags': [
+        {
+          'term': 'Industrie',
+          'scheme': None,
+          'label': None
+        }
+      ],
+      'content': [
+        {
+          'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+          'language': None,
+          'type': 'text/html',
+          'value': '<a href="http://www.handelsblatt.com/unternehmen/industrie/shell-vor-mega-uebernahme-bg-aktionaere-winken-zusammenschluss-durch/12894052.html"><img alt="" src="http://www.handelsblatt.com/images/shell-aktionaere-einverstanden/12894076/2-format7.jpg?format=format7"/></a>Der Weg für den Milliarden-Deal ist frei: Die Aktionäre der BG Group haben einer Übernahme durch Shell mit überdeutlicher Mehrheit zugestimmt. Schon in wenigen Wochen soll der Zusammenschluss unter Dach und Fach sein.'
+        }
+      ],
+      'guidislink': False,
+      'summary_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/html',
+        'value': 'Der Weg für den Milliarden-Deal ist frei: Die Aktionäre der BG Group haben einer Übernahme durch Shell mit überdeutlicher Mehrheit zugestimmt. Schon in wenigen Wochen soll der Zusammenschluss unter Dach und Fach sein.'
+      },
+      'link': 'http://www.handelsblatt.com/unternehmen/industrie/shell-vor-mega-uebernahme-bg-aktionaere-winken-zusammenschluss-durch/12894052.html',
+      'title_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/plain',
+        'value': 'Shell vor Mega-Übernahme: BG-Aktionäre winken Zusammenschluss durch'
+      },
+      'links': [
+        {
+          'rel': 'alternate',
+          'type': 'text/html',
+          'href': 'http://www.handelsblatt.com/unternehmen/industrie/shell-vor-mega-uebernahme-bg-aktionaere-winken-zusammenschluss-durch/12894052.html'
+        },
+        {
+          'length': '178524',
+          'type': 'image/jpeg',
+          'href': 'http://www.handelsblatt.com/images/shell-aktionaere-einverstanden/12894076/2-format7.jpg?format=format7',
+          'rel': 'enclosure'
+        }
+      ],
+      'title': 'Shell vor Mega-Übernahme: BG-Aktionäre winken Zusammenschluss durch',
+      'published_parsed': time
+      .
+      struct_time
+      (
+      tm_year
+      =
+      2016,
+      tm_mon
+      =
+      1,
+      tm_mday
+      =
+      28,
+      tm_hour
+      =
+      17,
+      tm_min
+      =
+      10,
+      tm_sec
+      =
+      0,
+      tm_wday
+      =
+      3,
+      tm_yday
+      =
+      28,
+      tm_isdst
+      =
+      0
+      ),
+      'id': 'http://www.handelsblatt.com/unternehmen/industrie/shell-vor-mega-uebernahme-bg-aktionaere-winken-zusammenschluss-durch/12894052.html',
+      'summary': 'Der Weg für den Milliarden-Deal ist frei: Die Aktionäre der BG Group haben einer Übernahme durch Shell mit überdeutlicher Mehrheit zugestimmt. Schon in wenigen Wochen soll der Zusammenschluss unter Dach und Fach sein.',
+      'published': 'Thu, 28 Jan 2016 18:10:00 +0100'
+    },
+    {
+      'tags': [
+        {
+          'term': 'Management',
+          'scheme': None,
+          'label': None
+        }
+      ],
+      'content': [
+        {
+          'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+          'language': None,
+          'type': 'text/html',
+          'value': '<a href="http://www.handelsblatt.com/unternehmen/management/chanel-chefin-maureen-chiquet-tritt-wegen-strategiestreit-zurueck/12893818.html"><img alt="" src="http://www.handelsblatt.com/images/seltener-anblick/12893834/2-format7.jpg?format=format7"/></a>In China, Russland und dem Nahen Osten lief es für Chanel zuletzt nicht besonders gut. Offenbar haben sich die Eigentümer des Luxusmodehauses eingemischt. Nun ist die langjährige Chefin Maureen Chiquet zurückgetreten.'
+        }
+      ],
+      'guidislink': False,
+      'summary_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/html',
+        'value': 'In China, Russland und dem Nahen Osten lief es für Chanel zuletzt nicht besonders gut. Offenbar haben sich die Eigentümer des Luxusmodehauses eingemischt. Nun ist die langjährige Chefin Maureen Chiquet zurückgetreten.'
+      },
+      'link': 'http://www.handelsblatt.com/unternehmen/management/chanel-chefin-maureen-chiquet-tritt-wegen-strategiestreit-zurueck/12893818.html',
+      'title_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/plain',
+        'value': 'Chanel-Chefin: Maureen Chiquet tritt wegen Strategiestreit zurück'
+      },
+      'links': [
+        {
+          'rel': 'alternate',
+          'type': 'text/html',
+          'href': 'http://www.handelsblatt.com/unternehmen/management/chanel-chefin-maureen-chiquet-tritt-wegen-strategiestreit-zurueck/12893818.html'
+        },
+        {
+          'length': '439645',
+          'type': 'image/jpeg',
+          'href': 'http://www.handelsblatt.com/images/seltener-anblick/12893834/2-format7.jpg?format=format7',
+          'rel': 'enclosure'
+        }
+      ],
+      'title': 'Chanel-Chefin: Maureen Chiquet tritt wegen Strategiestreit zurück',
+      'published_parsed': time
+      .
+      struct_time
+      (
+      tm_year
+      =
+      2016,
+      tm_mon
+      =
+      1,
+      tm_mday
+      =
+      28,
+      tm_hour
+      =
+      16,
+      tm_min
+      =
+      48,
+      tm_sec
+      =
+      0,
+      tm_wday
+      =
+      3,
+      tm_yday
+      =
+      28,
+      tm_isdst
+      =
+      0
+      ),
+      'id': 'http://www.handelsblatt.com/unternehmen/management/chanel-chefin-maureen-chiquet-tritt-wegen-strategiestreit-zurueck/12893818.html',
+      'summary': 'In China, Russland und dem Nahen Osten lief es für Chanel zuletzt nicht besonders gut. Offenbar haben sich die Eigentümer des Luxusmodehauses eingemischt. Nun ist die langjährige Chefin Maureen Chiquet zurückgetreten.',
+      'published': 'Thu, 28 Jan 2016 17:48:00 +0100'
+    },
+    {
+      'tags': [
+        {
+          'term': 'Industrie',
+          'scheme': None,
+          'label': None
+        }
+      ],
+      'content': [
+        {
+          'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+          'language': None,
+          'type': 'text/html',
+          'value': '<a href="http://www.handelsblatt.com/unternehmen/industrie/ford-in-europa-fahrt-in-die-gewinnzone-nach-vier-jahren/12893310.html"><img alt="" src="http://www.handelsblatt.com/images/ford-focus-rs/12893668/2-format7.jpg?format=format7"/></a>Die Kosten wurden gesenkt und Autos verkaufen sich ohnehin wieder besser: Ford hat im vergangenen Jahr in Europa schwarze Zahlen geschrieben. 2016 will sich der Autobauer noch einmal steigern.'
+        }
+      ],
+      'guidislink': False,
+      'summary_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/html',
+        'value': 'Die Kosten wurden gesenkt und Autos verkaufen sich ohnehin wieder besser: Ford hat im vergangenen Jahr in Europa schwarze Zahlen geschrieben. 2016 will sich der Autobauer noch einmal steigern.'
+      },
+      'link': 'http://www.handelsblatt.com/unternehmen/industrie/ford-in-europa-fahrt-in-die-gewinnzone-nach-vier-jahren/12893310.html',
+      'title_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/plain',
+        'value': 'Ford in Europa: Fahrt in die Gewinnzone – nach vier Jahren'
+      },
+      'links': [
+        {
+          'rel': 'alternate',
+          'type': 'text/html',
+          'href': 'http://www.handelsblatt.com/unternehmen/industrie/ford-in-europa-fahrt-in-die-gewinnzone-nach-vier-jahren/12893310.html'
+        },
+        {
+          'length': '207929',
+          'type': 'image/jpeg',
+          'href': 'http://www.handelsblatt.com/images/ford-focus-rs/12893668/2-format7.jpg?format=format7',
+          'rel': 'enclosure'
+        }
+      ],
+      'title': 'Ford in Europa: Fahrt in die Gewinnzone – nach vier Jahren',
+      'published_parsed': time
+      .
+      struct_time
+      (
+      tm_year
+      =
+      2016,
+      tm_mon
+      =
+      1,
+      tm_mday
+      =
+      28,
+      tm_hour
+      =
+      16,
+      tm_min
+      =
+      40,
+      tm_sec
+      =
+      9,
+      tm_wday
+      =
+      3,
+      tm_yday
+      =
+      28,
+      tm_isdst
+      =
+      0
+      ),
+      'id': 'http://www.handelsblatt.com/unternehmen/industrie/ford-in-europa-fahrt-in-die-gewinnzone-nach-vier-jahren/12893310.html',
+      'summary': 'Die Kosten wurden gesenkt und Autos verkaufen sich ohnehin wieder besser: Ford hat im vergangenen Jahr in Europa schwarze Zahlen geschrieben. 2016 will sich der Autobauer noch einmal steigern.',
+      'published': 'Thu, 28 Jan 2016 17:40:09 +0100'
+    },
+    {
+      'tags': [
+        {
+          'term': 'Handel + Konsumgüter',
+          'scheme': None,
+          'label': None
+        }
+      ],
+      'content': [
+        {
+          'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+          'language': None,
+          'type': 'text/html',
+          'value': '<a href="http://www.handelsblatt.com/unternehmen/handel-konsumgueter/bitburger-verschenkt-wlan-kostenloses-internet-fuer-70-000-kneipen-geplant/12893588.html"><img alt="" src="http://www.handelsblatt.com/images/lokalrunde/12893782/2-format7.jpg?format=format7"/></a>TV-Werbung ist out, findet Bitburger. Die Brauerei will künftig auf kostenlose Internetzugänge setzen, um Kunden zu binden – und stattet 70.000 Kneipen mit Wlan aus. Völlig frei ist die Nutzung allerdings nur für eine Stunde.'
+        }
+      ],
+      'guidislink': False,
+      'summary_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/html',
+        'value': 'TV-Werbung ist out, findet Bitburger. Die Brauerei will künftig auf kostenlose Internetzugänge setzen, um Kunden zu binden – und stattet 70.000 Kneipen mit Wlan aus. Völlig frei ist die Nutzung allerdings nur für eine Stunde.'
+      },
+      'link': 'http://www.handelsblatt.com/unternehmen/handel-konsumgueter/bitburger-verschenkt-wlan-kostenloses-internet-fuer-70-000-kneipen-geplant/12893588.html',
+      'title_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/plain',
+        'value': 'Bitburger verschenkt Wlan: Kostenloses Internet für 70.000 Kneipen geplant'
+      },
+      'links': [
+        {
+          'rel': 'alternate',
+          'type': 'text/html',
+          'href': 'http://www.handelsblatt.com/unternehmen/handel-konsumgueter/bitburger-verschenkt-wlan-kostenloses-internet-fuer-70-000-kneipen-geplant/12893588.html'
+        },
+        {
+          'length': '213412',
+          'type': 'image/jpeg',
+          'href': 'http://www.handelsblatt.com/images/lokalrunde/12893782/2-format7.jpg?format=format7',
+          'rel': 'enclosure'
+        }
+      ],
+      'title': 'Bitburger verschenkt Wlan: Kostenloses Internet für 70.000 Kneipen geplant',
+      'published_parsed': time
+      .
+      struct_time
+      (
+      tm_year
+      =
+      2016,
+      tm_mon
+      =
+      1,
+      tm_mday
+      =
+      28,
+      tm_hour
+      =
+      16,
+      tm_min
+      =
+      36,
+      tm_sec
+      =
+      0,
+      tm_wday
+      =
+      3,
+      tm_yday
+      =
+      28,
+      tm_isdst
+      =
+      0
+      ),
+      'id': 'http://www.handelsblatt.com/unternehmen/handel-konsumgueter/bitburger-verschenkt-wlan-kostenloses-internet-fuer-70-000-kneipen-geplant/12893588.html',
+      'summary': 'TV-Werbung ist out, findet Bitburger. Die Brauerei will künftig auf kostenlose Internetzugänge setzen, um Kunden zu binden – und stattet 70.000 Kneipen mit Wlan aus. Völlig frei ist die Nutzung allerdings nur für eine Stunde.',
+      'published': 'Thu, 28 Jan 2016 17:36:00 +0100'
+    },
+    {
+      'tags': [
+        {
+          'term': 'Handel + Konsumgüter',
+          'scheme': None,
+          'label': None
+        }
+      ],
+      'content': [
+        {
+          'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+          'language': None,
+          'type': 'text/html',
+          'value': '<a href="http://www.handelsblatt.com/unternehmen/handel-konsumgueter/karstadt-kaufhaus-zentrale-vor-dem-umzug/12893408.html"><img alt="" src="http://www.handelsblatt.com/images/karstadt-zentrale/12893480/2-format7.jpg?format=format7"/></a>Die Karstadt-Zentrale in Essen ist zu alt – und zu groß. Die Warenhauskette sucht einen neuen Standort für ihre Verwaltung. Neben Essen balgen offenbar auch Oberhausen und Düsseldorf um das angeschlagene Unternehmen.'
+        }
+      ],
+      'guidislink': False,
+      'summary_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/html',
+        'value': 'Die Karstadt-Zentrale in Essen ist zu alt – und zu groß. Die Warenhauskette sucht einen neuen Standort für ihre Verwaltung. Neben Essen balgen offenbar auch Oberhausen und Düsseldorf um das angeschlagene Unternehmen.'
+      },
+      'link': 'http://www.handelsblatt.com/unternehmen/handel-konsumgueter/karstadt-kaufhaus-zentrale-vor-dem-umzug/12893408.html',
+      'title_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/plain',
+        'value': 'Karstadt: Kaufhaus-Zentrale vor dem Umzug'
+      },
+      'links': [
+        {
+          'rel': 'alternate',
+          'type': 'text/html',
+          'href': 'http://www.handelsblatt.com/unternehmen/handel-konsumgueter/karstadt-kaufhaus-zentrale-vor-dem-umzug/12893408.html'
+        },
+        {
+          'length': '140082',
+          'type': 'image/jpeg',
+          'href': 'http://www.handelsblatt.com/images/karstadt-zentrale/12893480/2-format7.jpg?format=format7',
+          'rel': 'enclosure'
+        }
+      ],
+      'title': 'Karstadt: Kaufhaus-Zentrale vor dem Umzug',
+      'published_parsed': time
+      .
+      struct_time
+      (
+      tm_year
+      =
+      2016,
+      tm_mon
+      =
+      1,
+      tm_mday
+      =
+      28,
+      tm_hour
+      =
+      16,
+      tm_min
+      =
+      34,
+      tm_sec
+      =
+      10,
+      tm_wday
+      =
+      3,
+      tm_yday
+      =
+      28,
+      tm_isdst
+      =
+      0
+      ),
+      'id': 'http://www.handelsblatt.com/unternehmen/handel-konsumgueter/karstadt-kaufhaus-zentrale-vor-dem-umzug/12893408.html',
+      'summary': 'Die Karstadt-Zentrale in Essen ist zu alt – und zu groß. Die Warenhauskette sucht einen neuen Standort für ihre Verwaltung. Neben Essen balgen offenbar auch Oberhausen und Düsseldorf um das angeschlagene Unternehmen.',
+      'published': 'Thu, 28 Jan 2016 17:34:10 +0100'
+    },
+    {
+      'tags': [
+        {
+          'term': 'Banken + Versicherungen',
+          'scheme': None,
+          'label': None
+        }
+      ],
+      'content': [
+        {
+          'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+          'language': None,
+          'type': 'text/html',
+          'value': '<a href="http://www.handelsblatt.com/unternehmen/banken-versicherungen/cum-ex-geschaefte-das-ist-schon-krass/12893004.html"><img alt="" src="http://www.handelsblatt.com/images/gerhard-schick/12893172/3-format7.jpg?format=format7"/></a>Für den Grünenpolitiker Gerhard Schick sind Betrügereien im Finanzsektor keine Überraschung. Doch die Milliarden-Geschäfte namhafter Geldinstitute mit der Kapitalertragsteuer haben ihn alarmiert. Er fordert Aufklärung.'
+        }
+      ],
+      'guidislink': False,
+      'summary_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/html',
+        'value': 'Für den Grünenpolitiker Gerhard Schick sind Betrügereien im Finanzsektor keine Überraschung. Doch die Milliarden-Geschäfte namhafter Geldinstitute mit der Kapitalertragsteuer haben ihn alarmiert. Er fordert Aufklärung.'
+      },
+      'link': 'http://www.handelsblatt.com/unternehmen/banken-versicherungen/cum-ex-geschaefte-das-ist-schon-krass/12893004.html',
+      'title_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/plain',
+        'value': 'Cum-Ex-Geschäfte: „Das ist schon krass“'
+      },
+      'links': [
+        {
+          'rel': 'alternate',
+          'type': 'text/html',
+          'href': 'http://www.handelsblatt.com/unternehmen/banken-versicherungen/cum-ex-geschaefte-das-ist-schon-krass/12893004.html'
+        },
+        {
+          'length': '236542',
+          'type': 'image/jpeg',
+          'href': 'http://www.handelsblatt.com/images/gerhard-schick/12893172/3-format7.jpg?format=format7',
+          'rel': 'enclosure'
+        }
+      ],
+      'title': 'Cum-Ex-Geschäfte: „Das ist schon krass“',
+      'published_parsed': time
+      .
+      struct_time
+      (
+      tm_year
+      =
+      2016,
+      tm_mon
+      =
+      1,
+      tm_mday
+      =
+      28,
+      tm_hour
+      =
+      16,
+      tm_min
+      =
+      12,
+      tm_sec
+      =
+      52,
+      tm_wday
+      =
+      3,
+      tm_yday
+      =
+      28,
+      tm_isdst
+      =
+      0
+      ),
+      'id': 'http://www.handelsblatt.com/unternehmen/banken-versicherungen/cum-ex-geschaefte-das-ist-schon-krass/12893004.html',
+      'summary': 'Für den Grünenpolitiker Gerhard Schick sind Betrügereien im Finanzsektor keine Überraschung. Doch die Milliarden-Geschäfte namhafter Geldinstitute mit der Kapitalertragsteuer haben ihn alarmiert. Er fordert Aufklärung.',
+      'published': 'Thu, 28 Jan 2016 17:12:52 +0100'
+    },
+    {
+      'tags': [
+        {
+          'term': 'Industrie',
+          'scheme': None,
+          'label': None
+        }
+      ],
+      'content': [
+        {
+          'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+          'language': None,
+          'type': 'text/html',
+          'value': '<a href="http://www.handelsblatt.com/unternehmen/industrie/novartis-und-roche-der-baseler-zweikampf/12893192.html"><img alt="" src="http://www.handelsblatt.com/images/arzneimittelhersteller/12893488/4-format7.jpg?format=format7"/></a>Europas führende Pharmakonzerne setzen derzeit auf vollkommen unterschiedliche Strategien. Während Novartis gegen eine Wachstumsdelle kämpft und mitten im Umbau steckt, setzt Roche auf Kontinuität und Forschung.'
+        }
+      ],
+      'guidislink': False,
+      'summary_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/html',
+        'value': 'Europas führende Pharmakonzerne setzen derzeit auf vollkommen unterschiedliche Strategien. Während Novartis gegen eine Wachstumsdelle kämpft und mitten im Umbau steckt, setzt Roche auf Kontinuität und Forschung.'
+      },
+      'link': 'http://www.handelsblatt.com/unternehmen/industrie/novartis-und-roche-der-baseler-zweikampf/12893192.html',
+      'title_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/plain',
+        'value': 'Novartis und Roche: Der Baseler Zweikampf'
+      },
+      'links': [
+        {
+          'rel': 'alternate',
+          'type': 'text/html',
+          'href': 'http://www.handelsblatt.com/unternehmen/industrie/novartis-und-roche-der-baseler-zweikampf/12893192.html'
+        },
+        {
+          'length': '173861',
+          'type': 'image/jpeg',
+          'href': 'http://www.handelsblatt.com/images/arzneimittelhersteller/12893488/4-format7.jpg?format=format7',
+          'rel': 'enclosure'
+        }
+      ],
+      'title': 'Novartis und Roche: Der Baseler Zweikampf',
+      'published_parsed': time
+      .
+      struct_time
+      (
+      tm_year
+      =
+      2016,
+      tm_mon
+      =
+      1,
+      tm_mday
+      =
+      28,
+      tm_hour
+      =
+      16,
+      tm_min
+      =
+      9,
+      tm_sec
+      =
+      0,
+      tm_wday
+      =
+      3,
+      tm_yday
+      =
+      28,
+      tm_isdst
+      =
+      0
+      ),
+      'id': 'http://www.handelsblatt.com/unternehmen/industrie/novartis-und-roche-der-baseler-zweikampf/12893192.html',
+      'summary': 'Europas führende Pharmakonzerne setzen derzeit auf vollkommen unterschiedliche Strategien. Während Novartis gegen eine Wachstumsdelle kämpft und mitten im Umbau steckt, setzt Roche auf Kontinuität und Forschung.',
+      'published': 'Thu, 28 Jan 2016 17:09:00 +0100'
+    },
+    {
+      'tags': [
+        {
+          'term': 'Industrie',
+          'scheme': None,
+          'label': None
+        }
+      ],
+      'content': [
+        {
+          'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+          'language': None,
+          'type': 'text/html',
+          'value': '<a href="http://www.handelsblatt.com/unternehmen/industrie/caterpillar-streicht-stellen-jobabbau-kostet-baumaschinen-riesen-den-gewinn/12892912.html"><img alt="" src="http://www.handelsblatt.com/images/caterpillar-bagger/12892966/3-format7.jpg?format=format7"/></a>Die niedrigen Rohstoffpreise und die Flaute in den Schwellenländern setzen Caterpillar unter Druck. Der Baumaschinen-Hersteller rechnet mit mittelfristig sinkenden Umsätzen – und schreibt rote Zahlen.'
+        }
+      ],
+      'guidislink': False,
+      'summary_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/html',
+        'value': 'Die niedrigen Rohstoffpreise und die Flaute in den Schwellenländern setzen Caterpillar unter Druck. Der Baumaschinen-Hersteller rechnet mit mittelfristig sinkenden Umsätzen – und schreibt rote Zahlen.'
+      },
+      'link': 'http://www.handelsblatt.com/unternehmen/industrie/caterpillar-streicht-stellen-jobabbau-kostet-baumaschinen-riesen-den-gewinn/12892912.html',
+      'title_detail': {
+        'base': 'http://www.handelsblatt.com/contentexport/feed/unternehmen',
+        'language': None,
+        'type': 'text/plain',
+        'value': 'Caterpillar streicht Stellen: Jobabbau kostet Baumaschinen-Riesen den Gewinn'
+      },
+      'links': [
+        {
+          'rel': 'alternate',
+          'type': 'text/html',
+          'href': 'http://www.handelsblatt.com/unternehmen/industrie/caterpillar-streicht-stellen-jobabbau-kostet-baumaschinen-riesen-den-gewinn/12892912.html'
+        },
+        {
+          'length': '351787',
+          'type': 'image/jpeg',
+          'href': 'http://www.handelsblatt.com/images/caterpillar-bagger/12892966/3-format7.jpg?format=format7',
+          'rel': 'enclosure'
+        }
+      ],
+      'title': 'Caterpillar streicht Stellen: Jobabbau kostet Baumaschinen-Riesen den Gewinn',
+      'published_parsed': time
+      .
+      struct_time
+      (
+      tm_year
+      =
+      2016,
+      tm_mon
+      =
+      1,
+      tm_mday
+      =
+      28,
+      tm_hour
+      =
+      16,
+      tm_min
+      =
+      4,
+      tm_sec
+      =
+      40,
+      tm_wday
+      =
+      3,
+      tm_yday
+      =
+      28,
+      tm_isdst
+      =
+      0
+      ),
+      'id': 'http://www.handelsblatt.com/unternehmen/industrie/caterpillar-streicht-stellen-jobabbau-kostet-baumaschinen-riesen-den-gewinn/12892912.html',
+      'summary': 'Die niedrigen Rohstoffpreise und die Flaute in den Schwellenländern setzen Caterpillar unter Druck. Der Baumaschinen-Hersteller rechnet mit mittelfristig sinkenden Umsätzen – und schreibt rote Zahlen.',
+      'published': 'Thu, 28 Jan 2016 17:04:40 +0100'
+    }
+  ],
+  'bozo': 0,
+  'encoding': 'UTF-8'
+}
