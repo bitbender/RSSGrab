@@ -49,4 +49,5 @@ Instructions on how to install git flow can be found [here](https://github.com/n
 - [Anaconda Documentation](http://conda.pydata.org/docs/using/index.html)
 - [Documentation Flask-CORS](https://flask-cors.readthedocs.org/en/latest/)
 - [Documentation for requests lib](http://docs.python-requests.org/en/latest/)
+- [Documentation Advanced Python Scheduler](http://apscheduler.readthedocs.org/en/3.0/)
 - [GIT Workflow Tutorial](https://www.atlassian.com/git/tutorials/comparing-workflows)
