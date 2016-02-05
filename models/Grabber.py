@@ -1,6 +1,7 @@
 import feedparser
 import requests
 
+from smpl_conn_pool import SmplConnPool
 """
 This class represents a grabber. It is responsible for
 storing all the information needed in order to grab the
@@ -29,13 +30,18 @@ class Grabber:
         data = feedparser.parse(self.feed)
         for rss_item in data['entries']:
             self.store_rss_item(rss_item)
-        print([entry['title_detail']['value'] for entry in data['entries']])
 
     def download_article(self, article_url):
-        r = requests.get(article_url)
-        print(r.text)
+        response = requests.get(article_url)
+        if response.status_code == 200:
+            return response.text
+
+        response.raise_for_status()
 
     def store_rss_item(self, rss_item):
         article_url = rss_item['link']
-        article = self.download_article(article_url)
-
+        rss_item["article"] = self.download_article(article_url)
+        connection = SmplConnPool.get_instance().get_connection()
+        feed_collection = connection["local"]["Feeds"]
+        if not feed_collection.find({'id': rss_item['id']}).count() > 0:
+            feed_collection.save(rss_item)
