@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+from config import Config
 import logging
 from models.Grabber import Grabber
 from flask.ext.cors import CORS
@@ -6,6 +7,9 @@ from apscheduler.schedulers.background import BackgroundScheduler
 from bson.objectid import ObjectId
 from storage import fetch_databases
 import json
+
+# load configuration
+conf = Config()
 
 # instantiate the scheduler
 scheduler = BackgroundScheduler()
@@ -32,6 +36,9 @@ def get_grabbers():
 
 if __name__ == '__main__':
     scheduler.start()
+
+    print(conf)
+
     grabber1 = Grabber('Handelsblatt', 'http://newsfeed.zeit.de/index')
     # schedule grabber1 to be executed every 10 seconds
     job = scheduler.add_job(grabber1.run, 'interval', seconds=10)

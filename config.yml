@@ -1,0 +1,13 @@
+database:
+    type: mongo
+    host: localhost
+    port: 27017
+    user: root
+    passwd: my secret password
+    db: rssgrab
+other:
+    preprocessing_queue:
+        - preprocessing.scale_and_center
+        - preprocessing.dot_reduction
+        - preprocessing.connect_lines
+    use_anonymous: yes
