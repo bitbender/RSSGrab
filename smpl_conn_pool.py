@@ -1,4 +1,5 @@
 from pymongo import MongoClient
+from config import Config
 import random
 
 """
@@ -20,8 +21,9 @@ connection instance from pymongo.
 class SmplConnPool():
     _instance = None
     _pool = list()
+    _cfg = Config.get_instance()
 
-    def __init__(self, address='localhost', port=27017, size=2):
+    def __init__(self):
         """
         This is the constructor of the SmplConnPool
 
@@ -33,11 +35,11 @@ class SmplConnPool():
             raise NotImplemented(
                 "This is a singleton class. Use the get_instance() method")
 
-        self.address = address
-        self.port = port
+        self.address = SmplConnPool._cfg['database']['host']
+        self.port = SmplConnPool._cfg['database']['port']
 
-        for i in range(size):
-            SmplConnPool._pool.append(MongoClient(address, port))
+        for i in range(SmplConnPool._cfg['database']['poolsize']):
+            SmplConnPool._pool.append(MongoClient(self.address, self.port))
 
     @staticmethod
     def get_instance():

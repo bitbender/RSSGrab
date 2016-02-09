@@ -2,6 +2,7 @@ import feedparser
 import requests
 import time
 
+from config import Config
 from smpl_conn_pool import SmplConnPool
 """
 This class represents a grabber. It is responsible for
@@ -15,6 +16,8 @@ in an rss feed
 
 
 class Grabber:
+
+    cfg = Config.get_instance()
 
     def __init__(self, name, feed, db=('localhost', 27017)):
         self.name = name
@@ -39,7 +42,7 @@ class Grabber:
         article_url = rss_item['link']
         rss_item['article'] = self.download_article(article_url)
         connection = SmplConnPool.get_instance().get_connection()
-        feed_collection = connection['local']['Feeds']
+        feed_collection = connection[Grabber.cfg['database']['db']][Grabber.cfg['database']['collections']['articles']]
         db_feed = feed_collection.find({'id': rss_item['id']})
         assert db_feed.count() < 2, "id should be a primary key"
         if not db_feed.count() > 0:
@@ -53,7 +56,7 @@ class Grabber:
                 be made to a newer version of the article'
         if self.is_newer(old_feed['published'], new_feed['published']):
             connection = SmplConnPool.get_instance().get_connection()
-            feed_collection = connection['local']['Feeds']
+            feed_collection = connection[Grabber.cfg['database']['db']][Grabber.cfg['database']['collections']['articles']]
             feed_collection.replace_one({'id': new_feed['id']}, new_feed)
 
     def is_newer(self, old_date, new_date):

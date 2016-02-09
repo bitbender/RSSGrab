@@ -11,7 +11,7 @@ class Config(object):
     """
     _instance = None
 
-    def __init__(self, file):
+    def __init__(self, file='config.yml'):
         """
         The constructor of this class.
 
@@ -25,11 +25,11 @@ class Config(object):
         if Config._instance is not None:
             raise NotImplemented("This is a singleton class. Use the get_instance() method")
 
-        if file:
+        try:
             self.file = file
             with open(file, 'r') as ymlfile:
                 self.config = yaml.load(ymlfile)
-        else:
+        except FileNotFoundError as err:
             self.config = {}
 
     @staticmethod
