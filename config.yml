@@ -5,9 +5,6 @@ database:
     user: root
     passwd: my secret password
     db: rssgrab
-other:
-    preprocessing_queue:
-        - preprocessing.scale_and_center
-        - preprocessing.dot_reduction
-        - preprocessing.connect_lines
-    use_anonymous: yes
+    collections:
+      grabber: grabber
+      articles: articles
