@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 import logging
-from models.Grabber import Grabber
+from models.grabber import Grabber
 from flask.ext.cors import CORS
 from apscheduler.schedulers.background import BackgroundScheduler
 from bson.objectid import ObjectId
