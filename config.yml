@@ -2,8 +2,6 @@ database:
     type: mongo
     host: localhost
     port: 27017
-    user: root
-    passwd: my secret password
     db: rssgrab
     collections:
       grabber: grabber
