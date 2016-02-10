@@ -16,7 +16,6 @@ in an rss feed
 
 
 class Grabber:
-
     cfg = Config.get_instance()
 
     def __init__(self, name, feed, db=('localhost', 27017)):
@@ -56,7 +55,8 @@ class Grabber:
                 be made to a newer version of the article'
         if self.is_newer(old_feed['published'], new_feed['published']):
             connection = SmplConnPool.get_instance().get_connection()
-            feed_collection = connection[Grabber.cfg['database']['db']][Grabber.cfg['database']['collections']['articles']]
+            feed_collection = connection[Grabber.cfg['database']['db']][
+                Grabber.cfg['database']['collections']['articles']]
             feed_collection.replace_one({'id': new_feed['id']}, new_feed)
 
     def is_newer(self, old_date, new_date):
@@ -64,3 +64,9 @@ class Grabber:
         old = time.strptime(old_date.replace(',', ''), '%a %d %b %Y %X %z')
         new = time.strptime(new_date.replace(',', ''), '%a %d %b %Y %X %z')
         return old < new
+
+    def to_json(self):
+        return {
+            'name': self.name,
+            'feed': self.feed
+        }
