@@ -22,26 +22,38 @@ app = Flask(__name__)
 # Add standard CORS headers in order to access the app
 CORS(app)
 
-tasks = []
-
-
-def test():
-    print("Boom")
+# stores all grabbers currently in the system
+grabbers = []
 
 
 @app.route('/', methods=['GET'])
 def index():
-    return "Welcome the RSS Grabber ..."
+    return "Welcome to the RSS Grabber ..."
 
 
+@app.route('/grabber', methods=['GET'])
 def get_grabbers():
-    return "Get all the grabbers currently in the system"
+    return json.dumps([grabber.to_json() for grabber in grabbers])
 
 
-if __name__ == '__main__':
+@app.route('/grabber', methods=['POST'])
+def add_grabber():
+    jsn = request.get_json()
+
+    # TODO: Validate the incoming data
+    grabbers.append(Grabber(jsn['name'], jsn['feed']))
+
+    return '', 201
+
+
+def main():
     scheduler.start()
 
     grabber1 = Grabber('Handelsblatt', 'http://newsfeed.zeit.de/index')
     # schedule grabber1 to be executed every 10 seconds
-    job = scheduler.add_job(grabber1.run, 'interval', seconds=10)
+    # job = scheduler.add_job(grabber1.run, 'interval', seconds=10)
     app.run()
+
+
+if __name__ == '__main__':
+    main()
