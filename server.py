@@ -32,7 +32,7 @@ def index():
 
 
 @app.route('/grabber', methods=['GET'])
-def get_grabbers():
+def get_all_grabbers():
     return json.dumps([grabber.to_json() for grabber in grabbers])
 
 
@@ -42,16 +42,27 @@ def add_grabber():
 
     # TODO: Validate the incoming data
     grabbers.append(Grabber(jsn['name'], jsn['feed']))
+    # TODO: Save the grabber to the database
 
     return '', 201
+
+
+@app.route('/grabber/<id>', methods=['DELETE'])
+def delete_grabber():
+    raise NotImplemented('Delete the specified grabber from the database')
 
 
 def main():
     scheduler.start()
 
     grabber1 = Grabber('Handelsblatt', 'http://newsfeed.zeit.de/index')
+
+    # TODO: During startup load all grabbers from the database and place them into mem (grabbers)
+    # and schedule them for execution
+
     # schedule grabber1 to be executed every 10 seconds
     # job = scheduler.add_job(grabber1.run, 'interval', seconds=10)
+
     app.run()
 
 
