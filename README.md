@@ -4,7 +4,7 @@ This project uses Python 3.5.1 and the Git Flow branching model.
 Instructions on how to install git flow can be found [here](https://github.com/nvie/gitflow/wiki/Installation)
 
 
-## Project Setup
+## Setup Dev Environment
 
 1. Checkout project via git
 2. [Install Anaconda](http://docs.continuum.io/anaconda/install) 
