@@ -1,12 +1,9 @@
 from flask import Flask, request, jsonify
 from config import Config
 from smpl_conn_pool import SmplConnPool
-import logging
 from models.grabber import Grabber
 from flask.ext.cors import CORS
 from apscheduler.schedulers.background import BackgroundScheduler
-from bson.objectid import ObjectId
-from storage import fetch_databases
 import json
 
 # load configuration
@@ -38,14 +35,18 @@ def get_all_grabbers():
 
 @app.route('/grabber', methods=['POST'])
 def add_grabber():
+    # TODO: Validate the incoming date
     jsn = request.get_json()
 
-    # TODO: Validate the incoming data
-    grabbers.append(Grabber(jsn['name'], jsn['feed']))
-    # TODO: Save the grabber to the database
-
+    _add_grabber(jsn['name'], jsn['feed'], json['interval'])
     return '', 201
 
+
+def _add_grabber(name, feed, interval):
+    new_grabber = Grabber(name, feed, interval)
+    database_id = new_grabber.save()
+    scheduler.add_job(new_grabber.run, 'interval', seconds=10)
+    return database_id
 
 @app.route('/grabber/<id>', methods=['DELETE'])
 def delete_grabber():
@@ -55,16 +56,16 @@ def delete_grabber():
 def main():
     scheduler.start()
 
-    grabber1 = Grabber('Handelsblatt', 'http://newsfeed.zeit.de/index')
-
+    _add_grabber('Handelsblatt', 'http://newsfeed.zeit.de/index', 10)
     # TODO: During startup load all grabbers from the database and place them into mem (grabbers)
     # and schedule them for execution
 
-    # schedule grabber1 to be executed every 10 seconds
-    # job = scheduler.add_job(grabber1.run, 'interval', seconds=10)
-
     app.run()
 
+
+def fetch_grabbers_from_db():
+    connection = SmplConnPool.get_instance().get_connection()
+    grabber_collection = connection[Grabber.cfg['database']['db']]['grabbers']
 
 if __name__ == '__main__':
     main()
