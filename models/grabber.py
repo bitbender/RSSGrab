@@ -18,12 +18,13 @@ in an rss feed
 class Grabber:
     cfg = Config.get_instance()
 
-    def __init__(self, name, feed, db=('localhost', 27017)):
+    def __init__(self, name, feed, interval, _id=None):
         self.name = name
         self.feed = feed
-        self.db = db
+        self.interval = interval
         self.status = 'Inactive'
-        self.pagination_selector = None
+        if id:
+            self._id = _id
 
     def run(self):
         data = feedparser.parse(self.feed)
@@ -36,6 +37,13 @@ class Grabber:
             return response.text
 
         response.raise_for_status()
+
+    def save(self):
+        connection = SmplConnPool.get_instance().get_connection()
+        grabber_collection = connection[Grabber.cfg['database']['db']]['grabbers']
+        grabber_id = grabber_collection.insert_one(self.__dict__).inserted_id
+        print('Saved grabber with id {}'.format(grabber_id))
+        return grabber_id
 
     def store_rss_item(self, rss_item):
         article_url = rss_item['link']
