@@ -38,8 +38,18 @@ def get_all_grabbers():
 def add_grabber():
     # TODO: Validate the incoming date
     jsn = request.get_json()
-    _add_grabber(jsn['name'], jsn['feed'], json['interval'])
-    return '', 201
+    database_id = _add_grabber(jsn['name'], jsn['feed'], json['interval'])
+    return '{}'.format(database_id), 201
+
+
+@app.route('/grabber/{id}/start', methods=['POST'])
+def start_grabber():
+    raise NotImplemented
+
+
+@app.route('/grabber/{id}/STOP', methods=['POST'])
+def stop_grabber():
+    raise NotImplemented
 
 
 def _add_grabber(name, feed, interval):
@@ -60,9 +70,6 @@ def main():
     scheduler.start()
     fetch_grabbers_from_db()
     # _add_grabber('Handelsblatt', 'http://newsfeed.zeit.de/index', 10)
-    # TODO: During startup load all grabbers from the database and place them into mem (grabbers)
-    # and schedule them for execution
-
     app.run()
 
 
