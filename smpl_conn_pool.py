@@ -1,4 +1,5 @@
 from pymongo import MongoClient
+from config import Config
 import random
 
 """
@@ -15,12 +16,14 @@ Usage:
 The get_connection() method of SmplConnPool returns a normal
 connection instance from pymongo.
 """
-class SmplConnPool(object):
+
+
+class SmplConnPool():
     _instance = None
     _pool = list()
+    _cfg = Config.get_instance()
 
-
-    def __init__(self, address='localhost', port=27017, size=2):
+    def __init__(self):
         """
         This is the constructor of the SmplConnPool
 
@@ -29,13 +32,14 @@ class SmplConnPool(object):
         :param size: the pool size
         """
         if SmplConnPool._instance is not None:
-            raise NotImplemented("This is a singleton class. Use the get_instance() method")
+            raise NotImplemented(
+                "This is a singleton class. Use the get_instance() method")
 
-        self.address = address
-        self.port = port
+        self.address = SmplConnPool._cfg['database']['host']
+        self.port = SmplConnPool._cfg['database']['port']
 
-        for i in range(size):
-            SmplConnPool._pool.append(MongoClient(address, port))
+        for i in range(SmplConnPool._cfg['database']['poolsize']):
+            SmplConnPool._pool.append(MongoClient(self.address, self.port))
 
     @staticmethod
     def get_instance():
