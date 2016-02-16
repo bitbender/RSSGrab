@@ -1,3 +1,4 @@
+from bson.objectid import ObjectId
 from flask import Flask, request, jsonify
 from config import Config
 from smpl_conn_pool import SmplConnPool
@@ -37,7 +38,6 @@ def get_all_grabbers():
 def add_grabber():
     # TODO: Validate the incoming date
     jsn = request.get_json()
-
     _add_grabber(jsn['name'], jsn['feed'], json['interval'])
     return '', 201
 
@@ -48,15 +48,18 @@ def _add_grabber(name, feed, interval):
     scheduler.add_job(new_grabber.run, 'interval', seconds=10)
     return database_id
 
-@app.route('/grabber/<id>', methods=['DELETE'])
+
+@app.route('/grabber/<_id>', methods=['DELETE'])
 def delete_grabber():
-    raise NotImplemented('Delete the specified grabber from the database')
+    connection = SmplConnPool.get_instance().get_connection()
+    grabber_collection = connection[Grabber.cfg['database']['db']]['grabbers']
+    grabber_collection.remove( {'_id': ObjectId(_id) } )
 
 
 def main():
     scheduler.start()
-
-    _add_grabber('Handelsblatt', 'http://newsfeed.zeit.de/index', 10)
+    fetch_grabbers_from_db()
+    # _add_grabber('Handelsblatt', 'http://newsfeed.zeit.de/index', 10)
     # TODO: During startup load all grabbers from the database and place them into mem (grabbers)
     # and schedule them for execution
 
@@ -66,6 +69,9 @@ def main():
 def fetch_grabbers_from_db():
     connection = SmplConnPool.get_instance().get_connection()
     grabber_collection = connection[Grabber.cfg['database']['db']]['grabbers']
-
+    for grabber in grabber_collection.find():
+        recreated = Grabber(grabber['name'], grabber['feed'], grabber['interval']
+                            , grabber['_id'])
+        scheduler.add_job(recreated.run, 'interval', seconds=10)
 if __name__ == '__main__':
     main()
