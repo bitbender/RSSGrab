@@ -4,6 +4,7 @@ import time
 
 from config import Config
 from smpl_conn_pool import SmplConnPool
+from statistic import Statistic
 """
 This class represents a grabber. It is responsible for
 storing all the information needed in order to grab the
@@ -23,15 +24,18 @@ class Grabber:
         self.feed = feed
         self.interval = interval
         self.status = 'Inactive'
+        self.statistic = Statistic()
         if id:
             self._id = _id
 
     def run(self):
         data = feedparser.parse(self.feed)
+        self.statistic.increase_runs()
         for rss_item in data['entries']:
             self.store_rss_item(rss_item)
 
     def download_article(self, article_url):
+        self.statistic.increase_downloaded_articles()
         response = requests.get(article_url)
         if response.status_code == 200:
             return response.text
