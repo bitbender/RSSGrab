@@ -23,9 +23,8 @@ class Grabber:
         self.name = name
         self.feed = feed
         self.interval = interval
-        self.status = 'Inactive'
         self.statistic = Statistic()
-        if id:
+        if _id:
             self._id = _id
 
     def run(self):
@@ -53,7 +52,8 @@ class Grabber:
         article_url = rss_item['link']
         rss_item['article'] = self.download_article(article_url)
         connection = SmplConnPool.get_instance().get_connection()
-        feed_collection = connection[Grabber.cfg['database']['db']][Grabber.cfg['database']['collections']['articles']]
+        feed_collection = connection[Grabber.cfg['database']['db']][
+            Grabber.cfg['database']['collections']['articles']]
         db_feed = feed_collection.find({'id': rss_item['id']})
         assert db_feed.count() < 2, "id should be a primary key"
         if not db_feed.count() > 0:
