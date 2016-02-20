@@ -1,0 +1,16 @@
+<h1>Create a new grabber</h1>
+<form role="form">
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" id="name" ng-model="grabber.name">
+    </div>
+    <div class="form-group">
+        <label for="feed">Feed:</label>
+        <input type="url" class="form-control" id="feed" ng-model="grabber.feed">
+    </div>
+    <div class="form-group">
+        <label for="Interval">Interval:</label>
+        <input type="number" class="form-control" id="interval" step="1" ng-model="grabber.interval">
+    </div>
+    <a class="btn btn-primary btn-lg btn-outline btn-rounded" ng-click="create()">Create</a>
+</form>
