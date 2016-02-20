@@ -54,20 +54,22 @@ def _add_grabber(name, feed, interval):
 
 @app.route('/grabber/<_id>/start', methods=['POST'])
 def start_grabber(_id):
-    if _id in grabber_to_job:
-        job = grabber_to_job[_id]
+    object_id = ObjectId(_id)
+    if object_id in grabber_to_job:
+        job = grabber_to_job[object_id]
         job.resume()
-        return '', 200
+        return 'Succesfully started grabber', 200
     else:
         return 'Invalid grabber id', 404
 
 
-@app.route('/grabber/{_id}/stop', methods=['POST'])
+@app.route('/grabber/<_id>/stop', methods=['POST'])
 def stop_grabber(_id):
-    if _id in grabber_to_job:
-        job = grabber_to_job[_id]
+    object_id = ObjectId(_id)
+    if object_id in grabber_to_job:
+        job = grabber_to_job[object_id]
         job.pause()
-        return '', 200
+        return 'Succesfully stopped grabber', 200
     else:
         return 'Invalid grabber id', 404
 
@@ -91,7 +93,10 @@ def fetch_grabbers_from_db():
     for grabber in grabber_collection.find():
         recreated = Grabber(grabber['name'], grabber['feed'], grabber['interval'],
                             grabber['_id'])
-        scheduler.add_job(recreated.run, 'interval', seconds=10)
+        job = scheduler.add_job(recreated .run, 'interval',
+                                seconds=grabber['interval'])
+        grabber_to_job[grabber['_id']] = job
+
 
 if __name__ == '__main__':
     main()
