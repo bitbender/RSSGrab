@@ -13,10 +13,10 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>John</td>
-                    <td>Doe</td>
-                    <td>john@example.com</td>
+                <tr ng-repeat="grabber in grabbers">
+                    <td>{{grabber.name}}</td>
+                    <td>{{grabber.feed}}</td>
+                    <td>{{grabber.interval}}</td>
                     <td>
                         <span class="glyphicon glyphicon-play"></span>
                         <span class="glyphicon glyphicon-stop"></span>
@@ -26,6 +26,7 @@
                 </tbody>
             </table>
 			<a class="btn btn-primary btn-lg btn-outline btn-rounded" ng-click="clickToOpen()">New</a>
+            <a class="btn btn-primary btn-lg btn-outline btn-rounded" ng-click="getAll()">Refresh</a>
 		</div>
 	</div>
 </div>
