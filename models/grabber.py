@@ -75,6 +75,8 @@ class Grabber:
 
     def to_json(self):
         return {
+            'id': str(self._id),
             'name': self.name,
-            'feed': self.feed
+            'feed': self.feed,
+            'interval': self.interval
         }
