@@ -39,7 +39,8 @@ class Grabber:
 
     def save(self):
         connection = SmplConnPool.get_instance().get_connection()
-        grabber_collection = connection[Grabber.cfg['database']['db']]['grabbers']
+        grabber_collection = connection[
+            Grabber.cfg['database']['db']]['grabbers']
         grabber_id = grabber_collection.insert_one(self.__dict__).inserted_id
         print('Saved grabber with id {}'.format(grabber_id))
         return grabber_id

@@ -37,10 +37,28 @@ def get_all_grabbers():
 
 @app.route('/grabber', methods=['POST'])
 def add_grabber():
-    # TODO: Validate the incoming date
+    # TODO: Validate the incoming data
     jsn = request.get_json()
     database_id = _add_grabber(jsn['name'], jsn['feed'], jsn['interval'])
     return '{}'.format(database_id), 201
+
+
+@app.route('/grabber/<_id>', methods=['PUT'])
+def update_grabber(_id):
+    jsn = request.get_json()
+    connection = SmplConnPool.get_instance().get_connection()
+    print(jsn)
+    grabber_collection = connection[
+        Grabber.cfg['database']['db']]['grabbers']
+    grabber = Grabber(jsn['name'], jsn['feed'], jsn['interval'], _id)
+    try:
+        answer = grabber_collection.find_one_and_replace(
+            {"_id": _id},
+            grabber.__dict__
+        )
+    except Exception as inst:
+        print(inst)
+    return 'Succesfully updated grabber', 201
 
 
 def _add_grabber(name, feed, interval):
