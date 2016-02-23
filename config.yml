@@ -5,5 +5,6 @@ database:
     db: rssgrab
     poolsize: 2
     collections:
+      statistic: statistic
       grabber: grabber
       articles: articles

@@ -23,9 +23,9 @@ class Grabber:
         self.name = name
         self.feed = feed
         self.interval = interval
-        self.statistic = Statistic()
         if _id:
             self._id = _id
+            self.statistic = Statistic(self._id)
 
     def run(self):
         data = feedparser.parse(self.feed)
@@ -45,18 +45,22 @@ class Grabber:
         connection = SmplConnPool.get_instance().get_connection()
         grabber_collection = connection[Grabber.cfg['database']['db']]['grabbers']
         grabber_id = grabber_collection.insert_one(self.__dict__).inserted_id
+        self._id = grabber_id
+        self.statistic = Statistic(self._id)
+        self.statistic.save()
         print('Saved grabber with id {}'.format(grabber_id))
         return grabber_id
 
     def store_rss_item(self, rss_item):
         article_url = rss_item['link']
-        rss_item['article'] = self.download_article(article_url)
         connection = SmplConnPool.get_instance().get_connection()
         feed_collection = connection[Grabber.cfg['database']['db']][
             Grabber.cfg['database']['collections']['articles']]
         db_feed = feed_collection.find({'id': rss_item['id']})
         assert db_feed.count() < 2, "id should be a primary key"
-        if not db_feed.count() > 0:
+        if db_feed.count() == 0:
+            print("stored new rss item")
+            rss_item['article'] = self.download_article(article_url)
             feed_collection.save(rss_item)
         else:
             self.update_feed(db_feed[0], rss_item)
