@@ -121,7 +121,7 @@ def fetch_grabbers_from_db():
         recreated = Grabber(grabber['name'], grabber['feed'], grabber['interval'],
                             grabber['_id'])
         grabbers.append(recreated)
-        job = scheduler.add_job(recreated .run, 'interval',
+        job = scheduler.add_job(recreated.run, 'interval',
                                 seconds=grabber['interval'])
         grabber_to_job[grabber['_id']] = job
 

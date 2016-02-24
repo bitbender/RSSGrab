@@ -18,7 +18,8 @@
                     <td>{{grabber.feed}}</td>
                     <td>{{grabber.interval}}</td>
                     <td>
-                        <span class="glyphicon glyphicon-play"></span>
+                        <!--glyphicon glyphicon-play text-success-->
+                        <span ng-class="startgrab" ng-mouseenter="startgrab='glyphicon glyphicon-play text-success'" ng-mouseleave="startgrab='glyphicon glyphicon-play'" ng-init="startgrab='glyphicon glyphicon-play'" ng-click="start($index)"></span>
                         <span class="glyphicon glyphicon-stop"></span>
                         <span class="glyphicon glyphicon-trash" ng-click="delete($index)"></span>
                     </td>
