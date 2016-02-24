@@ -1,8 +1,10 @@
 <div>
-	<a ui-sref="overview" class="pull-right btn btn-primary btn-outline btn-rounded">Back to Overview</a>
-	<h2>Grabber <small>Manage grabbers</small></h2>
-	<div class="jumbotron">
-		<div class="container">
+    <a ui-sref="overview" class="pull-right btn btn-primary btn-outline btn-rounded">Back to Overview</a>
+    <h2>Grabber
+        <small>Manage grabbers</small>
+    </h2>
+    <div class="jumbotron">
+        <div class="container">
             <table class="table">
                 <thead>
                 <tr>
@@ -18,16 +20,19 @@
                     <td>{{grabber.feed}}</td>
                     <td>{{grabber.interval}}</td>
                     <td>
-                        <!--glyphicon glyphicon-play text-success-->
-                        <span ng-class="startgrab" ng-mouseenter="startgrab='glyphicon glyphicon-play text-success'" ng-mouseleave="startgrab='glyphicon glyphicon-play'" ng-init="startgrab='glyphicon glyphicon-play'" ng-click="start($index)"></span>
-                        <span class="glyphicon glyphicon-stop"></span>
+                        <span ng-class="startgrab" ng-mouseenter="startgrab='glyphicon glyphicon-play text-success'"
+                              ng-mouseleave="startgrab='glyphicon glyphicon-play'"
+                              ng-init="startgrab='glyphicon glyphicon-play'" ng-click="start($index)"></span>
+                        <span ng-class="stopgrab" ng-mouseenter="stopgrab='glyphicon glyphicon-stop text-danger'"
+                              ng-mouseleave="stopgrab='glyphicon glyphicon-stop'"
+                              ng-init="stopgrab='glyphicon glyphicon-stop'" ng-click="stop($index)"></span>
                         <span class="glyphicon glyphicon-trash" ng-click="delete($index)"></span>
                     </td>
                 </tr>
                 </tbody>
             </table>
-			<a class="btn btn-primary btn-lg btn-outline btn-rounded" ng-click="clickToOpen()">New</a>
+            <a class="btn btn-primary btn-lg btn-outline btn-rounded" ng-click="clickToOpen()">New</a>
             <a class="btn btn-primary btn-lg btn-outline btn-rounded" ng-click="getAll()">Refresh</a>
-		</div>
-	</div>
+        </div>
+    </div>
 </div>
