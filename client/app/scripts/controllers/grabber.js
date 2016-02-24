@@ -37,7 +37,6 @@ angular.module('yapp')
 
       $http(req).then(function successCallback(response) {
         $scope.grabbers = response.data;
-        console.log(response.data)
       }, function errorCallback(response) {
         console.log('Ups for some reason I couldn\'t create the grabber')
       });
@@ -66,10 +65,49 @@ angular.module('yapp')
       };
 
       $http(req).then(function successCallback(response) {
+        console.log(response.data)
+      }, function errorCallback(response) {
+        console.log('Ups for some reason I couldn\'t create the grabber')
+      });
+    };
+
+    $scope.start = function(){
+      $scope.grabber.interval = convert($scope.grabber.interval, $scope.unit);
+
+      var req = {
+        method: 'POST',
+        url: 'http://localhost:5000/grabber',
+        headers: {
+          'Content-Type': "application/json"
+        },
+        data: $scope.grabber
+      };
+
+      $http(req).then(function successCallback(response) {
         console.log(response)
       }, function errorCallback(response) {
         console.log('Ups for some reason I couldn\'t create the grabber')
       });
-
     };
+
+    $scope.delete = function(position){
+      console.log("Deleting Grabber at position: "+position);
+      console.log($scope.grabbers[position].id);
+
+      var req = {
+        method: 'DELETE',
+        url: 'http://localhost:5000/grabber/'+$scope.grabbers[position].id,
+        headers: {
+          'Content-Type': "application/json"
+        }
+      };
+
+      $http(req).then(function successCallback(response) {
+        console.log(response);
+        $scope.getAll();
+      }, function errorCallback(response) {
+        console.log('Ups for some reason I couldn\'t create the grabber')
+      });
+
+    }
   });

@@ -21,7 +21,10 @@ app = Flask(__name__)
 CORS(app)
 
 # stores all grabbers currently in the system
+# TODO: This needs to be a dictionary for quick removal of grabbers
 grabbers = []
+
+# a mapping from a specific grabber to its corresponding job
 grabber_to_job = {}
 
 
@@ -74,11 +77,35 @@ def stop_grabber(_id):
         return 'Invalid grabber id', 404
 
 
-@app.route('/grabber/<_id>', methods=['DELETE'])
-def delete_grabber(_id):
-    connection = SmplConnPool.get_instance().get_connection()
-    grabber_collection = connection[Grabber.cfg['database']['db']]['grabbers']
-    grabber_collection.remove({'_id': ObjectId(_id)})
+@app.route('/grabber/<id>', methods=['DELETE'])
+def delete_grabber(id):
+    """
+    Delete grabber from system
+    :param id: the id of the grabber that should be deleted
+    :return: http code 200 if grabber could be deleted, else 404
+    """
+    object_id = ObjectId(id)
+    if object_id in grabber_to_job:
+
+        # delete associated job
+        job = grabber_to_job[object_id]
+        job.remove()
+        del grabber_to_job[object_id]
+
+        # FIXME: stupid an inefficient but using the grabbers collection the only way
+        # delete grabber from grabbers collection
+        for idx, grabber in enumerate(grabbers):
+            if str(grabber._id) == id:
+                del grabbers[idx]
+
+        # delete grabber from database
+        connection = SmplConnPool.get_instance().get_connection()
+        grabber_collection = connection[Grabber.cfg['database']['db']]['grabbers']
+        grabber_collection.remove({'_id': ObjectId(id)})
+
+        return 'Succesfully stopped grabber', 200
+    else:
+        return 'Invalid grabber id', 404
 
 
 def main():

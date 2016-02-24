@@ -13,14 +13,14 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr ng-repeat="grabber in grabbers">
+                <tr ng-repeat="grabber in grabbers track by $index">
                     <td>{{grabber.name}}</td>
                     <td>{{grabber.feed}}</td>
                     <td>{{grabber.interval}}</td>
                     <td>
                         <span class="glyphicon glyphicon-play"></span>
                         <span class="glyphicon glyphicon-stop"></span>
-                        <span class="glyphicon glyphicon-trash"></span>
+                        <span class="glyphicon glyphicon-trash" ng-click="delete($index)"></span>
                     </td>
                 </tr>
                 </tbody>
