@@ -71,22 +71,20 @@ angular.module('yapp')
       });
     };
 
-    $scope.start = function(){
-      $scope.grabber.interval = convert($scope.grabber.interval, $scope.unit);
-
+    $scope.start = function(position){
       var req = {
         method: 'POST',
-        url: 'http://localhost:5000/grabber',
+        url: 'http://localhost:5000/grabber/'+$scope.grabbers[position].id+'/start',
         headers: {
           'Content-Type': "application/json"
-        },
-        data: $scope.grabber
+        }
       };
 
       $http(req).then(function successCallback(response) {
-        console.log(response)
+        console.log(response.data);
+        $scope.startgrab='glyphicon glyphicon-play text-success';
       }, function errorCallback(response) {
-        console.log('Ups for some reason I couldn\'t create the grabber')
+        console.log('Ups for some reason I couldn\'t start the grabber')
       });
     };
 
@@ -106,7 +104,7 @@ angular.module('yapp')
         console.log(response);
         $scope.getAll();
       }, function errorCallback(response) {
-        console.log('Ups for some reason I couldn\'t create the grabber')
+        console.log('Ups for some reason I couldn\'t delete the grabber')
       });
 
     }
