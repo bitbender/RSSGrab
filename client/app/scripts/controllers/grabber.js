@@ -88,6 +88,23 @@ angular.module('yapp')
       });
     };
 
+    $scope.stop = function(position){
+      var req = {
+        method: 'POST',
+        url: 'http://localhost:5000/grabber/'+$scope.grabbers[position].id+'/stop',
+        headers: {
+          'Content-Type': "application/json"
+        }
+      };
+
+      $http(req).then(function successCallback(response) {
+        console.log(response.data);
+        $scope.stopgrab='glyphicon glyphicon-play text-danger';
+      }, function errorCallback(response) {
+        console.log('Ups for some reason I couldn\'t stop the grabber')
+      });
+    };
+
     $scope.delete = function(position){
       console.log("Deleting Grabber at position: "+position);
       console.log($scope.grabbers[position].id);

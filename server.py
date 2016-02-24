@@ -68,6 +68,11 @@ def start_grabber(_id):
 
 @app.route('/grabber/<_id>/stop', methods=['POST'])
 def stop_grabber(_id):
+    """
+    Stop the grabber with the specified id
+    :param _id: the id of the grabber that should be stopped
+    :return: http code 200 if grabber could be deleted, else 404
+    """
     object_id = ObjectId(_id)
     if object_id in grabber_to_job:
         job = grabber_to_job[object_id]
