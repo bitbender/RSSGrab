@@ -1,3 +1,4 @@
+from bson import ObjectId
 import feedparser
 import requests
 import time
@@ -23,7 +24,7 @@ class Grabber:
         self.feed = feed
         self.interval = interval
         if _id:
-            self._id = _id
+            self._id = ObjectId(_id)
 
     def run(self):
         data = feedparser.parse(self.feed)
@@ -43,6 +44,7 @@ class Grabber:
             Grabber.cfg['database']['db']]['grabbers']
         grabber_id = grabber_collection.insert_one(self.__dict__).inserted_id
         print('Saved grabber with id {}'.format(grabber_id))
+        self._id = ObjectId(grabber_id)
         return grabber_id
 
     def store_rss_item(self, rss_item):
