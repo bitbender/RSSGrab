@@ -1,0 +1,32 @@
+<div>
+	<a ui-sref="overview" class="pull-right btn btn-primary btn-outline btn-rounded">Back to Overview</a>
+	<h2>Grabber <small>Manage grabbers</small></h2>
+	<div class="jumbotron">
+		<div class="container">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Feed</th>
+                    <th>Interval</th>
+                    <th>Control</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="grabber in grabbers">
+                    <td>{{grabber.name}}</td>
+                    <td>{{grabber.feed}}</td>
+                    <td>{{grabber.interval}}</td>
+                    <td>
+                        <span class="glyphicon glyphicon-play"></span>
+                        <span class="glyphicon glyphicon-stop"></span>
+                        <span class="glyphicon glyphicon-trash"></span>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+			<a class="btn btn-primary btn-lg btn-outline btn-rounded" ng-click="clickToOpen()">New</a>
+            <a class="btn btn-primary btn-lg btn-outline btn-rounded" ng-click="getAll()">Refresh</a>
+		</div>
+	</div>
+</div>

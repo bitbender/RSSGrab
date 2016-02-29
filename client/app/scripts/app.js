@@ -11,7 +11,8 @@
 angular
   .module('yapp', [
     'ui.router',
-    'ngAnimate'
+    'ngAnimate',
+    'ngDialog'
   ])
   .config(function ($stateProvider, $urlRouterProvider) {
 
@@ -41,10 +42,11 @@ angular
         parent: 'dashboard',
         templateUrl: 'views/dashboard/overview.html'
       })
-      .state('reports', {
-        url: '/reports',
+      .state('grabber', {
+        url: '/grabber',
         parent: 'dashboard',
-        templateUrl: 'views/dashboard/reports.html'
+        templateUrl: 'views/dashboard/grabbers.html',
+        controller: 'GrabberCtrl'
       })
       .state('admin', {
         url: '/admin',
