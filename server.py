@@ -62,6 +62,8 @@ def _add_grabber(name, feed, interval):
     new_grabber = Grabber(name, feed, interval)
     database_id = new_grabber.save()
     _add_job_for_grabber(new_grabber)
+    job = scheduler.add_job(new_grabber.run, 'interval', seconds=10)
+    grabber_to_job[database_id] = job
     grabbers.append(new_grabber)
     return database_id
 

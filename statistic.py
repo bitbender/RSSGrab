@@ -1,3 +1,4 @@
+from bson import ObjectId
 from config import Config
 from smpl_conn_pool import SmplConnPool
 
@@ -25,7 +26,9 @@ class Statistic:
     def _exists_statistic(self, grabber_id):
         connection = SmplConnPool.get_instance().get_connection()
         statistics = connection[Statistic.cfg['database']['db']]['statistics']
-        return statistics.count() == 1
+
+        return statistics.find(
+            {"grabber_id": self.grabber_id}).count() == 1
 
     def save(self):
         connection = SmplConnPool.get_instance().get_connection()
@@ -43,7 +46,7 @@ class Statistic:
         connection = SmplConnPool.get_instance().get_connection()
         statistics = connection[Statistic.cfg['database']['db']]['statistics']
         statistics.update_one({
-            'grabber_id': self.grabber_id
+            'grabber_id': ObjectId(self.grabber_id)
         }, {
             '$inc': {
                 'runs_since_startup': 1
@@ -58,7 +61,7 @@ class Statistic:
             'grabber_id': self.grabber_id
         }, {
             '$set': {
-                'downloaded_articles': 0
+                'runs_since_startup': 0
             }
         }, upsert=False)
 

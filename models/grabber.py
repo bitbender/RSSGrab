@@ -27,6 +27,7 @@ class Grabber:
         if _id:
             self._id = ObjectId(_id)
             self.statistic = Statistic(self._id)
+            self.statistic.reset_run()
 
     def run(self):
         data = feedparser.parse(self.feed)
