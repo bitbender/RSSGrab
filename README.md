@@ -1,8 +1,10 @@
 # RSSGrab
 
-This project uses Python 3.5.1
+This project uses Python 3.5.1 and the Git Flow branching model.
+Instructions on how to install git flow can be found [here](https://github.com/nvie/gitflow/wiki/Installation)
 
-## Project Setup
+
+## Setup Dev Environment
 
 1. Checkout project via git
 2. [Install Anaconda](http://docs.continuum.io/anaconda/install) 
@@ -47,3 +49,5 @@ This project uses Python 3.5.1
 - [Anaconda Documentation](http://conda.pydata.org/docs/using/index.html)
 - [Documentation Flask-CORS](https://flask-cors.readthedocs.org/en/latest/)
 - [Documentation for requests lib](http://docs.python-requests.org/en/latest/)
+- [Documentation Advanced Python Scheduler](http://apscheduler.readthedocs.org/en/3.0/)
+- [GIT Workflow Tutorial](https://www.atlassian.com/git/tutorials/comparing-workflows)
