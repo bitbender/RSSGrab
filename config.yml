@@ -1,0 +1,10 @@
+database:
+    type: mongo
+    host: localhost
+    port: 27017
+    db: rssgrab
+    poolsize: 2
+    collections:
+      statistic: statistic
+      grabber: grabber
+      articles: articles
