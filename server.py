@@ -40,19 +40,47 @@ def get_all_grabbers():
 
 @app.route('/grabber', methods=['POST'])
 def add_grabber():
-    # TODO: Validate the incoming date
+    # TODO: Validate the incoming data
     jsn = request.get_json()
     database_id = _add_grabber(jsn['name'], jsn['feed'], jsn['interval'])
     return '{}'.format(database_id), 201
 
 
+@app.route('/grabber/<_id>', methods=['PUT'])
+def update_grabber(_id):
+    jsn = request.get_json()
+    connection = SmplConnPool.get_instance().get_connection()
+    grabber_collection = connection[
+        Grabber.cfg['database']['db']]['grabbers']
+    grabber = Grabber(jsn['name'], jsn['feed'], jsn['interval'], _id)
+    _update_job(grabber)
+    grabber_collection.find_one_and_replace(
+        {"_id": ObjectId(_id)},
+        jsn
+    )
+    return 'Succesfully updated grabber', 201
+
+
 def _add_grabber(name, feed, interval):
     new_grabber = Grabber(name, feed, interval)
     database_id = new_grabber.save()
-    job = scheduler.add_job(new_grabber.run, 'interval', seconds=10)
-    grabber_to_job[database_id] = job
+    _add_job_for_grabber(new_grabber)
     grabbers.append(new_grabber)
     return database_id
+
+
+def _add_job_for_grabber(grabber):
+    job = scheduler.add_job(grabber.run, 'interval', seconds=10)
+    grabber_to_job[grabber._id] = job
+
+
+def _update_job(grabber):
+    object_id = ObjectId(grabber._id)
+    assert object_id in grabber_to_job
+    if object_id in grabber_to_job:
+        job = grabber_to_job[object_id]
+        job.remove()
+    _add_job_for_grabber(grabber)
 
 
 @app.route('/grabber/<_id>/start', methods=['POST'])
