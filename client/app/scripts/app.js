@@ -10,6 +10,7 @@
  */
 angular
   .module('yapp', [
+    'ui.bootstrap',
     'ui.router',
     'ngAnimate',
     'ngDialog'

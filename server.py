@@ -47,7 +47,8 @@ def add_grabber():
     jsn = request.get_json()
     # TODO: Validate the incoming json data
     grabber = _add_grabber(jsn)
-    return '{}'.format(grabber.encode()), 201
+    print('{}'.format(grabber.encode()))
+    return 'Hallali!', 201
 
 
 @app.route('/grabber', methods=['PUT'])
@@ -84,7 +85,7 @@ def _add_grabber(doc):
 
 
 def _add_job_for_grabber(grabber):
-    job = scheduler.add_job(grabber.run, 'interval', seconds=10)
+    job = scheduler.add_job(grabber.run, 'interval', seconds=grabber.interval)
     grabber_to_job[grabber._id] = job
 
 
