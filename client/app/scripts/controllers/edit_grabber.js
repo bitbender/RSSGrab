@@ -7,33 +7,35 @@
  * # GrabberCtrl
  */
 angular.module('yapp')
-  .controller('CreateGrabberCtrl', function ($scope, $state, $log, ngDialog, $http) {
+  .controller('EditGrabberCtrl', function ($scope, $state, $log, $http, ngDialog, moment) {
 
-    $scope.grabber = {};
-
-    var d =  new Date();
-    d.setHours(0);
-    d.setMinutes(0);
-    d.setSeconds(0);
-    $scope.Date = d;
+    var dur =  $scope.grabber.interval;
+    var h = Math.floor(dur/3600);
+    var m = Math.floor((dur-(h*3600))/60);
+    var s = dur-(h*3600+m*60);
+    $log.log(h);
+    $log.log(m);
+    $log.log(s);
+    $scope.Date = new moment().hours(h).minutes(m).seconds(s);
 
     var trigger = 0;
 
     $scope.changed = function () {
-      var hours = $scope.grabber.interval.getHours() * 3600;
-      var minutes = $scope.grabber.interval.getMinutes() * 60;
-      var seconds = $scope.grabber.interval.getSeconds();
+      var hours = $scope.interval.getHours() * 3600;
+      var minutes = $scope.interval.getMinutes() * 60;
+      var seconds = $scope.interval.getSeconds();
 
       trigger = hours+minutes+seconds;
+      $log.info(trigger)
     };
 
-    $scope.create = function () {
+    $scope.save = function () {
       $scope.grabber.interval = trigger ;
 
       $log.info($scope.grabber);
 
       var req = {
-        method: 'POST',
+        method: 'PUT',
         url: 'http://localhost:5000/grabber',
         headers: {
           'Content-Type': "application/json"

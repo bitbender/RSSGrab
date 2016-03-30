@@ -55,6 +55,17 @@ angular.module('yapp')
       });
     };
 
+    $scope.openEditDialog = function (position) {
+      $scope.grabber = $scope.grabbers[position];
+      ngDialog.open({
+        template: '../../views/partials/edit_grabber.html',
+        controller: 'EditGrabberCtrl',
+        scope: $scope
+      }).closePromise.then(function (data) {
+        console.log('Edit grabber dialog has been dismissed.');
+      });
+    };
+
     $scope.start = function(position){
       var req = {
         method: 'POST',

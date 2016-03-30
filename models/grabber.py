@@ -23,12 +23,16 @@ in an rss feed
 class Grabber:
     cfg = Config.get_instance()
 
-    def __init__(self, name, feed, interval, _id=ObjectId()):
+    def __init__(self, name, feed, interval, _id=None):
 
         if type(_id) == str:
             self._id = ObjectId(_id)
-        else:
+
+        elif type(_id) == ObjectId:
             self._id = _id
+
+        else:
+            self._id = ObjectId()
 
         self.name = name
         self.feed = feed
@@ -57,7 +61,7 @@ class Grabber:
             Grabber.cfg['database']['db']]['grabbers']
         grabber_id = grabber_collection.insert_one(self.__dict__).inserted_id
         logging.info('Saved grabber with id {}'.format(grabber_id))
-        self._id = ObjectId(grabber_id)
+        #self._id = ObjectId(grabber_id)
         return grabber_id
 
     def store_rss_item(self, rss_item):
