@@ -1,9 +1,11 @@
 from bson import ObjectId
+import copy
 import feedparser
 import logging
 import requests
-import time
-import copy
+from time import mktime, strptime
+from datetime import datetime as dt
+
 
 from config import Config
 from models.status import Status
@@ -40,6 +42,7 @@ class Grabber:
 
     def run(self):
         data = feedparser.parse(self.feed)
+        # check here to see data format
         for rss_item in data['entries']:
             self.store_rss_item(rss_item)
 
@@ -66,11 +69,18 @@ class Grabber:
 
     def store_rss_item(self, rss_item):
         article_url = rss_item['link']
+        # convert time.struct_time to datetime.datetime
+        rss_item['published'] = dt.fromtimestamp(mktime(rss_item['published_parsed']))
+        del rss_item['published_parsed']
+
+        # download the article mentioned in the rss feed
         rss_item['article'] = self.download_article(article_url)
 
         connection = SmplConnPool.get_instance().get_connection()
         feed_collection = connection[Grabber.cfg['database']['db']][
             Grabber.cfg['database']['collections']['articles']]
+
+        # try to fetch the article from database
         db_feed = feed_collection.find({'id': rss_item['id']})
 
         assert db_feed.count() < 2, "id should be a primary key"
@@ -95,10 +105,7 @@ class Grabber:
             feed_collection.replace_one({'id': new_feed['id']}, new_feed)
 
     def is_newer(self, old_date, new_date):
-        # Parse date with format Fri, 05 Feb 2016 13:28:12 -0000
-        old = time.strptime(old_date.replace(',', ''), '%a %d %b %Y %X %z')
-        new = time.strptime(new_date.replace(',', ''), '%a %d %b %Y %X %z')
-        return old < new
+        return old_date < new_date
 
     def encode(self, rm=None):
         """
