@@ -40,13 +40,21 @@ class Grabber:
         self.interval = interval
 
     def run(self):
+        """
+        This method starts the parsing of the feed.
+        """
         data = feedparser.parse(self.feed)
         # check here to see data format
         for rss_item in data['entries']:
             self.store_rss_item(rss_item)
 
-    def download_article(self, article_url):
-        response = requests.get(article_url)
+    def download_website(self, url):
+        """
+        Downloads the website that can be found at the given url
+        :param url: the website of the url that should be downloaded
+        :return: the text downloaded from the url or raise an error instead
+        """
+        response = requests.get(url)
         if response.status_code == 200:
             return response.text
 
@@ -67,13 +75,25 @@ class Grabber:
         return grabber_id
 
     def store_rss_item(self, rss_item):
+        """
+        This method takes an rss_item from the rss feed, downloads
+        the article the item points to, and checks if the constructed
+        rss item is already in the database.
+
+        If the rss item is already in the database, it tries to update it
+        if the downloaded version is newer then the stored version. Otherwise
+        it simply saves the constructed rss item to the database.
+
+        :param rss_item: the rss item to be processed
+        """
         article_url = rss_item['link']
+
         # convert time.struct_time to datetime.datetime
         rss_item['published'] = dt.fromtimestamp(mktime(rss_item['published_parsed']))
         del rss_item['published_parsed']
 
         # download the article mentioned in the rss feed
-        rss_item['article'] = self.download_article(article_url)
+        rss_item['article'] = self.download_website(article_url)
 
         connection = SmplConnPool.get_instance().get_connection()
         feed_collection = connection[Grabber.cfg['database']['db']][
@@ -90,20 +110,26 @@ class Grabber:
 
     def update_feed(self, old_feed, new_feed):
         """
-        Replaces old feed with new one if it is published at another time
+        Replaces old feed with new one.
         :param old_feed:
         :param new_feed:
         :return:
         """
         assert old_feed['id'] == new_feed['id'], 'Updates should only \
                 be made to a newer version of the article'
-        if self.is_newer(old_feed['published'], new_feed['published']):
+        if self._is_newer(old_feed['published'], new_feed['published']):
             connection = SmplConnPool.get_instance().get_connection()
             feed_collection = connection[Grabber.cfg['database']['db']][
                 Grabber.cfg['database']['collections']['articles']]
             feed_collection.replace_one({'id': new_feed['id']}, new_feed)
 
-    def is_newer(self, old_date, new_date):
+    def _is_newer(self, old_date, new_date):
+        """
+        Checks if a date is newer then another date
+        :param old_date: older date
+        :param new_date: newer date
+        :return: true if the old date is truly older else false.
+        """
         return old_date < new_date
 
     def encode(self, rm=None):
@@ -132,6 +158,12 @@ class Grabber:
 
     @staticmethod
     def decode(doc):
+        """
+        Takes a document / dictionary and reconstructs a Grabber from the
+        given information.
+        :param doc: the document containing the Grabber specification
+        :return: a new instance of a Grabber
+        """
         assert type(doc) == dict
         if '_id' in doc:
             return Grabber(doc['name'], doc['feed'], doc['interval'], doc['_id'])
