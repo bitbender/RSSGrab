@@ -1,5 +1,5 @@
 import yaml
-
+import os
 
 class Config(object):
     """
@@ -21,13 +21,14 @@ class Config(object):
 
         :param file: a file from which to load the configuration
         """
+        path = os.path.dirname(os.path.realpath(__file__))
 
         if Config._instance is not None:
             raise NotImplemented("This is a singleton class. Use the get_instance() method")
 
         try:
-            self.file = file
-            with open(file, 'r') as ymlfile:
+            self.file = path+'/'+file
+            with open(self.file, 'r') as ymlfile:
                 self.config = yaml.load(ymlfile)
         except FileNotFoundError as err:
             self.config = {}
