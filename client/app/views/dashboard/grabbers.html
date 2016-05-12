@@ -16,9 +16,9 @@
                 </thead>
                 <tbody>
                 <tr ng-repeat="grabber in grabbers track by $index">
-                    <td>{{grabber.name}}</td>
+                    <td ng-click="openEditDialog($index)">{{grabber.name}}</td>
                     <td>{{grabber.feed}}</td>
-                    <td>{{grabber.interval}}</td>
+                    <td>{{grabber.interval | duration}}</td>
                     <td>
                         <span ng-class="startgrab" ng-mouseenter="startgrab='glyphicon glyphicon-play text-success'"
                               ng-mouseleave="startgrab='glyphicon glyphicon-play'"

@@ -1,10 +1,16 @@
 from bson import ObjectId
+import copy
 import feedparser
+import logging
 import requests
-import time
+from time import mktime, strptime
+from datetime import datetime as dt
+
 
 from config import Config
+from models.status import Status
 from smpl_conn_pool import SmplConnPool
+
 """
 This class represents a grabber. It is responsible for
 storing all the information needed in order to grab the
@@ -20,14 +26,23 @@ class Grabber:
     cfg = Config.get_instance()
 
     def __init__(self, name, feed, interval, _id=None):
+
+        if type(_id) == str:
+            self._id = ObjectId(_id)
+
+        elif type(_id) == ObjectId:
+            self._id = _id
+
+        else:
+            self._id = ObjectId()
+
         self.name = name
         self.feed = feed
         self.interval = interval
-        if _id:
-            self._id = ObjectId(_id)
 
     def run(self):
         data = feedparser.parse(self.feed)
+        # check here to see data format
         for rss_item in data['entries']:
             self.store_rss_item(rss_item)
 
@@ -39,21 +54,35 @@ class Grabber:
         response.raise_for_status()
 
     def save(self):
+        """
+        Save the grabber to a mongodb database.
+
+        :return: the document id of the grabber in the database.
+        """
         connection = SmplConnPool.get_instance().get_connection()
         grabber_collection = connection[
             Grabber.cfg['database']['db']]['grabbers']
         grabber_id = grabber_collection.insert_one(self.__dict__).inserted_id
-        print('Saved grabber with id {}'.format(grabber_id))
-        self._id = ObjectId(grabber_id)
+        logging.info('Saved grabber with id {}'.format(grabber_id))
+        #self._id = ObjectId(grabber_id)
         return grabber_id
 
     def store_rss_item(self, rss_item):
         article_url = rss_item['link']
+        # convert time.struct_time to datetime.datetime
+        rss_item['published'] = dt.fromtimestamp(mktime(rss_item['published_parsed']))
+        del rss_item['published_parsed']
+
+        # download the article mentioned in the rss feed
         rss_item['article'] = self.download_article(article_url)
+
         connection = SmplConnPool.get_instance().get_connection()
         feed_collection = connection[Grabber.cfg['database']['db']][
             Grabber.cfg['database']['collections']['articles']]
+
+        # try to fetch the article from database
         db_feed = feed_collection.find({'id': rss_item['id']})
+
         assert db_feed.count() < 2, "id should be a primary key"
         if not db_feed.count() > 0:
             feed_collection.save(rss_item)
@@ -61,7 +90,12 @@ class Grabber:
             self.update_feed(db_feed[0], rss_item)
 
     def update_feed(self, old_feed, new_feed):
-        # Replaces old feed with new one if it is published at another time
+        """
+        Replaces old feed with new one if it is published at another time
+        :param old_feed:
+        :param new_feed:
+        :return:
+        """
         assert old_feed['id'] == new_feed['id'], 'Updates should only \
                 be made to a newer version of the article'
         if self.is_newer(old_feed['published'], new_feed['published']):
@@ -71,15 +105,39 @@ class Grabber:
             feed_collection.replace_one({'id': new_feed['id']}, new_feed)
 
     def is_newer(self, old_date, new_date):
-        # Parse date with format Fri, 05 Feb 2016 13:28:12 -0000
-        old = time.strptime(old_date.replace(',', ''), '%a %d %b %Y %X %z')
-        new = time.strptime(new_date.replace(',', ''), '%a %d %b %Y %X %z')
-        return old < new
+        return old_date < new_date
 
-    def to_json(self):
-        return {
-            'id': str(self._id),
-            'name': self.name,
-            'feed': self.feed,
-            'interval': self.interval
-        }
+    def encode(self, rm=None):
+        """
+        Encode the grabber as a dictionary
+
+        :param rm: the fields of the grabber that should me excluded from serialization
+        :return: a dictionary encoding of the grabber
+        """
+
+        if rm is None:
+            rm = []
+        else:
+            rm = rm.split(',')
+
+        # Copy the dictionary with all attributes of this object.
+        result = copy.deepcopy(self.__dict__)
+        # Convert the ObjectId into a string
+        result['_id'] = str(self._id)
+
+        for key in rm:
+            if key in result:
+                del result[key]
+
+        return result
+
+    @staticmethod
+    def decode(doc):
+        assert type(doc) == dict
+        if '_id' in doc:
+            return Grabber(doc['name'], doc['feed'], doc['interval'], doc['_id'])
+        else:
+            return Grabber(doc['name'], doc['feed'], doc['interval'])
+
+    def __repr__(self):
+        return '[{0}, {1}, {2}, {3}]'.format(self._id, self.name, self.feed, self.interval)

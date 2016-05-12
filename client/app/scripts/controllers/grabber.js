@@ -7,7 +7,7 @@
  * # GrabberCtrl
  */
 angular.module('yapp')
-  .controller('GrabberCtrl', function ($scope, $state, ngDialog, $http) {
+  .controller('GrabberCtrl', function ($scope, $state, $log, ngDialog, $http) {
 
     /**
     * Convert the interval value to the correct unit (seconds,minutes,hours)
@@ -48,33 +48,28 @@ angular.module('yapp')
     $scope.clickToOpen = function () {
       ngDialog.open({
         template: '../../views/partials/create_grabber.html',
-        controller: 'GrabberCtrl'
+        controller: 'CreateGrabberCtrl'
+      }).closePromise.then(function (data) {
+        console.log(data.id + ' has been dismissed.');
+        $scope.getAll();
       });
     };
 
-    $scope.create = function () {
-      $scope.grabber.interval = convert($scope.grabber.interval, $scope.unit);
-
-      var req = {
-        method: 'POST',
-        url: 'http://localhost:5000/grabber',
-        headers: {
-          'Content-Type': "application/json"
-        },
-        data: $scope.grabber
-      };
-
-      $http(req).then(function successCallback(response) {
-        console.log(response.data)
-      }, function errorCallback(response) {
-        console.log('Ups for some reason I couldn\'t create the grabber')
+    $scope.openEditDialog = function (position) {
+      $scope.grabber = $scope.grabbers[position];
+      ngDialog.open({
+        template: '../../views/partials/edit_grabber.html',
+        controller: 'EditGrabberCtrl',
+        scope: $scope
+      }).closePromise.then(function (data) {
+        console.log('Edit grabber dialog has been dismissed.');
       });
     };
 
     $scope.start = function(position){
       var req = {
         method: 'POST',
-        url: 'http://localhost:5000/grabber/'+$scope.grabbers[position].id+'/start',
+        url: 'http://localhost:5000/grabber/'+$scope.grabbers[position]._id+'/start',
         headers: {
           'Content-Type': "application/json"
         }
@@ -91,7 +86,7 @@ angular.module('yapp')
     $scope.stop = function(position){
       var req = {
         method: 'POST',
-        url: 'http://localhost:5000/grabber/'+$scope.grabbers[position].id+'/stop',
+        url: 'http://localhost:5000/grabber/'+$scope.grabbers[position]._id+'/stop',
         headers: {
           'Content-Type': "application/json"
         }
@@ -107,14 +102,15 @@ angular.module('yapp')
 
     $scope.delete = function(position){
       console.log("Deleting Grabber at position: "+position);
-      console.log($scope.grabbers[position].id);
+      console.log($scope.grabbers[position]);
 
       var req = {
         method: 'DELETE',
-        url: 'http://localhost:5000/grabber/'+$scope.grabbers[position].id,
+        url: 'http://localhost:5000/grabber',
         headers: {
           'Content-Type': "application/json"
-        }
+        },
+        data: $scope.grabbers[position]
       };
 
       $http(req).then(function successCallback(response) {
