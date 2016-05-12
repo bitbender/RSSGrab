@@ -3,12 +3,11 @@ import copy
 import feedparser
 import logging
 import requests
-from time import mktime, strptime
+from time import mktime
 from datetime import datetime as dt
 
 
 from config import Config
-from models.status import Status
 from smpl_conn_pool import SmplConnPool
 
 """
