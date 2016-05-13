@@ -42,7 +42,12 @@ Instructions on how to install git flow can be found [here](https://github.com/n
         ```gulp serve```
     
     The client application is located under client/app
+
+## Update conda environment
+
+To update the currently active conda environment simply execute:
     
+    conda env update
     
 ## Links and useful resources
 - [Designing a RESTful API with Python and Flask](http://blog.miguelgrinberg.com/post/designing-a-restful-api-with-python-and-flask)
