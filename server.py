@@ -151,6 +151,21 @@ def delete_grabber():
 def main():
     scheduler.start()
     restart_grabbers_from_db()
+
+    # Only for testing purposes (if not used any longer ... remove)
+    # grabber = Grabber.decode({
+    #     'id': ObjectId("56ca2e9399b19050bf6d6fc5"),
+    #     'feed': 'http://www.handelsblatt.com/contentexport/feed/wirtschaft',
+    #     'interval': 10,
+    #     'css_selector': 'div.vhb-article-pagination-list a',
+    #     'name': 'Handelsblatt Wirtschafts-Schlagzeilen'
+    # })
+    #
+    # job = scheduler.add_job(grabber.run, 'interval',
+    #                         seconds=grabber.interval)
+    #
+    # grabber_to_job[grabber._id] = job
+
     app.run()
 
 

@@ -4,6 +4,8 @@ import feedparser
 import logging
 import requests
 from time import mktime
+from bs4 import BeautifulSoup
+from urllib.parse import urlparse
 from datetime import datetime as dt
 
 
@@ -24,7 +26,7 @@ in an rss feed
 class Grabber:
     cfg = Config.get_instance()
 
-    def __init__(self, name, feed, interval, _id=None):
+    def __init__(self, name, feed, interval, css_selector=None, _id=None):
 
         if type(_id) == str:
             self._id = ObjectId(_id)
@@ -37,6 +39,7 @@ class Grabber:
 
         self.name = name
         self.feed = feed
+        self.css_selector = css_selector
         self.interval = interval
 
     def run(self):
@@ -48,17 +51,36 @@ class Grabber:
         for rss_item in data['entries']:
             self.store_rss_item(rss_item)
 
-    def download_website(self, url):
+    def _download_website(self, url):
         """
-        Downloads the website that can be found at the given url
+        Downloads the website that can be found at the given url. Should
+        a css selector be provided, it will use the selector to paginate
+        through all the websites that the selector will extract.
+
         :param url: the website of the url that should be downloaded
         :return: the text downloaded from the url or raise an error instead
         """
-        response = requests.get(url)
-        if response.status_code == 200:
-            return response.text
+        result = []
 
-        response.raise_for_status()
+        parsed_url = urlparse(url)
+        response = requests.get(url)
+
+        if response.status_code == 200:
+            result.append(response.text)
+
+            if self.css_selector:
+                soup = BeautifulSoup(response.text, 'html.parser')
+
+                pages = [page['href'] for page in soup.select(self.css_selector)]
+                for page in pages:
+                    next_page = requests.get(parsed_url.scheme+'://'+parsed_url.netloc+'/'+page)
+
+                    if next_page.status_code == 200:
+                        result.append(next_page.text)
+
+        return result
+
+        #response.raise_for_status()
 
     def save(self):
         """
@@ -71,7 +93,7 @@ class Grabber:
             Grabber.cfg['database']['db']]['grabbers']
         grabber_id = grabber_collection.insert_one(self.__dict__).inserted_id
         logging.info('Saved grabber with id {}'.format(grabber_id))
-        #self._id = ObjectId(grabber_id)
+        # self._id = ObjectId(grabber_id)
         return grabber_id
 
     def store_rss_item(self, rss_item):
@@ -92,8 +114,8 @@ class Grabber:
         rss_item['published'] = dt.fromtimestamp(mktime(rss_item['published_parsed']))
         del rss_item['published_parsed']
 
-        # download the article mentioned in the rss feed
-        rss_item['article'] = self.download_website(article_url)
+        # download the article referred to the rss feed
+        rss_item['articles'] = self._download_website(article_url)
 
         connection = SmplConnPool.get_instance().get_connection()
         feed_collection = connection[Grabber.cfg['database']['db']][
@@ -165,8 +187,13 @@ class Grabber:
         :return: a new instance of a Grabber
         """
         assert type(doc) == dict
-        if '_id' in doc:
-            return Grabber(doc['name'], doc['feed'], doc['interval'], doc['_id'])
+        # TODO: A builder pattern would certainly be the better choice here.
+        if '_id' in doc and 'css_selector' in doc:
+            return Grabber(name=doc['name'], feed=doc['feed'], interval=doc['interval'], css_selector=doc['css_selector'], _id=doc['_id'])
+        elif '_id' in doc and not 'css_selector' in doc:
+            return Grabber(name=doc['name'], feed=doc['feed'], interval=doc['interval'], _id=doc['_id'])
+        elif '_id' not in doc and 'css_selector' in doc:
+            return Grabber(name=doc['name'], feed=doc['feed'], interval=doc['interval'], css_selector=doc['css_selector'])
         else:
             return Grabber(doc['name'], doc['feed'], doc['interval'])
 
