@@ -111,7 +111,6 @@ gulp.task('test', function(done) {
 gulp.task('wiredep', function() {
   var wiredep = require('wiredep').stream;
   var exclude = [
-    'bootstrap',
     'jquery',
     'es5-shim',
     'json3',

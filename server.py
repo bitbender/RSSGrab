@@ -5,6 +5,8 @@ from config import Config
 from smpl_conn_pool import SmplConnPool
 from models.grabber import Grabber
 from flask.ext.cors import CORS
+from auth import auth_endpoints
+from annotations import login_required
 from apscheduler.schedulers.background import BackgroundScheduler
 from json import dumps
 
@@ -27,6 +29,9 @@ CORS(app)
 # a mapping from a specific grabber to its corresponding job
 grabber_to_job = {}
 
+# register blueprints
+app.register_blueprint(auth_endpoints)
+
 
 @app.route('/', methods=['GET'])
 def index():
@@ -34,6 +39,7 @@ def index():
 
 
 @app.route('/grabber', methods=['GET'])
+@login_required
 def get_all_grabbers():
     connection = SmplConnPool.get_instance().get_connection()
     grabber_collection = connection[
@@ -43,6 +49,7 @@ def get_all_grabbers():
 
 
 @app.route('/grabber', methods=['POST'])
+@login_required
 def add_grabber():
     jsn = request.get_json()
     # TODO: Validate the incoming json data
@@ -52,6 +59,7 @@ def add_grabber():
 
 
 @app.route('/grabber', methods=['PUT'])
+@login_required
 def update_grabber():
     jsn = request.get_json()
     connection = SmplConnPool.get_instance().get_connection()
@@ -98,6 +106,7 @@ def _update_job(grabber):
 
 
 @app.route('/grabber/<_id>/start', methods=['POST'])
+@login_required
 def start_grabber(_id):
     object_id = ObjectId(_id)
     if object_id in grabber_to_job:
@@ -109,6 +118,7 @@ def start_grabber(_id):
 
 
 @app.route('/grabber/<_id>/stop', methods=['POST'])
+@login_required
 def stop_grabber(_id):
     """
     Stop the grabber with the specified id
@@ -125,6 +135,7 @@ def stop_grabber(_id):
 
 
 @app.route('/grabber', methods=['DELETE'])
+@login_required
 def delete_grabber():
     """
     Delete grabber from system

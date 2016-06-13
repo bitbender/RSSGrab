@@ -13,12 +13,15 @@ var app = angular
     'ui.bootstrap',
     'ui.router',
     'ngAnimate',
-    'ngDialog'
+    'ngDialog',
+    'satellizer'
   ]);
 
 app.constant("moment", moment);
 
-app.config(function ($stateProvider, $urlRouterProvider) {
+app.config(function ($stateProvider, $urlRouterProvider, $authProvider) {
+
+  $authProvider.baseUrl = 'http://localhost:5000/';
 
   $urlRouterProvider.when('/dashboard', '/dashboard/overview');
   $urlRouterProvider.otherwise('/login');

@@ -16,10 +16,13 @@ module.exports = function(config) {
     files: [
       // bower:js
       '../bower_components/angular/angular.js',
+      '../bower_components/bootstrap/dist/js/bootstrap.js',
       '../bower_components/ui-router/release/angular-ui-router.js',
       '../bower_components/ng-dialog/js/ngDialog.js',
       '../bower_components/angular-animate/angular-animate.js',
+      '../bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
       '../bower_components/moment/moment.js',
+      '../bower_components/satellizer/satellizer.js',
       '../bower_components/angular-mocks/angular-mocks.js',
       // endbower
       '../app/scripts/**/*.js',
