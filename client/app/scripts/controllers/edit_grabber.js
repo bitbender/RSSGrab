@@ -29,6 +29,17 @@ angular.module('yapp')
       $log.info(trigger)
     };
 
+    $scope.clickToOpen = function () {
+      ngDialog.open({
+        template: '../../views/partials/preview_feed.html',
+        controller: 'PreviewFeedCtrl',
+        scope: $scope
+      }).closePromise.then(function (data) {
+        console.log(data);
+        //$scope.getAll();
+      });
+    };
+
     $scope.save = function () {
       $scope.grabber.interval = trigger ;
 

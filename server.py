@@ -1,4 +1,5 @@
 import logging
+import feedparser
 from bson import ObjectId
 from flask import Flask, request
 from config import Config
@@ -9,6 +10,7 @@ from auth import auth_endpoints
 from annotations import login_required
 from apscheduler.schedulers.background import BackgroundScheduler
 from json import dumps
+
 
 # load configuration
 conf = Config.get_instance()
@@ -36,6 +38,20 @@ app.register_blueprint(auth_endpoints)
 @app.route('/', methods=['GET'])
 def index():
     return "Welcome to the RSS Grabber ..."
+
+
+@app.route('/feed', methods=['POST'])
+@login_required
+def preview_feed():
+    """
+    This endpoint is responsible for fetching the feed url
+    and sending the content for display purposes back to the
+    client.
+    """
+    jsn = request.get_json()
+    data = feedparser.parse(jsn['url'])
+
+    return dumps([(entry['title'], entry['link']) for entry in  data['entries']])
 
 
 @app.route('/grabber', methods=['GET'])

@@ -2,9 +2,13 @@
 'use strict';
 
 var gulp = require('gulp');
+var taskListing = require('gulp-task-listing');
 var karma = require('karma').server;
 var argv = require('yargs').argv;
 var $ = require('gulp-load-plugins')();
+
+// Add a task to render the output
+gulp.task('tasks', taskListing);
 
 gulp.task('styles', function() {
   return gulp.src('app/styles/main.less')
