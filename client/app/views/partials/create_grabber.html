@@ -7,18 +7,17 @@
     <div class="form-group">
         <label for="feed">Feed:</label>
         <input type="url" class="form-control" id="feed" ng-model="grabber.feed">
-        <a class="btn btn-primary btn-sm btn-outline btn-rounded" ng-click="preview()">Preview</a>
+        <a class="btn btn-primary btn-sm btn-outline btn-rounded" ng-click="openPreviewDialog()">Preview</a>
     </div>
     <div class="form-group">
         <label for="css_selector">CSS Selector for Pagination:</label>
         <input type="text" class="form-control" id="css_selector" ng-model="grabber.css_selector">
+    </div><div class="form-group">
+        <label for="payed_selector">CSS Selector for Payed Content:</label>
+        <input id="payed_selector" type="text" class="form-control" ng-model="grabber.payed_selector">
     </div>
     <div class="form-group">
         <label for="interval">Interval:</label>
-        <!--<label class="radio-inline"><input type="radio" ng-model="unit" value="sec">Seconds</label>-->
-        <!--<label class="radio-inline"><input type="radio" ng-model="unit" value="min">Minutes</label>-->
-        <!--<label class="radio-inline"><input type="radio" ng-model="unit" value="h">Hours</label>-->
-        <!--<input type="number" class="form-control" id="interval" value="2" ng-model="grabber.interval">-->
         <uib-timepicker id="interval" ng-model="grabber.interval" ng-init="grabber.interval = Date" ng-change="changed()" hour-step="1" minute-step="1" show-seconds="true", show-meridian="false"></uib-timepicker>
 
     </div>

@@ -26,7 +26,7 @@ in an rss feed
 class Grabber:
     cfg = Config.get_instance()
 
-    def __init__(self, name, feed, interval, css_selector=None, _id=None):
+    def __init__(self, name, feed, interval=1800, css_selector=None, payed_selector=None, _id=None):
 
         if type(_id) == str:
             self._id = ObjectId(_id)
@@ -40,6 +40,7 @@ class Grabber:
         self.name = name
         self.feed = feed
         self.css_selector = css_selector
+        self.payed_selector = payed_selector
         self.interval = interval
 
     def run(self):
@@ -187,15 +188,25 @@ class Grabber:
         :return: a new instance of a Grabber
         """
         assert type(doc) == dict
-        # TODO: A builder pattern would certainly be the better choice here.
-        if '_id' in doc and 'css_selector' in doc:
-            return Grabber(name=doc['name'], feed=doc['feed'], interval=doc['interval'], css_selector=doc['css_selector'], _id=doc['_id'])
-        elif '_id' in doc and not 'css_selector' in doc:
-            return Grabber(name=doc['name'], feed=doc['feed'], interval=doc['interval'], _id=doc['_id'])
-        elif '_id' not in doc and 'css_selector' in doc:
-            return Grabber(name=doc['name'], feed=doc['feed'], interval=doc['interval'], css_selector=doc['css_selector'])
+
+        if 'name' not in doc:
+            raise Exception('A grabber needs to have a name!')
+        if 'feed' not in doc:
+            raise Exception('A grabber needs to have a feed!')
+
+        if '_id' in doc:
+            grabber = Grabber(_id=doc['_id'], name=doc['name'], feed=doc['feed'])
         else:
-            return Grabber(doc['name'], doc['feed'], doc['interval'])
+            grabber = Grabber(name=doc['name'], feed=doc['feed'])
+
+        if 'css_selector' in doc:
+            grabber.css_selector = doc['css_selector']
+        if 'payed_selector' in doc:
+            grabber.payed_selector = doc['payed_selector']
+        if 'interval' in doc:
+            grabber.interval = doc['interval']
+
+        return grabber
 
     def __repr__(self):
         return '[{0}, {1}, {2}, {3}]'.format(self._id, self.name, self.feed, self.interval)

@@ -49,4 +49,15 @@ angular.module('yapp')
       });
     };
 
+    $scope.openPreviewDialog = function () {
+      $log.info('Open preview dialog');
+      ngDialog.open({
+        template: '../../views/partials/preview_feed.html',
+        controller: 'PreviewFeedCtrl',
+        scope: $scope
+      }).closePromise.then(function (data) {
+        console.log(data);
+      });
+    };
+
   });
