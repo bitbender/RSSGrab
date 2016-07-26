@@ -7,7 +7,7 @@ from time import mktime
 from bs4 import BeautifulSoup
 from urllib.parse import urlparse
 from datetime import datetime as dt
-
+from models.page import Page
 
 from config import Config
 from smpl_conn_pool import SmplConnPool
@@ -25,6 +25,8 @@ in an rss feed
 
 class Grabber:
     cfg = Config.get_instance()
+
+    state = set()
 
     def __init__(self, name, feed, interval=1800, css_selector=None, payed_selector=None, _id=None):
 
@@ -64,24 +66,50 @@ class Grabber:
         result = []
 
         parsed_url = urlparse(url)
+        url_prefix = parsed_url.scheme + '://' + parsed_url.netloc
         response = requests.get(url)
+        Grabber.state.add(url)
 
         if response.status_code == 200:
-            result.append(response.text)
 
-            if self.css_selector:
-                soup = BeautifulSoup(response.text, 'html.parser')
+            soup = BeautifulSoup(response.text, 'html.parser')
 
-                pages = [page['href'] for page in soup.select(self.css_selector)]
-                for page in pages:
-                    next_page = requests.get(parsed_url.scheme+'://'+parsed_url.netloc+'/'+page)
+            # Check website for payed content
+            if self.payed_selector:
+                if len(soup.select(self.payed_selector)) > 0:
+                    result.append(Page(url, response.text, True))
+                else:
+                    result.append(Page(url, response.text, False))
+            else:
+                result.append(Page(url, response.text, False))
 
-                    if next_page.status_code == 200:
-                        result.append(next_page.text)
+            if not result[0].isPayed and self.css_selector:
+                return self._paginate(url_prefix, response, self.css_selector, result)
+            else:
+                return result
+                # pages = [page['href'] for page in soup.select(self.css_selector)]
+                # for page in pages:
+                #     next_page = requests.get(parsed_url.scheme+'://'+parsed_url.netloc+'/'+page)
+                #
+                #     if next_page.status_code == 200:
+                #         result.append(next_page.text)
 
+    def _paginate(self, url_prefix, response, selector, result):
+        soup = BeautifulSoup(response.text, 'html.parser')
+        pages = [page['href'] for page in soup.select(selector)]
+
+        if len(pages) > 0:
+            for page in pages:
+                url = url_prefix + page
+
+                if url not in Grabber.state:
+                    Grabber.state.add(url)
+                    response = requests.get(url)
+                    result.append(Page(url, response.text, False))
+                    result = self._paginate(url_prefix, response, selector, result)
+
+        Grabber.state = set()
         return result
-
-        #response.raise_for_status()
 
     def save(self):
         """
