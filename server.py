@@ -51,7 +51,7 @@ def preview_feed():
     jsn = request.get_json()
     data = feedparser.parse(jsn['url'])
 
-    return dumps([(entry['title'], entry['link']) for entry in  data['entries']])
+    return dumps([(entry['title'], entry['guid']) for entry in data['entries']])
 
 
 @app.route('/grabber', methods=['GET'])
@@ -71,7 +71,7 @@ def add_grabber():
     # TODO: Validate the incoming json data
     grabber = _add_grabber(jsn)
     print('{}'.format(grabber.encode()))
-    return 'Hallali!', 201
+    return 'Success', 201
 
 
 @app.route('/grabber', methods=['PUT'])

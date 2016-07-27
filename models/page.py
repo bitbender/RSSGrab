@@ -6,7 +6,7 @@ class Page:
         self.html = html
 
     def __repr__(self):
-        return self.url
+        return '[{0},{1}]'.format(self.isPayed, self.url)
 
     def toDoc(self):
         return self.__dict__

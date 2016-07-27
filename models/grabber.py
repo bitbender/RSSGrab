@@ -84,7 +84,9 @@ class Grabber:
                 result.append(Page(url, response.text, False))
 
             if not result[0].isPayed and self.css_selector:
-                return self._paginate(url_prefix, response, self.css_selector, result)
+                pages = self._paginate(url_prefix, response, self.css_selector, result)
+                Grabber.state = set()
+                return pages
             else:
                 return result
                 # pages = [page['href'] for page in soup.select(self.css_selector)]
@@ -93,6 +95,8 @@ class Grabber:
                 #
                 #     if next_page.status_code == 200:
                 #         result.append(next_page.text)
+        else:
+            return result
 
     def _paginate(self, url_prefix, response, selector, result):
         soup = BeautifulSoup(response.text, 'html.parser')
@@ -108,7 +112,7 @@ class Grabber:
                     result.append(Page(url, response.text, False))
                     result = self._paginate(url_prefix, response, selector, result)
 
-        Grabber.state = set()
+
         return result
 
     def save(self):
@@ -137,14 +141,14 @@ class Grabber:
 
         :param rss_item: the rss item to be processed
         """
-        article_url = rss_item['link']
+        article_url = rss_item['guid']
 
         # convert time.struct_time to datetime.datetime
         rss_item['published'] = dt.fromtimestamp(mktime(rss_item['published_parsed']))
         del rss_item['published_parsed']
 
         # download the article referred to the rss feed
-        rss_item['articles'] = self._download_website(article_url)
+        rss_item['articles'] = [page.toDoc() for page in self._download_website(article_url)]
 
         connection = SmplConnPool.get_instance().get_connection()
         feed_collection = connection[Grabber.cfg['database']['db']][
