@@ -37,7 +37,7 @@ app.register_blueprint(auth_endpoints)
 
 @app.route('/', methods=['GET'])
 def index():
-    return "Welcome to the RSS Grabber ..."
+    return "Running ..."
 
 
 @app.route('/feed', methods=['POST'])

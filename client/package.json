@@ -4,6 +4,8 @@
     "node": ">=0.10.0"
   },
   "scripts": {
+    "start": "../bin/start.sh",
+    "stop": "../bin/stop.sh",
     "test": "gulp test"
   },
   "devDependencies": {
