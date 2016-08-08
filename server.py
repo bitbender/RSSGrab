@@ -5,6 +5,7 @@ from flask import Flask, request
 from config import Config
 from smpl_conn_pool import SmplConnPool
 from models.grabber import Grabber
+from models.User import User
 from flask.ext.cors import CORS
 from auth import auth_endpoints
 from annotations import login_required
@@ -38,6 +39,22 @@ app.register_blueprint(auth_endpoints)
 @app.route('/', methods=['GET'])
 def index():
     return "Running ..."
+
+
+@app.route('/signup', methods=['POST'])
+def signup():
+    """
+    This route is for creating a new
+    User with the RSS Grabber software.
+    :return:
+    """
+    jsn = request.get_json()
+
+    usr = User(email=jsn['email'], name=jsn['name'])
+    usr.set_password(jsn['password'])
+    usr.save()
+
+    return "User created"
 
 
 @app.route('/feed', methods=['POST'])
