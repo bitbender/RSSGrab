@@ -41,20 +41,20 @@ def index():
     return "Running ..."
 
 
-@app.route('/signup', methods=['POST'])
-def signup():
-    """
-    This route is for creating a new
-    User with the RSS Grabber software.
-    :return:
-    """
-    jsn = request.get_json()
-
-    usr = User(email=jsn['email'], name=jsn['name'])
-    usr.set_password(jsn['password'])
-    usr.save()
-
-    return "User created"
+# @app.route('/signup', methods=['POST'])
+# def signup():
+#     """
+#     This route is for creating a new
+#     User with the RSS Grabber software.
+#     :return:
+#     """
+#     jsn = request.get_json()
+#
+#     usr = User(email=jsn['email'], name=jsn['name'])
+#     usr.set_password(jsn['password'])
+#     usr.save()
+#
+#     return "User created"
 
 
 @app.route('/feed', methods=['POST'])

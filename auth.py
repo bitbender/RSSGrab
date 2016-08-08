@@ -28,10 +28,14 @@ def login():
     return jsonify(token=token)
 
 
-# @auth_endpoints.route('/auth/signup', methods=['POST'])
-# def signup():
-#     user = User(email=request.json['email'])
-#     user.set_password(password=request.json['password'])
-#     user.save()
-#     token = _create_token(user)
-#     return jsonify(token=token)
+@auth_endpoints.route('/auth/signup', methods=['POST'])
+def signup():
+    user = User(email=request.json['email'])
+    user.set_password(password=request.json['password'])
+
+    if request.json['name']:
+        user.name = request.json['name']
+
+    user.save()
+    token = _create_token(user)
+    return jsonify(token=token)
