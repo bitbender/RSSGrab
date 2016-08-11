@@ -1,16 +1,15 @@
 import logging
 import feedparser
-from bson import ObjectId
 from flask import Flask, request
 from config import Config
 from smpl_conn_pool import SmplConnPool
 from models.grabber import Grabber
-from models.User import User
+from engine import Engine
 from flask.ext.cors import CORS
 from auth import auth_endpoints
 from annotations import login_required
-from apscheduler.schedulers.background import BackgroundScheduler
-from json import dumps
+from bson import json_util
+from json import dumps, loads
 
 
 # load configuration
@@ -22,39 +21,20 @@ logging.basicConfig(level=logging.DEBUG)
 # init connection pool
 conn = SmplConnPool.get_instance()
 
-# instantiate the scheduler
-scheduler = BackgroundScheduler()
+# create the engine
+engine = Engine()
 
 app = Flask(__name__)
 # Add standard CORS headers in order to access the app
 CORS(app)
 
-# a mapping from a specific grabber to its corresponding job
-grabber_to_job = {}
-
-# register blueprints
+# register flask blueprints
 app.register_blueprint(auth_endpoints)
 
 
 @app.route('/', methods=['GET'])
 def index():
     return "Running ..."
-
-
-# @app.route('/signup', methods=['POST'])
-# def signup():
-#     """
-#     This route is for creating a new
-#     User with the RSS Grabber software.
-#     :return:
-#     """
-#     jsn = request.get_json()
-#
-#     usr = User(email=jsn['email'], name=jsn['name'])
-#     usr.set_password(jsn['password'])
-#     usr.save()
-#
-#     return "User created"
 
 
 @app.route('/feed', methods=['POST'])
@@ -68,7 +48,7 @@ def preview_feed():
     jsn = request.get_json()
     data = feedparser.parse(jsn['url'])
 
-    return dumps([(entry['title'], entry['guid']) for entry in data['entries']])
+    return dumps([(entry['title'], entry['guid']) for entry in data['entries']], default=json_util.default)
 
 
 @app.route('/grabber', methods=['GET'])
@@ -78,15 +58,19 @@ def get_all_grabbers():
     grabber_collection = connection[
         Grabber.cfg['database']['db']]['grabbers']
 
-    return dumps([grabber.encode() for grabber in [Grabber.decode(doc) for doc in grabber_collection.find()]])
+    return dumps([grabber.encode() for grabber in [Grabber.new(doc) for doc in grabber_collection.find()]], default=json_util.default)
 
 
 @app.route('/grabber', methods=['POST'])
 @login_required
 def add_grabber():
-    jsn = request.get_json()
+    jsn = loads(request.data.decode('utf-8'), object_hook=json_util.object_hook)
     # TODO: Validate the incoming json data
-    grabber = _add_grabber(jsn)
+
+    grabber = Grabber.new(jsn)
+    grabber.save()
+    engine.create_job(grabber)
+
     print('{}'.format(grabber.encode()))
     return 'Success', 201
 
@@ -94,58 +78,25 @@ def add_grabber():
 @app.route('/grabber', methods=['PUT'])
 @login_required
 def update_grabber():
-    jsn = request.get_json()
+    jsn = loads(request.data.decode('utf-8'), object_hook=json_util.object_hook)
+
     connection = SmplConnPool.get_instance().get_connection()
     grabber_collection = connection[
         Grabber.cfg['database']['db']]['grabbers']
 
-    grabber = Grabber.decode(jsn)
-    _update_job(grabber)
-
-    update = grabber.encode()
-    del update['_id']
-
-    grabber_collection.find_one_and_replace(
-        {"_id": grabber._id},
-        update
-    )
-    return 'Succesfully updated grabber', 201
-
-
-def _add_grabber(doc):
-    """
-    Create and save grabber from a json document / dict
-
-    :param doc: the document which should be used to create the grabber
-    :return: the newly created grabber
-    """
-    grabber = Grabber.decode(doc)
+    grabber = Grabber.new(jsn)
     grabber.save()
-    _add_job_for_grabber(grabber)
-    return grabber
+    engine.reschedule_job(grabber)
 
-
-def _add_job_for_grabber(grabber):
-    job = scheduler.add_job(grabber.run, 'interval', seconds=grabber.interval)
-    grabber_to_job[grabber._id] = job
-
-
-def _update_job(grabber):
-    assert grabber._id in grabber_to_job
-    if grabber._id in grabber_to_job:
-        job = grabber_to_job[grabber._id]
-        job.remove()
-    _add_job_for_grabber(grabber)
+    return 'Succesfully updated grabber', 201
 
 
 @app.route('/grabber/<_id>/start', methods=['POST'])
 @login_required
 def start_grabber(_id):
-    object_id = ObjectId(_id)
-    if object_id in grabber_to_job:
-        job = grabber_to_job[object_id]
-        job.resume()
-        return 'Succesfully started grabber', 200
+    if engine.exists_job(_id):
+        engine.start_job_by_id(_id)
+        return 'Succesfully started the grabber', 200
     else:
         return 'Invalid grabber id', 404
 
@@ -158,11 +109,9 @@ def stop_grabber(_id):
     :param _id: the id of the grabber that should be stopped
     :return: http code 200 if grabber could be deleted, else 404
     """
-    object_id = ObjectId(_id)
-    if object_id in grabber_to_job:
-        job = grabber_to_job[object_id]
-        job.pause()
-        return 'Succesfully stopped grabber', 200
+    if engine.exists_job(_id):
+        engine.pause_job_by_id(_id)
+        return 'Succesfully stopped the grabber', 200
     else:
         return 'Invalid grabber id', 404
 
@@ -175,25 +124,24 @@ def delete_grabber():
     :param id: the id of the grabber that should be deleted
     :return: http code 200 if grabber could be deleted, else 404
     """
-    grabber = Grabber.decode(request.get_json())
-    if grabber._id in grabber_to_job:
-        # delete associated job
-        job = grabber_to_job[grabber._id]
-        job.remove()
-        del grabber_to_job[grabber._id]
+    jsn = loads(request.data.decode('utf-8'), object_hook=json_util.object_hook)
+    grabber = Grabber.new(jsn)
 
-        # delete grabber from database
-        connection = SmplConnPool.get_instance().get_connection()
-        grabber_collection = connection[Grabber.cfg['database']['db']]['grabbers']
-        grabber_collection.remove({'_id': grabber._id})
+    # delete associated job
+    engine.delete_job(grabber)
 
-        return 'Grabber deleted', 200
-    else:
-        return 'Invalid grabber id', 404
+    # delete grabber from database
+    connection = SmplConnPool.get_instance().get_connection()
+    grabber_collection = connection[Grabber.cfg['database']['db']]['grabbers']
+
+    grabber_collection.remove({'_id': grabber._id})
+
+    return 'Grabber deleted', 200
+
 
 
 def main():
-    scheduler.start()
+    engine.start()
     restart_grabbers_from_db()
 
     # Only for testing purposes (if not used any longer ... remove)
@@ -216,11 +164,9 @@ def main():
 def restart_grabbers_from_db():
     connection = SmplConnPool.get_instance().get_connection()
     grabber_collection = connection[Grabber.cfg['database']['db']]['grabbers']
+
     for doc in grabber_collection.find():
-        grabber = Grabber.decode(doc)
-        job = scheduler.add_job(grabber.run, 'interval',
-                                seconds=grabber.interval)
-        grabber_to_job[grabber._id] = job
+        engine.create_job(Grabber.new(doc))
 
 
 if __name__ == '__main__':

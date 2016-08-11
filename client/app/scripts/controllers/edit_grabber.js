@@ -41,8 +41,9 @@ angular.module('yapp')
     };
 
     $scope.save = function () {
-      $scope.grabber.interval = trigger ;
-
+      if (trigger != 0){
+        $scope.grabber.interval = trigger ;
+      }
       $log.info($scope.grabber);
 
       var req = {

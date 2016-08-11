@@ -1,4 +1,4 @@
-from bson import ObjectId
+from bson import ObjectId, json_util
 import copy
 import feedparser
 import logging
@@ -8,6 +8,9 @@ from bs4 import BeautifulSoup
 from urllib.parse import urlparse
 from datetime import datetime as dt
 from models.page import Page
+from models.stat import Statistic
+import json
+
 
 from config import Config
 from smpl_conn_pool import SmplConnPool
@@ -27,6 +30,7 @@ class Grabber:
     cfg = Config.get_instance()
 
     state = set()
+    stats = None
 
     def __init__(self, name, feed, interval=1800, css_selector=None, payed_selector=None, _id=None):
 
@@ -44,15 +48,22 @@ class Grabber:
         self.css_selector = css_selector
         self.payed_selector = payed_selector
         self.interval = interval
+        self.createdAt = dt.utcnow()
 
     def run(self):
         """
         This method starts the parsing of the feed.
         """
+        Grabber.stats = Statistic(self._id)
+        Grabber.stats.start_time = dt.utcnow()
+
         data = feedparser.parse(self.feed)
         # check here to see data format
         for rss_item in data['entries']:
             self.store_rss_item(rss_item)
+
+        Grabber.stats.end_time = dt.utcnow()
+        Grabber.stats.save()
 
     def _download_website(self, url):
         """
@@ -124,10 +135,32 @@ class Grabber:
         connection = SmplConnPool.get_instance().get_connection()
         grabber_collection = connection[
             Grabber.cfg['database']['db']]['grabbers']
-        grabber_id = grabber_collection.insert_one(self.__dict__).inserted_id
-        logging.info('Saved grabber with id {}'.format(grabber_id))
-        # self._id = ObjectId(grabber_id)
-        return grabber_id
+
+        result = grabber_collection.update_one(
+            {'_id': self._id},
+            {'$set': self.__dict__},
+            True
+        )
+        logging.info('Saved grabber with id {}'.format(result.upserted_id))
+
+        return result.upserted_id
+
+    @staticmethod
+    def load(grb_id):
+        """
+        Load a grabber from the mongodb database.
+
+        :return: the document id of the grabber to be loaded.
+        """
+        connection = SmplConnPool.get_instance().get_connection()
+        grabber_collection = connection[
+            Grabber.cfg['database']['db']]['grabbers']
+
+        result = grabber_collection.find_one({'_id': ObjectId(grb_id)})
+        if result:
+            return Grabber.new(result)
+        else:
+            return None
 
     def store_rss_item(self, rss_item):
         """
@@ -141,7 +174,9 @@ class Grabber:
 
         :param rss_item: the rss item to be processed
         """
+        rss_item['grbid'] = self._id
         article_url = rss_item['guid']
+        Grabber.stats.urls.append(article_url)
 
         # convert time.struct_time to datetime.datetime
         rss_item['published'] = dt.fromtimestamp(mktime(rss_item['published_parsed']))
@@ -149,6 +184,7 @@ class Grabber:
 
         # download the article referred to the rss feed
         rss_item['articles'] = [page.toDoc() for page in self._download_website(article_url)]
+        Grabber.stats.total_pages += len(rss_item['articles'])
 
         connection = SmplConnPool.get_instance().get_connection()
         feed_collection = connection[Grabber.cfg['database']['db']][
@@ -212,7 +248,7 @@ class Grabber:
         return result
 
     @staticmethod
-    def decode(doc):
+    def new(doc):
         """
         Takes a document / dictionary and reconstructs a Grabber from the
         given information.
@@ -237,6 +273,8 @@ class Grabber:
             grabber.payed_selector = doc['payed_selector']
         if 'interval' in doc:
             grabber.interval = doc['interval']
+        if 'createdAt' in doc:
+            grabber.createdAt = doc['createdAt']
 
         return grabber
 
