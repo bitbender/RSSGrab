@@ -9,8 +9,6 @@ from urllib.parse import urlparse
 from datetime import datetime as dt
 from models.page import Page
 from models.stat import Statistic
-import json
-
 
 from config import Config
 from smpl_conn_pool import SmplConnPool
@@ -54,8 +52,8 @@ class Grabber:
         self.css_selector = css_selector
         self.payed_selector = payed_selector
         self.interval = interval
-        self.createdAt = dt.utcnow()
-        self.lastModified = dt.utcnow()
+        self.createdAt = self.lastModified = dt.utcnow()
+        self.lastRun = None
         self.status = 'suspended'
 
     def run(self):
@@ -64,6 +62,7 @@ class Grabber:
         """
         Grabber.stats = Statistic(self._id)
         Grabber.stats.start_time = dt.utcnow()
+        self.lastRun = dt.utcnow()
 
         logger.info('{0}: Starting the crawl'.format(self._id))
         self.status = 'running'
@@ -79,7 +78,10 @@ class Grabber:
         Grabber.stats.save()
         Grabber.stats = None
 
+        # call save in order to persist the lastRun
+        self.save()
         self.status = 'scheduled'
+
 
     def _download_website(self, url):
         """
@@ -103,13 +105,16 @@ class Grabber:
 
             # Check website for payed content
             if self.payed_selector:
+
                 if len(soup.select(self.payed_selector)) > 0:
                     result.append(Page(url, response.text, True))
+                    Grabber.stats.payed.append(url)
                 else:
                     result.append(Page(url, response.text, False))
             else:
                 result.append(Page(url, response.text, False))
 
+            # apply the pagination css selector only to free sites
             if not result[0].isPayed and self.css_selector:
                 pages = self._paginate(url_prefix, response, self.css_selector, result)
                 Grabber.crawl_state = set()
@@ -209,7 +214,6 @@ class Grabber:
         """
         rss_item['grbid'] = self._id
         article_url = rss_item['guid']
-        Grabber.stats.urls.append(article_url)
 
         # convert time.struct_time to datetime.datetime
         rss_item['published'] = dt.fromtimestamp(mktime(rss_item['published_parsed']))
@@ -229,6 +233,7 @@ class Grabber:
         assert db_feed.count() < 2, "id should be a primary key"
         if not db_feed.count() > 0:
             feed_collection.save(rss_item)
+            Grabber.stats.new.append(article_url)
         else:
             self.update_feed(db_feed[0], rss_item)
 
@@ -242,10 +247,13 @@ class Grabber:
         assert old_feed['id'] == new_feed['id'], 'Updates should only \
                 be made to a newer version of the article'
         if self._is_newer(old_feed['published'], new_feed['published']):
+
             connection = SmplConnPool.get_instance().get_connection()
             feed_collection = connection[Grabber.cfg['database']['db']][
                 Grabber.cfg['database']['collections']['articles']]
+
             feed_collection.replace_one({'id': new_feed['id']}, new_feed)
+            Grabber.stats.updated.append(new_feed['guid'])
 
     def _is_newer(self, old_date, new_date):
         """
@@ -308,6 +316,8 @@ class Grabber:
             grabber.createdAt = doc['createdAt']
         if 'lastModified' in doc:
             grabber.lastModified = doc['lastModified']
+        if 'lastRun' in doc:
+            grabber.lastRun = doc['lastRun']
 
         return grabber
 

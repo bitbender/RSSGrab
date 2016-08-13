@@ -1,7 +1,11 @@
 import json
+import logging
 from bson import json_util, ObjectId
 from config import Config
 from smpl_conn_pool import SmplConnPool
+
+logger = logging.getLogger('statistics')
+
 
 class Statistic:
     cfg = Config.get_instance()
@@ -18,7 +22,12 @@ class Statistic:
             self._id = ObjectId()
 
         self.grb_id = grb_id
-        self.urls = []
+        # newly discovered urls
+        self.new = []
+        # urls that got updated
+        self.updated = []
+        # urls to payed pages
+        self.payed = []
         self.total_pages = 0
         self.start_time = None
         self.end_time = None
@@ -37,10 +46,9 @@ class Statistic:
             {'$set': self.__dict__},
             True
         )
-        #logging.info('Saved stats for grabber run {}'.format(self.grb_id))
+        logger.info('{}: Saved stats for current grabber run'.format(self.grb_id))
 
         return result.upserted_id
-
 
     def toDoc(self):
         return json.dumps(self.__dict__, default=json_util.default)

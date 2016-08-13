@@ -1,24 +1,32 @@
 <div>
-    <a ui-sref="overview" class="pull-right btn btn-primary btn-outline btn-rounded">Back to Overview</a>
+    <a ui-sref="overview" class="pull-right btn btn-primary btn-outline">Back to Overview</a>
     <h2>Grabber
         <small>Manage grabbers</small>
     </h2>
     <div class="jumbotron">
         <div class="container">
-            <table class="table">
+            <form>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon"><i class="glyphicon glyphicon-search"></i></div>
+                        <input type="text" class="form-control" placeholder="Search for a grabber" ng-model="searchTerm">
+                    </div>
+                </div>
+            </form>
+            <table class="table table-striped">
                 <thead>
                 <tr>
-                    <th>Name</th>
-                    <th>Feed</th>
-                    <th>Interval</th>
-                    <th>Control</th>
+                    <th><a ng-click="sortType = 'name'; sortReverse = !sortReverse">Name</a></th>
+                    <th><a ng-click="sortType = 'feed'; sortReverse = !sortReverse">Feed</a></th>
+                    <th><a ng-click="sortType = 'interval'; sortReverse = !sortReverse">Interval</a></th>
+                    <th>Controls</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr ng-repeat="grabber in grabbers track by $index">
-                    <td ng-click="openEditDialog($index)">{{grabber.name}}</td>
-                    <td>{{grabber.feed}}</td>
-                    <td>{{grabber.interval | duration}}</td>
+                <tr ng-repeat="grabber in grabbers | orderBy:sortType:sortReverse | filter:searchTerm track by $index">
+                    <td ng-click="openEditDialog($index)">{{ grabber.name }}</td>
+                    <td>{{ grabber.feed }}</td>
+                    <td>{{ grabber.interval | duration }}</td>
                     <td>
                         <span ng-class="{'glyphicon glyphicon-play': grabber.status == 'suspended',
                         'glyphicon glyphicon-time': grabber.status == 'scheduled',
@@ -36,11 +44,11 @@
                 </tr>
                 </tbody>
             </table>
-            <a class="btn btn-primary btn-lg btn-outline btn-rounded" ng-click="clickToOpen()">New</a>
-            <a class="btn btn-primary btn-lg btn-outline btn-rounded" ng-click="getAll()">Refresh</a>
-            <a class="btn btn-primary btn-lg btn-outline btn-rounded" ng-click="startAll()">Start All</a>
-            <a class="btn btn-primary btn-lg btn-outline btn-rounded" ng-click="stopAll()">Stop All</a>
-            <a class="btn btn-primary btn-lg btn-outline btn-rounded" ng-click="showGrb()">Print</a>
+            <a class="btn btn-primary btn-lg btn-outline glyphicon glyphicon-plus" ng-click="clickToOpen()"></a>
+            <a class="btn btn-primary btn-lg btn-outline glyphicon glyphicon-refresh" ng-click="getAll()"></a>
+            <a class="btn btn-primary btn-lg btn-outline glyphicon glyphicon-play" ng-click="startAll()"></a>
+            <a class="btn btn-primary btn-lg btn-outline glyphicon glyphicon-stop" ng-click="stopAll()"></a>
+            <a class="btn btn-primary btn-lg btn-outline glyphicon glyphicon-print" ng-click="showGrb()"></a>
         </div>
     </div>
 </div>

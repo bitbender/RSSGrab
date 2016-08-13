@@ -9,6 +9,11 @@
 angular.module('yapp')
   .controller('GrabberCtrl', function ($scope, $state, $log, ngDialog, $http) {
 
+    // This controls the sorting of the table
+    $scope.sortType     = 'name'; // set the default sort type
+    $scope.sortReverse  = false;  // set the default sort order
+    $scope.searchTerm   = '';     // set the default search/filter term
+
     /**
     * Convert the interval value to the correct unit (seconds,minutes,hours)
     * @param value the inverval value in seconds
