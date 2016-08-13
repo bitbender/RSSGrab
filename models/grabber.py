@@ -56,6 +56,7 @@ class Grabber:
         self.interval = interval
         self.createdAt = dt.utcnow()
         self.lastModified = dt.utcnow()
+        self.status = 'suspended'
 
     def run(self):
         """
@@ -65,6 +66,7 @@ class Grabber:
         Grabber.stats.start_time = dt.utcnow()
 
         logger.info('{0}: Starting the crawl'.format(self._id))
+        self.status = 'running'
 
         data = feedparser.parse(self.feed)
         # check here to see data format
@@ -76,6 +78,8 @@ class Grabber:
         Grabber.stats.end_time = dt.utcnow()
         Grabber.stats.save()
         Grabber.stats = None
+
+        self.status = 'scheduled'
 
     def _download_website(self, url):
         """
@@ -263,7 +267,7 @@ class Grabber:
         if rm is None:
             rm = []
         else:
-            rm.extend(['log'])
+            rm.extend([])
 
         # Copy the dictionary with all attributes of this object.
         result = copy.deepcopy(self.__dict__)

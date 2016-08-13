@@ -75,22 +75,22 @@ def update_grabber():
 @app.route('/grabber/start', methods=['POST'])
 @login_required
 def start__all_grabbers():
-    engine.start_grabbers()
-    return 'Succesfully started all grabbers', 200
+    result = engine.start_grabbers()
+    return dumps([grabber.encode() for grabber in result], default=json_util.default), 200
 
 
 @app.route('/grabber/stop', methods=['POST'])
 @login_required
 def suspend__all_grabbers():
-    engine.suspend_grabbers()
-    return 'Succesfully suspended all grabbers', 200
+    result = engine.suspend_grabbers()
+    return dumps([grabber.encode() for grabber in result], default=json_util.default), 200
 
 
 @app.route('/grabber/<_id>/start', methods=['POST'])
 @login_required
 def start_grabber(_id):
-    engine.start_grabber(engine.get_grabber(_id))
-    return 'Succesfully started the grabber', 200
+    result = engine.start_grabber(engine.get_grabber(_id))
+    return dumps(result.encode(), default=json_util.default)
 
 
 @app.route('/grabber/<_id>/stop', methods=['POST'])
@@ -101,8 +101,8 @@ def suspend_grabber(_id):
     :param _id: the id of the grabber that should be stopped
     :return: http code 200 if grabber could be deleted, else 404
     """
-    engine.pause_grabber(engine.get_grabber(_id))
-    return 'Succesfully stopped the grabber', 200
+    result = engine.pause_grabber(engine.get_grabber(_id))
+    return dumps(result.encode(), default=json_util.default), 200
 
 
 @app.route('/grabber', methods=['DELETE'])

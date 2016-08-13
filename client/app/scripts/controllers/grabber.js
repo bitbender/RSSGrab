@@ -78,6 +78,7 @@ angular.module('yapp')
 
       $http(req).then(function successCallback(response) {
         console.log(response.data);
+        $scope.grabbers[position] = response.data;
         $scope.startgrab='glyphicon glyphicon-play text-success';
       }, function errorCallback(response) {
         console.log('Ups for some reason I couldn\'t start the grabber')
@@ -95,7 +96,7 @@ angular.module('yapp')
 
       $http(req).then(function successCallback(response) {
         console.log(response.data);
-        $scope.startgrab='glyphicon glyphicon-play text-success';
+        $scope.grabbers = response.data;
       }, function errorCallback(response) {
         console.log('Ups for some reason I couldn\'t start the grabber')
       });
@@ -112,7 +113,7 @@ angular.module('yapp')
 
       $http(req).then(function successCallback(response) {
         console.log(response.data);
-        $scope.stopgrab='glyphicon glyphicon-play text-danger';
+        $scope.grabbers[position] = response.data;
       }, function errorCallback(response) {
         console.log('Ups for some reason I couldn\'t stop the grabber')
       });
@@ -129,7 +130,7 @@ angular.module('yapp')
 
       $http(req).then(function successCallback(response) {
         console.log(response.data);
-        $scope.stopgrab='glyphicon glyphicon-play text-danger';
+        $scope.grabbers = response.data;
       }, function errorCallback(response) {
         console.log('Ups for some reason I couldn\'t start the grabber')
       });
@@ -155,5 +156,12 @@ angular.module('yapp')
         console.log('Ups for some reason I couldn\'t delete the grabber')
       });
 
-    }
+    };
+
+
+    $scope.showGrb = function(){
+       console.log($scope.grabbers);
+    };
+
+
   });

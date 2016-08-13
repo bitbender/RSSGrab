@@ -20,12 +20,17 @@
                     <td>{{grabber.feed}}</td>
                     <td>{{grabber.interval | duration}}</td>
                     <td>
-                        <span ng-class="startgrab" ng-mouseenter="startgrab='glyphicon glyphicon-play text-success'"
-                              ng-mouseleave="startgrab='glyphicon glyphicon-play'"
-                              ng-init="startgrab='glyphicon glyphicon-play'" ng-click="start($index)"></span>
-                        <span ng-class="stopgrab" ng-mouseenter="stopgrab='glyphicon glyphicon-stop text-danger'"
-                              ng-mouseleave="stopgrab='glyphicon glyphicon-stop'"
-                              ng-init="stopgrab='glyphicon glyphicon-stop'" ng-click="stop($index)"></span>
+                        <span ng-class="{'glyphicon glyphicon-play': grabber.status == 'suspended',
+                        'glyphicon glyphicon-time': grabber.status == 'scheduled',
+                        'glyphicon glyphicon-cog': grabber.status == 'running'}"
+                              ng-click="start($index)">
+                        </span>
+
+                        <span ng-class="{'glyphicon glyphicon-stop': grabber.status == 'scheduled' || grabber.status == 'running',
+                        'glyphicon glyphicon-stop text-danger': grabber.status == 'suspended'}"
+                              ng-click="stop($index)">
+                        </span>
+
                         <span class="glyphicon glyphicon-trash" ng-click="delete($index)"></span>
                     </td>
                 </tr>
@@ -35,6 +40,7 @@
             <a class="btn btn-primary btn-lg btn-outline btn-rounded" ng-click="getAll()">Refresh</a>
             <a class="btn btn-primary btn-lg btn-outline btn-rounded" ng-click="startAll()">Start All</a>
             <a class="btn btn-primary btn-lg btn-outline btn-rounded" ng-click="stopAll()">Stop All</a>
+            <a class="btn btn-primary btn-lg btn-outline btn-rounded" ng-click="showGrb()">Print</a>
         </div>
     </div>
 </div>

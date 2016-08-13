@@ -86,6 +86,7 @@ class Engine:
         """
         for grabber in self.grabbers.values():
             self.start_grabber(grabber)
+        return self.grabbers.values()
 
     def suspend_grabbers(self):
         """
@@ -93,6 +94,7 @@ class Engine:
         """
         for grabber in self.grabbers.values():
             self.pause_grabber(grabber)
+        return self.grabbers.values()
 
     def start_grabber(self, grabber):
         if self.grabbers[str(grabber._id)]:
@@ -101,11 +103,13 @@ class Engine:
             else:
                 self._create_job(grabber)
             logger.info('Scheduled grabber {} for execution.'.format(grabber))
+        return grabber
 
     def pause_grabber(self, grabber):
         if self.grabbers[str(grabber._id)]:
             self._pause_job_by_id(str(grabber._id))
             logger.info('Paused grabber {}'.format(grabber))
+        return grabber
 
     def _create_job(self, grabber):
         """
@@ -114,6 +118,7 @@ class Engine:
         :param grabber: the grabber that should be scheduled for execution
         """
         self.scheduler.add_job(grabber.run, 'interval', seconds=grabber.interval, id=str(grabber._id))
+        grabber.status = 'scheduled'
 
     def _reschedule_job(self, grabber):
         if self.scheduler.get_job(str(grabber._id)):
@@ -121,6 +126,7 @@ class Engine:
             self._delete_job(grabber)
             # add the new one
             self.scheduler.add_job(grabber.run, 'interval', seconds=grabber.interval,  id=str(grabber._id))
+            grabber.status = 'scheduled'
 
     def _pause_job_by_id(self, grb_id):
         """
@@ -129,14 +135,16 @@ class Engine:
         """
         if self.scheduler.get_job(grb_id):
             self.scheduler.pause_job(grb_id)
+            self.grabbers[grb_id].status = 'suspended'
 
     def _resume_job_by_id(self, grb_id):
         """
         Resume the job that executes the passed in grabber.
-        :param grabber: the grabber that should be resumed
+        :param grb_id: the id of the grabber (string) that should be resumed
         """
         if self.scheduler.get_job(grb_id):
             self.scheduler.resume_job(grb_id)
+            self.grabbers[grb_id].status = 'scheduled'
 
     def _delete_job(self, grabber):
         """
