@@ -25,11 +25,17 @@ grab. That means downloading the source code of the articles
 in an rss feed
 """
 
+logger = logging.getLogger('grabber')
+
 
 class Grabber:
     cfg = Config.get_instance()
 
-    state = set()
+    # keeps track of the urls that have been
+    # downloaded already
+    crawl_state = set()
+
+    # temporarily stores the statistics of one grabber run
     stats = None
 
     def __init__(self, name, feed, interval=1800, css_selector=None, payed_selector=None, _id=None):
@@ -49,6 +55,7 @@ class Grabber:
         self.payed_selector = payed_selector
         self.interval = interval
         self.createdAt = dt.utcnow()
+        self.lastModified = dt.utcnow()
 
     def run(self):
         """
@@ -57,13 +64,18 @@ class Grabber:
         Grabber.stats = Statistic(self._id)
         Grabber.stats.start_time = dt.utcnow()
 
+        logger.info('{0}: Starting the crawl'.format(self._id))
+
         data = feedparser.parse(self.feed)
         # check here to see data format
         for rss_item in data['entries']:
             self.store_rss_item(rss_item)
 
+        logger.info('{0}: Finished'.format(self._id))
+
         Grabber.stats.end_time = dt.utcnow()
         Grabber.stats.save()
+        Grabber.stats = None
 
     def _download_website(self, url):
         """
@@ -79,7 +91,7 @@ class Grabber:
         parsed_url = urlparse(url)
         url_prefix = parsed_url.scheme + '://' + parsed_url.netloc
         response = requests.get(url)
-        Grabber.state.add(url)
+        Grabber.crawl_state.add(url)
 
         if response.status_code == 200:
 
@@ -96,7 +108,7 @@ class Grabber:
 
             if not result[0].isPayed and self.css_selector:
                 pages = self._paginate(url_prefix, response, self.css_selector, result)
-                Grabber.state = set()
+                Grabber.crawl_state = set()
                 return pages
             else:
                 return result
@@ -117,8 +129,8 @@ class Grabber:
             for page in pages:
                 url = url_prefix + page
 
-                if url not in Grabber.state:
-                    Grabber.state.add(url)
+                if url not in Grabber.crawl_state:
+                    Grabber.crawl_state.add(url)
                     response = requests.get(url)
                     result.append(Page(url, response.text, False))
                     result = self._paginate(url_prefix, response, selector, result)
@@ -133,17 +145,34 @@ class Grabber:
         :return: the document id of the grabber in the database.
         """
         connection = SmplConnPool.get_instance().get_connection()
-        grabber_collection = connection[
-            Grabber.cfg['database']['db']]['grabbers']
+        grabber_collection = connection[Grabber.cfg['database']['db']]['grabbers']
+
+        # let lastModified timestamp
+        self.lastModified = dt.utcnow()
+
+        # remove elements that should not be saved
+        to_be_saved = self.encode(['status'])
 
         result = grabber_collection.update_one(
             {'_id': self._id},
-            {'$set': self.__dict__},
+            {'$set': to_be_saved},
             True
         )
-        logging.info('Saved grabber with id {}'.format(result.upserted_id))
 
         return result.upserted_id
+
+    def delete(self):
+        """
+        Delete the grabber from the mongodb database.
+
+        :return: the document id of the grabber in the database.
+        """
+        connection = SmplConnPool.get_instance().get_connection()
+        grabber_collection = connection[Grabber.cfg['database']['db']]['grabbers']
+
+        result = grabber_collection.delete_one({'_id': self._id})
+
+        return result.deleted_count
 
     @staticmethod
     def load(grb_id):
@@ -234,12 +263,10 @@ class Grabber:
         if rm is None:
             rm = []
         else:
-            rm = rm.split(',')
+            rm.extend(['log'])
 
         # Copy the dictionary with all attributes of this object.
         result = copy.deepcopy(self.__dict__)
-        # Convert the ObjectId into a string
-        result['_id'] = str(self._id)
 
         for key in rm:
             if key in result:
@@ -275,6 +302,8 @@ class Grabber:
             grabber.interval = doc['interval']
         if 'createdAt' in doc:
             grabber.createdAt = doc['createdAt']
+        if 'lastModified' in doc:
+            grabber.lastModified = doc['lastModified']
 
         return grabber
 

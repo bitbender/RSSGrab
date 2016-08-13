@@ -1,10 +1,15 @@
+import logging
 from apscheduler.schedulers.background import BackgroundScheduler
-
+from config import Config
+from smpl_conn_pool import SmplConnPool
+from models.grabber import Grabber
 """
 This class represents the execution engine of the RSS Grabber.
 It is responsible for creating, managing and running the
 created grabbers.
 """
+
+logger = logging.getLogger('engine')
 
 
 class Engine:
@@ -22,39 +27,110 @@ class Engine:
             'apscheduler.job_defaults.max_instances': '1',
             'apscheduler.timezone': 'UTC',
         })
+        # load configuration
+        self.cfg = Config.get_instance()
 
-    def create_job(self, grabber):
+        # get grabber collection
+        connection = SmplConnPool.get_instance().get_connection()
+        self.grb_coll = connection[self.cfg['database']['db']]['grabbers']
+
+        self.grabbers = {str(doc['_id']): Grabber.new(doc) for doc in self.grb_coll.find()}
+
+    def add_grabber(self, grabber):
+        self.grabbers[str(grabber._id)] = grabber
+        grabber.save()
+        logger.info('Registered grabber {} with the engine.'.format(grabber))
+
+    def update_grabber(self, grabber):
+        # update in memory
+        self.grabbers[str(grabber._id)] = grabber
+
+        # save to db
+        grabber.save()
+
+        # update scheduled job
+        if self._exists_job(str(grabber._id)):
+            self._reschedule_job(grabber)
+
+        logger.info('Updated grabber to {}'.format(grabber))
+
+    def get_grabber(self, grb_id):
+        try:
+            return self.grabbers[grb_id]
+        except KeyError as e:
+            return None
+
+    def get_all(self):
+        return self.grabbers.values()
+
+
+    def delete_grabber(self, grabber):
+        if self.grabbers[str(grabber._id)]:
+            grabber = self.grabbers[str(grabber._id)]
+
+            # delete job
+            if self._exists_job(str(grabber._id)):
+                self._delete_job(grabber)
+
+            # delete from db
+            grabber.delete()
+
+            # delete from memory
+            del self.grabbers[str(grabber._id)]
+
+            logger.info('Deleted grabber {}'.format(grabber))
+
+    def start_grabbers(self):
+        """
+        Start all registered grabbers.
+        """
+        for grabber in self.grabbers.values():
+            self.start_grabber(grabber)
+
+    def suspend_grabbers(self):
+        """
+        Stop all registered grabbers.
+        """
+        for grabber in self.grabbers.values():
+            self.pause_grabber(grabber)
+
+    def start_grabber(self, grabber):
+        if self.grabbers[str(grabber._id)]:
+            if self._exists_job(str(grabber._id)):
+                self._resume_job_by_id(str(grabber._id))
+            else:
+                self._create_job(grabber)
+            logger.info('Scheduled grabber {} for execution.'.format(grabber))
+
+    def pause_grabber(self, grabber):
+        if self.grabbers[str(grabber._id)]:
+            self._pause_job_by_id(str(grabber._id))
+            logger.info('Paused grabber {}'.format(grabber))
+
+    def _create_job(self, grabber):
         """
         Schedule a job that executes the passed in grabber
         in certain intervals.
         :param grabber: the grabber that should be scheduled for execution
         """
-        self.scheduler.add_job(grabber.run, 'interval', seconds=grabber.interval, id=str(grabber._id)).pause()
+        self.scheduler.add_job(grabber.run, 'interval', seconds=grabber.interval, id=str(grabber._id))
 
-    def reschedule_job(self, grabber):
+    def _reschedule_job(self, grabber):
         if self.scheduler.get_job(str(grabber._id)):
             # remove the old job
-            self.delete_job(grabber)
+            self._delete_job(grabber)
             # add the new one
             self.scheduler.add_job(grabber.run, 'interval', seconds=grabber.interval,  id=str(grabber._id))
 
-    def start_job_by_id(self, grb_id):
-        """
-        Start the job that executes the passed in grabber.
-        :param grabber: the grabber that should be resumed
-        """
-        if self.scheduler.get_job(str(grb_id)):
-            self.scheduler.resume_job(str(grb_id))
-
-    def pause_job_by_id(self, grb_id):
+    def _pause_job_by_id(self, grb_id):
         """
         Pause the job that executes the passed in grabber.
         :param grabber: the grabber that should be paused
         """
         if self.scheduler.get_job(grb_id):
-            self.scheduler.pause_job(str(grb_id))
+            self.scheduler.pause_job(grb_id)
 
-    def resume_job_by_id(self, grb_id):
+    def _resume_job_by_id(self, grb_id):
         """
         Resume the job that executes the passed in grabber.
         :param grabber: the grabber that should be resumed
@@ -62,7 +138,7 @@ class Engine:
         if self.scheduler.get_job(grb_id):
             self.scheduler.resume_job(grb_id)
 
-    def delete_job(self, grabber):
+    def _delete_job(self, grabber):
         """
         Remove the scheduled job for a grabber
         :param grabber: the grabber for which the associated job should be removed
@@ -70,7 +146,7 @@ class Engine:
         if self.scheduler.get_job(str(grabber._id)):
             self.scheduler.remove_job(str(grabber._id))
 
-    def exists_job(self, grb_id):
+    def _exists_job(self, grb_id):
         if self.scheduler.get_job(grb_id):
             return True
         else:

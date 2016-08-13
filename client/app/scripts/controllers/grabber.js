@@ -67,9 +67,27 @@ angular.module('yapp')
     };
 
     $scope.start = function(position){
+
       var req = {
         method: 'POST',
-        url: 'http://localhost:5000/grabber/'+$scope.grabbers[position]._id+'/start',
+        url: 'http://localhost:5000/grabber/'+$scope.grabbers[position]._id['$oid']+'/start',
+        headers: {
+          'Content-Type': "application/json"
+        }
+      };
+
+      $http(req).then(function successCallback(response) {
+        console.log(response.data);
+        $scope.startgrab='glyphicon glyphicon-play text-success';
+      }, function errorCallback(response) {
+        console.log('Ups for some reason I couldn\'t start the grabber')
+      });
+    };
+
+    $scope.startAll = function(){
+      var req = {
+        method: 'POST',
+        url: 'http://localhost:5000/grabber/start',
         headers: {
           'Content-Type': "application/json"
         }
@@ -86,7 +104,7 @@ angular.module('yapp')
     $scope.stop = function(position){
       var req = {
         method: 'POST',
-        url: 'http://localhost:5000/grabber/'+$scope.grabbers[position]._id+'/stop',
+        url: 'http://localhost:5000/grabber/'+$scope.grabbers[position]._id['$oid']+'/stop',
         headers: {
           'Content-Type': "application/json"
         }
@@ -97,6 +115,23 @@ angular.module('yapp')
         $scope.stopgrab='glyphicon glyphicon-play text-danger';
       }, function errorCallback(response) {
         console.log('Ups for some reason I couldn\'t stop the grabber')
+      });
+    };
+
+    $scope.stopAll = function(){
+      var req = {
+        method: 'POST',
+        url: 'http://localhost:5000/grabber/stop',
+        headers: {
+          'Content-Type': "application/json"
+        }
+      };
+
+      $http(req).then(function successCallback(response) {
+        console.log(response.data);
+        $scope.stopgrab='glyphicon glyphicon-play text-danger';
+      }, function errorCallback(response) {
+        console.log('Ups for some reason I couldn\'t start the grabber')
       });
     };
 
