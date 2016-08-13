@@ -5,6 +5,13 @@
     </h2>
     <div class="jumbotron">
         <div class="container">
+            <div class="form-group">
+                <a class="btn btn-primary btn-lg btn-outline glyphicon glyphicon-plus" ng-click="clickToOpen()"></a>
+                <a class="btn btn-primary btn-lg btn-outline glyphicon glyphicon-refresh" ng-click="getAll()"></a>
+                <a class="btn btn-primary btn-lg btn-outline glyphicon glyphicon-play" ng-click="startAll()"></a>
+                <a class="btn btn-primary btn-lg btn-outline glyphicon glyphicon-stop" ng-click="stopAll()"></a>
+                <a class="btn btn-primary btn-lg btn-outline glyphicon glyphicon-print" ng-click="showGrb()"></a>
+            </div>
             <form>
                 <div class="form-group">
                     <div class="input-group">
@@ -13,6 +20,9 @@
                     </div>
                 </div>
             </form>
+
+
+
             <table class="table table-striped">
                 <thead>
                 <tr>
@@ -23,7 +33,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr ng-repeat="grabber in grabbers | orderBy:sortType:sortReverse | filter:searchTerm track by $index">
+                <tr dir-paginate="grabber in grabbers | orderBy:sortType:sortReverse | filter:searchTerm | itemsPerPage:10 track by $index">
                     <td ng-click="openEditDialog($index)">{{ grabber.name }}</td>
                     <td>{{ grabber.feed }}</td>
                     <td>{{ grabber.interval | duration }}</td>
@@ -44,11 +54,7 @@
                 </tr>
                 </tbody>
             </table>
-            <a class="btn btn-primary btn-lg btn-outline glyphicon glyphicon-plus" ng-click="clickToOpen()"></a>
-            <a class="btn btn-primary btn-lg btn-outline glyphicon glyphicon-refresh" ng-click="getAll()"></a>
-            <a class="btn btn-primary btn-lg btn-outline glyphicon glyphicon-play" ng-click="startAll()"></a>
-            <a class="btn btn-primary btn-lg btn-outline glyphicon glyphicon-stop" ng-click="stopAll()"></a>
-            <a class="btn btn-primary btn-lg btn-outline glyphicon glyphicon-print" ng-click="showGrb()"></a>
+            <div class="text-center"><dir-pagination-controls max-size="10" direction-links="true" boundary-links="true" ></dir-pagination-controls></div>
         </div>
     </div>
 </div>

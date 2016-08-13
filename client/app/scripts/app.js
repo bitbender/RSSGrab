@@ -14,6 +14,7 @@ var app = angular
     'ui.router',
     'ngAnimate',
     'ngDialog',
+    'angularUtils.directives.dirPagination',
     'satellizer'
   ]);
 

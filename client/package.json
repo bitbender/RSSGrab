@@ -52,5 +52,7 @@
     "wiredep": "^4.0.0",
     "yargs": "^4.7.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "ng-table": "^1.0.0"
+  }
 }
