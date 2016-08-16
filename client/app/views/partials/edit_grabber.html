@@ -13,5 +13,5 @@
         <label for="interval">Interval:</label>
         <uib-timepicker id="interval" ng-model="interval" ng-init="interval = Date" ng-change="changed()" hour-step="1" minute-step="1" show-seconds="true", show-meridian="false"></uib-timepicker>
     </div>
-    <a class="btn btn-primary btn-sm btn-outline btn-rounded" ng-click="save()">Save</a>
+    <a class="btn btn-primary btn-sm btn-outline btn-rounded" ng-click="save(grabber)">Save</a>
 </form>

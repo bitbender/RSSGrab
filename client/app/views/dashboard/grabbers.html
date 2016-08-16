@@ -22,34 +22,38 @@
             </form>
 
 
-
             <table class="table table-striped">
                 <thead>
                 <tr>
+                    <th></th>
                     <th><a ng-click="sortType = 'name'; sortReverse = !sortReverse">Name</a></th>
                     <th><a ng-click="sortType = 'feed'; sortReverse = !sortReverse">Feed</a></th>
+                    <th><a ng-click="sortType = 'feed'; sortReverse = !sortReverse">Last Modified</a></th>
                     <th><a ng-click="sortType = 'interval'; sortReverse = !sortReverse">Interval</a></th>
                     <th>Controls</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr dir-paginate="grabber in grabbers | orderBy:sortType:sortReverse | filter:searchTerm | itemsPerPage:10 track by $index">
-                    <td ng-click="openEditDialog($index)">{{ grabber.name }}</td>
-                    <td>{{ grabber.feed }}</td>
+                <tr dir-paginate="grabber in grabbers | filter:{name:searchTerm} | orderBy:sortType:sortReverse | itemsPerPage: 10">
+                    <td><span ng-click="openEditDialog(grabber)" class="glyphicon glyphicon-pencil"></span></td>
+                    <td>{{ grabber.name }}</td>
+                    <td><a href="{{ grabber.feed }}">{{ grabber.feed }}</a></td>
+                    <td>{{ grabber.lastModified['$date'] | date:'dd.MM.yyyy HH:mm:ss Z' }}</td>
                     <td>{{ grabber.interval | duration }}</td>
                     <td>
                         <span ng-class="{'glyphicon glyphicon-play': grabber.status == 'suspended',
                         'glyphicon glyphicon-time': grabber.status == 'scheduled',
                         'glyphicon glyphicon-cog': grabber.status == 'running'}"
-                              ng-click="start($index)">
+                              ng-click="start(grabber)">
                         </span>
 
                         <span ng-class="{'glyphicon glyphicon-stop': grabber.status == 'scheduled' || grabber.status == 'running',
                         'glyphicon glyphicon-stop text-danger': grabber.status == 'suspended'}"
-                              ng-click="stop($index)">
+                              ng-click="stop(grabber)">
                         </span>
 
-                        <span class="glyphicon glyphicon-trash" ng-click="delete($index)"></span>
+                        <span class="glyphicon glyphicon-info-sign" ui-sref="stats({grabberID: grabber._id['$oid']})"></span>
+                        <span class="glyphicon glyphicon-trash" ng-click="delete(grabber)"></span>
                     </td>
                 </tr>
                 </tbody>

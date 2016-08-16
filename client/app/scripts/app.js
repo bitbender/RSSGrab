@@ -62,6 +62,12 @@ app.config(function ($stateProvider, $urlRouterProvider, $authProvider) {
       templateUrl: 'views/dashboard/admin.html',
       controller: 'AdminCtrl'
     })
+    .state('stats', {
+      url: '/stats/:grabberID',
+      parent: 'dashboard',
+      templateUrl: 'views/dashboard/stats.html',
+      controller: 'StatsCtrl'
+    })
     .state('database', {
       url: '/database',
       parent: 'admin',

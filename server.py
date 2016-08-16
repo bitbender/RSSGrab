@@ -54,6 +54,27 @@ def get_all_grabbers():
     return dumps([grabber.encode() for grabber in engine.get_all()], default=json_util.default)
 
 
+@app.route('/grabber/<id>', methods=['GET'])
+@login_required
+def get_grabber(id):
+    grabber = engine.get_grabber(id)
+    if grabber:
+        return dumps(grabber.encode(), default=json_util.default)
+    else:
+        return 'Grabber with id {} does not exist'.format(id), 404
+
+
+@app.route('/grabber/stats/', methods=['POST'])
+@login_required
+def get_grabber_stats():
+    jsn = loads(request.data.decode('utf-8'), object_hook=json_util.object_hook)
+    stats = engine.get_stats(Grabber.new(jsn))
+    if stats:
+        return dumps(stats, default=json_util.default)
+    else:
+        return dumps([], default=json_util.default)
+
+
 @app.route('/grabber', methods=['POST'])
 @login_required
 def add_grabber():
@@ -68,8 +89,8 @@ def add_grabber():
 def update_grabber():
     jsn = loads(request.data.decode('utf-8'), object_hook=json_util.object_hook)
 
-    engine.update_grabber(Grabber.new(jsn))
-    return 'Succesfully updated grabber', 201
+    result = engine.update_grabber(Grabber.new(jsn))
+    return dumps(result.encode(), default=json_util.default)
 
 
 @app.route('/grabber/start', methods=['POST'])
@@ -114,6 +135,8 @@ def delete_grabber():
     :return: http code 200 if grabber could be deleted, else 404
     """
     jsn = loads(request.data.decode('utf-8'), object_hook=json_util.object_hook)
+
+    print(jsn)
 
     engine.delete_grabber(Grabber.new(jsn))
     return 'Grabber deleted', 200

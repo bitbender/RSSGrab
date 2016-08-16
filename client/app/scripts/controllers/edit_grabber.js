@@ -20,6 +20,15 @@ angular.module('yapp')
 
     var trigger = 0;
 
+    var replace_grabber = function(arr,grabber){
+      for(var i = 0; i < arr.length; i++) {
+        if(grabber._id['$oid'] === arr[i]._id['$oid']){
+          arr[i] = grabber;
+          break;
+        }
+      }
+    };
+
     $scope.changed = function () {
       var hours = $scope.interval.getHours() * 3600;
       var minutes = $scope.interval.getMinutes() * 60;
@@ -29,6 +38,7 @@ angular.module('yapp')
       $log.info(trigger)
     };
 
+    // Open Preview Feed Dialog
     $scope.clickToOpen = function () {
       ngDialog.open({
         template: '../../views/partials/preview_feed.html',
@@ -36,15 +46,14 @@ angular.module('yapp')
         scope: $scope
       }).closePromise.then(function (data) {
         console.log(data);
-        //$scope.getAll();
+        //$scope.getAll();edit_grabber.js
       });
     };
 
-    $scope.save = function () {
+    $scope.save = function (grabber) {
       if (trigger != 0){
-        $scope.grabber.interval = trigger ;
+        grabber.interval = trigger ;
       }
-      $log.info($scope.grabber);
 
       var req = {
         method: 'PUT',
@@ -52,14 +61,15 @@ angular.module('yapp')
         headers: {
           'Content-Type': "application/json"
         },
-        data: $scope.grabber
+        data: grabber
       };
 
       $http(req).then(function successCallback(response) {
-        $log.info(response);
-        $scope.closeThisDialog('Close the create dialog');
+        $log.debug(response.data);
+        replace_grabber($scope.grabbers, response.data);
+        $scope.closeThisDialog('Close the edit dialog');
       }, function errorCallback(response) {
-        $log.info('Ups for some reason I could not create the grabber')
+        $log.error('Ups for some reason I could not create the grabber')
       });
     };
 

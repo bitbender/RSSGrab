@@ -30,6 +30,15 @@ angular.module('yapp')
       }
     };
 
+    var replace_grabber = function(arr,grabber){
+      for(var i = 0; i < arr.length; i++) {
+        if(grabber._id['$oid'] === arr[i]._id['$oid']){
+          arr[i] = grabber;
+          break;
+        }
+      }
+    };
+
     $scope.getAll = function () {
 
       var req = {
@@ -50,6 +59,7 @@ angular.module('yapp')
     // get all data when page reloads
     $scope.getAll();
 
+    // Open the create dialog
     $scope.clickToOpen = function () {
       ngDialog.open({
         template: '../../views/partials/create_grabber.html',
@@ -60,8 +70,8 @@ angular.module('yapp')
       });
     };
 
-    $scope.openEditDialog = function (position) {
-      $scope.grabber = $scope.grabbers[position];
+    $scope.openEditDialog = function (grabber) {
+      $scope.grabber = grabber;
       ngDialog.open({
         template: '../../views/partials/edit_grabber.html',
         controller: 'EditGrabberCtrl',
@@ -71,11 +81,11 @@ angular.module('yapp')
       });
     };
 
-    $scope.start = function(position){
+    $scope.start = function(grabber){
 
       var req = {
         method: 'POST',
-        url: 'http://localhost:5000/grabber/'+$scope.grabbers[position]._id['$oid']+'/start',
+        url: 'http://localhost:5000/grabber/'+grabber._id['$oid']+'/start',
         headers: {
           'Content-Type': "application/json"
         }
@@ -83,8 +93,7 @@ angular.module('yapp')
 
       $http(req).then(function successCallback(response) {
         console.log(response.data);
-        $scope.grabbers[position] = response.data;
-        $scope.startgrab='glyphicon glyphicon-play text-success';
+        replace_grabber($scope.grabbers, response.data);
       }, function errorCallback(response) {
         console.log('Ups for some reason I couldn\'t start the grabber')
       });
@@ -107,10 +116,10 @@ angular.module('yapp')
       });
     };
 
-    $scope.stop = function(position){
+    $scope.stop = function(grabber){
       var req = {
         method: 'POST',
-        url: 'http://localhost:5000/grabber/'+$scope.grabbers[position]._id['$oid']+'/stop',
+        url: 'http://localhost:5000/grabber/'+grabber._id['$oid']+'/stop',
         headers: {
           'Content-Type': "application/json"
         }
@@ -118,7 +127,7 @@ angular.module('yapp')
 
       $http(req).then(function successCallback(response) {
         console.log(response.data);
-        $scope.grabbers[position] = response.data;
+        replace_grabber($scope.grabbers, response.data);
       }, function errorCallback(response) {
         console.log('Ups for some reason I couldn\'t stop the grabber')
       });
@@ -141,9 +150,9 @@ angular.module('yapp')
       });
     };
 
-    $scope.delete = function(position){
-      console.log("Deleting Grabber at position: "+position);
-      console.log($scope.grabbers[position]);
+    $scope.delete = function(grabber){
+      console.log("Deleting Grabber: "+grabber.name);
+      console.log(grabber);
 
       var req = {
         method: 'DELETE',
@@ -151,7 +160,7 @@ angular.module('yapp')
         headers: {
           'Content-Type': "application/json"
         },
-        data: $scope.grabbers[position]
+        data: grabber
       };
 
       $http(req).then(function successCallback(response) {

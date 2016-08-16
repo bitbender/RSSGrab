@@ -34,6 +34,10 @@ class Engine:
         connection = SmplConnPool.get_instance().get_connection()
         self.grb_coll = connection[self.cfg['database']['db']]['grabbers']
 
+        # get stats collection
+        connection = SmplConnPool.get_instance().get_connection()
+        self.stats_coll = connection[self.cfg['database']['db']]['stats']
+
         self.grabbers = {str(doc['_id']): Grabber.new(doc) for doc in self.grb_coll.find()}
 
     def add_grabber(self, grabber):
@@ -53,6 +57,7 @@ class Engine:
             self._reschedule_job(grabber)
 
         logger.info('Updated grabber to {}'.format(grabber))
+        return grabber
 
     def get_grabber(self, grb_id):
         try:
@@ -62,6 +67,12 @@ class Engine:
 
     def get_all(self):
         return self.grabbers.values()
+
+    def get_stats(self, grabber):
+        result = list(self.stats_coll.find({'grb_id': grabber._id}))
+        logger.info('Retrieved stats for grabber {}'.format(grabber))
+
+        return result
 
 
     def delete_grabber(self, grabber):

@@ -1,0 +1,39 @@
+<div>
+	<a ui-sref="grabber" class="pull-right btn btn-primary btn-outline btn-rounded">Back</a>
+	<h2>Statistics for {{ grabber.name }} - {{ grabber.status }}</h2>
+	<div class="jumbotron">
+		<div class="container">
+            <p>
+                <a class="btn btn-primary btn-lg btn-outline glyphicon glyphicon-refresh" ng-click="retrieveStatistics()"></a>
+
+                <!--<a class="btn btn-primary btn-lg btn-outline btn-rounded" ng-click="printGrabber()">Print Grabber</a>-->
+                <!--<a class="btn btn-primary btn-lg btn-outline btn-rounded" ng-click="retrieveStatistics()">Get Stats</a>-->
+			</p>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th><a ng-click="sortType = 'start'; sortReverse = !sortReverse">Start Time</a></th>
+                    <th><a ng-click="sortType = 'end'; sortReverse = !sortReverse">End Time</a></th>
+                    <th><a ng-click="sortType = 'exec'; sortReverse = !sortReverse">Exec Time</a></th>
+                    <th><a ng-click="sortType = 'total'; sortReverse = !sortReverse">Total</a></th>
+                    <th><a ng-click="sortType = 'new'; sortReverse = !sortReverse">New</a></th>
+                    <th><a ng-click="sortType = 'pay'; sortReverse = !sortReverse">Payed</a></th>
+                    <th><a ng-click="sortType = 'updated'; sortReverse = !sortReverse">Updated</a></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr dir-paginate="stat in stats | orderBy:sortType:sortReverse | itemsPerPage: 15">
+                    <td>{{ stat.start_time['$date'] | date:'dd.MM.yyyy - HH:mm:ss'}}</td>
+                    <td>{{ stat.end_time['$date'] | date:'dd.MM.yyyy - HH:mm:ss'}}</td>
+                    <td>{{ stat.end_time['$date'] - stat.start_time['$date'] | date:'mm:ss'}}</td>
+                    <td>{{ stat.total_pages }}</td>
+                    <td ng-click="showNewUrls(stat)">{{ stat.new.length }}</td>
+                    <td ng-click="showPayedUrls(stat)">{{ stat.payed.length }}</td>
+                    <td ng-click="showUpdatedUrls(stat)">{{ stat.updated.length }}</td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="text-center"><dir-pagination-controls max-size="15" direction-links="true" boundary-links="true" ></dir-pagination-controls></div>
+		</div>
+	</div>
+</div>
