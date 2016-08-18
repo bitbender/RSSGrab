@@ -8,14 +8,14 @@
  * Controller of admin
  */
 angular.module('yapp')
-  .controller('AdminCtrl', function ($scope, $state, $http) {
+  .controller('AdminCtrl', function ($scope, $state, $http, __env) {
 
     $scope.$state = $state;
 
     $scope.getDatabases = function(){
       $http({
         method: 'GET',
-        url: 'http://localhost:5000/database'
+        url: __env.apiUrl+'database'
       }).then(function successCallback(response) {
         $scope.databases = angular.fromJson(response.data.databases);
         console.log(response)

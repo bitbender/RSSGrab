@@ -7,7 +7,7 @@
  * # GrabberCtrl
  */
 angular.module('yapp')
-  .controller('CreateGrabberCtrl', function ($scope, $state, $log, ngDialog, $http) {
+  .controller('CreateGrabberCtrl', function ($scope, $state, $log, ngDialog, $http, __env) {
 
     $scope.grabber = {};
 
@@ -34,7 +34,7 @@ angular.module('yapp')
 
       var req = {
         method: 'POST',
-        url: 'http://localhost:5000/grabber',
+        url: __env.apiUrl+'grabber',
         headers: {
           'Content-Type': "application/json"
         },

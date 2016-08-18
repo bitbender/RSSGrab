@@ -7,7 +7,7 @@
  * # GrabberCtrl
  */
 angular.module('yapp')
-  .controller('EditGrabberCtrl', function ($scope, $state, $log, $http, ngDialog, moment) {
+  .controller('EditGrabberCtrl', function ($scope, $state, $log, $http, ngDialog, moment, __env) {
 
     var dur =  $scope.grabber.interval;
     var h = Math.floor(dur/3600);
@@ -57,7 +57,7 @@ angular.module('yapp')
 
       var req = {
         method: 'PUT',
-        url: 'http://localhost:5000/grabber',
+        url: __env.apiUrl+'grabber',
         headers: {
           'Content-Type': "application/json"
         },

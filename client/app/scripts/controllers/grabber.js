@@ -7,7 +7,7 @@
  * # GrabberCtrl
  */
 angular.module('yapp')
-  .controller('GrabberCtrl', function ($scope, $state, $log, ngDialog, $http) {
+  .controller('GrabberCtrl', function ($scope, $state, $log, ngDialog, $http, __env) {
 
     // This controls the sorting of the table
     $scope.sortType     = 'name'; // set the default sort type
@@ -43,7 +43,7 @@ angular.module('yapp')
 
       var req = {
         method: 'GET',
-        url: 'http://localhost:5000/grabber',
+        url: __env.apiUrl+'grabber',
         headers: {
           'Content-Type': "application/json"
         }
@@ -85,7 +85,7 @@ angular.module('yapp')
 
       var req = {
         method: 'POST',
-        url: 'http://localhost:5000/grabber/'+grabber._id['$oid']+'/start',
+        url: __env.apiUrl+'grabber/'+grabber._id['$oid']+'/start',
         headers: {
           'Content-Type': "application/json"
         }
@@ -102,7 +102,7 @@ angular.module('yapp')
     $scope.startAll = function(){
       var req = {
         method: 'POST',
-        url: 'http://localhost:5000/grabber/start',
+        url: __env.apiUrl+'grabber/start',
         headers: {
           'Content-Type': "application/json"
         }
@@ -119,7 +119,7 @@ angular.module('yapp')
     $scope.stop = function(grabber){
       var req = {
         method: 'POST',
-        url: 'http://localhost:5000/grabber/'+grabber._id['$oid']+'/stop',
+        url: __env.apiUrl+'grabber/'+grabber._id['$oid']+'/stop',
         headers: {
           'Content-Type': "application/json"
         }
@@ -136,7 +136,7 @@ angular.module('yapp')
     $scope.stopAll = function(){
       var req = {
         method: 'POST',
-        url: 'http://localhost:5000/grabber/stop',
+        url: __env.apiUrl+'grabber/stop',
         headers: {
           'Content-Type': "application/json"
         }
@@ -156,7 +156,7 @@ angular.module('yapp')
 
       var req = {
         method: 'DELETE',
-        url: 'http://localhost:5000/grabber',
+        url: __env.apiUrl+'grabber',
         headers: {
           'Content-Type': "application/json"
         },

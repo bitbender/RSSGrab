@@ -18,11 +18,16 @@ var app = angular
     'satellizer'
   ]);
 
+
+// console.log(__env);
+app.constant('__env', __env);
 app.constant("moment", moment);
 
-app.config(function ($stateProvider, $urlRouterProvider, $authProvider) {
+app.config(function ($stateProvider, $urlRouterProvider, $authProvider, __env) {
 
-  $authProvider.baseUrl = 'http://localhost:5000/';
+  //console.log(__env.apiUrl);
+
+  $authProvider.baseUrl = __env.baseUrl;
 
   $urlRouterProvider.when('/dashboard', '/dashboard/overview');
   $urlRouterProvider.otherwise('/login');

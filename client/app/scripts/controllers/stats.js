@@ -8,7 +8,7 @@
  * Controller of admin
  */
 angular.module('yapp')
-  .controller('StatsCtrl', function ($scope, $state, $stateParams, ngDialog, $http) {
+  .controller('StatsCtrl', function ($scope, $state, $stateParams, ngDialog, $http, __env) {
 
     // This controls the sorting of the table
     $scope.sortType     = 'start'; // set the default sort type
@@ -19,7 +19,7 @@ angular.module('yapp')
 
       var req = {
         method: 'GET',
-        url: 'http://localhost:5000/grabber/'+id,
+        url: __env.apiUrl+'grabber/'+id,
         headers: {
           'Content-Type': "application/json"
         }
@@ -38,7 +38,7 @@ angular.module('yapp')
 
       var req = {
         method: 'POST',
-        url: 'http://localhost:5000/grabber/stats/',
+        url: __env.apiUrl+'grabber/stats/',
         headers: {
           'Content-Type': "application/json"
         },

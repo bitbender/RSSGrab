@@ -16,7 +16,7 @@ angular.module('yapp')
 
       var req = {
         method: 'POST',
-        url: 'http://localhost:5000/task',
+        url: __env.apiUrl+'task',
         headers: {
           'Content-Type': 'application/json'
         },

@@ -7,7 +7,7 @@
  * # GrabberCtrl
  */
 angular.module('yapp')
-  .controller('PreviewFeedCtrl', function ($scope, $state, $log, $http) {
+  .controller('PreviewFeedCtrl', function ($scope, $state, $log, $http, __env) {
 
     $scope.preview = function () {
 
@@ -15,7 +15,7 @@ angular.module('yapp')
 
       var req = {
         method: 'POST',
-        url: 'http://localhost:5000/feed',
+        url: __env.apiUrl+'feed',
         headers: {
           'Content-Type': "application/json"
         },
