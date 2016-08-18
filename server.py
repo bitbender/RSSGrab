@@ -160,7 +160,13 @@ def main():
     #
     # grabber_to_job[grabber._id] = job
 
-    app.run()
+    if 'server' in conf:
+        if conf['server']['host'] and 'port' not in conf['server']:
+            app.run(host=conf['server']['host'])
+        elif conf['server']['host'] and conf['server']['port']:
+            app.run(host=conf['server']['host'], port=conf['server']['port'])
+    else:
+        app.run()
 
 
 if __name__ == '__main__':
