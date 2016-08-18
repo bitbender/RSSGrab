@@ -25,9 +25,8 @@ app.constant("moment", moment);
 
 app.config(function ($stateProvider, $urlRouterProvider, $authProvider, __env) {
 
-  //console.log(__env.apiUrl);
-
-  $authProvider.baseUrl = __env.baseUrl;
+  // set url to the authentication endpoint
+  $authProvider.baseUrl = __env.authUrl;
 
   $urlRouterProvider.when('/dashboard', '/dashboard/overview');
   $urlRouterProvider.otherwise('/login');
