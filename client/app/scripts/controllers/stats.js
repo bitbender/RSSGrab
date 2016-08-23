@@ -38,7 +38,7 @@ angular.module('yapp')
 
       var req = {
         method: 'POST',
-        url: __env.apiUrl+'grabber/stats/',
+        url: __env.apiUrl+'grabber/stats/50',
         headers: {
           'Content-Type': "application/json"
         },

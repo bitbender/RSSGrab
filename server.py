@@ -64,11 +64,11 @@ def get_grabber(id):
         return 'Grabber with id {} does not exist'.format(id), 404
 
 
-@app.route('/grabber/stats/', methods=['POST'])
+@app.route('/grabber/stats/<limit>', methods=['POST'])
 @login_required
-def get_grabber_stats():
+def get_grabber_stats(limit):
     jsn = loads(request.data.decode('utf-8'), object_hook=json_util.object_hook)
-    stats = engine.get_stats(Grabber.new(jsn))
+    stats = engine.get_stats(Grabber.new(jsn), int(limit))
     if stats:
         return dumps(stats, default=json_util.default)
     else:

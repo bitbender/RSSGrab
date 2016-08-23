@@ -68,12 +68,11 @@ class Engine:
     def get_all(self):
         return self.grabbers.values()
 
-    def get_stats(self, grabber):
-        result = list(self.stats_coll.find({'grb_id': grabber._id}))
+    def get_stats(self, grabber, limit):
+        result = list(self.stats_coll.find({'grb_id': grabber._id}).sort([("start_time", 1)]).limit(limit))
         logger.info('Retrieved stats for grabber {}'.format(grabber))
 
         return result
-
 
     def delete_grabber(self, grabber):
         if self.grabbers[str(grabber._id)]:
