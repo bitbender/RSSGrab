@@ -213,56 +213,63 @@ class Grabber:
         :param rss_item: the rss item to be processed
         """
         rss_item['grbid'] = self._id
-        article_url = rss_item['guid']
 
-        # convert time.struct_time to datetime.datetime
-        rss_item['published'] = dt.fromtimestamp(mktime(rss_item['published_parsed']))
-        del rss_item['published_parsed']
+        # only try to download something if the rss element contains a valid article link.
+        if 'link' in rss_item:
+            article_url = rss_item['link']
 
-        # download the article referred to the rss feed
-        rss_item['articles'] = [page.toDoc() for page in self._download_website(article_url)]
-        Grabber.stats.total_pages += len(rss_item['articles'])
+            # convert time.struct_time to datetime.datetime
+            if 'published_parsed' in rss_item:
+                rss_item['published'] = dt.fromtimestamp(mktime(rss_item['published_parsed']))
+                del rss_item['published_parsed']
 
-        connection = SmplConnPool.get_instance().get_connection()
-        feed_collection = connection[Grabber.cfg['database']['db']][
-            Grabber.cfg['database']['collections']['articles']]
-
-        # try to fetch the article from database
-        db_feed = feed_collection.find({'id': rss_item['id']})
-
-        assert db_feed.count() < 2, "id should be a primary key"
-        if not db_feed.count() > 0:
-            feed_collection.save(rss_item)
-            Grabber.stats.new.append(article_url)
-        else:
-            self.update_feed(db_feed[0], rss_item)
-
-    def update_feed(self, old_feed, new_feed):
-        """
-        Replaces old feed with new one.
-        :param old_feed:
-        :param new_feed:
-        :return:
-        """
-        assert old_feed['id'] == new_feed['id'], 'Updates should only \
-                be made to a newer version of the article'
-        if self._is_newer(old_feed['published'], new_feed['published']):
+            # download the article referred to the rss feed
+            # note that one articles can consist of multiple pages
+            rss_item['articles'] = [page.toDoc() for page in self._download_website(article_url)]
+            Grabber.stats.total_pages += len(rss_item['articles'])
 
             connection = SmplConnPool.get_instance().get_connection()
             feed_collection = connection[Grabber.cfg['database']['db']][
                 Grabber.cfg['database']['collections']['articles']]
 
-            feed_collection.replace_one({'id': new_feed['id']}, new_feed)
-            Grabber.stats.updated.append(new_feed['guid'])
+            if 'id' not in rss_item or rss_item['id'] == '':
+                rss_item['id'] = rss_item['link']
 
-    def _is_newer(self, old_date, new_date):
+            # try to fetch the article from database
+            db_feed = feed_collection.find({'id': rss_item['id']})
+
+            assert db_feed.count() < 2, "id should be a primary key"
+            if not db_feed.count() > 0:
+                feed_collection.save(rss_item)
+                Grabber.stats.new.append(article_url)
+            else:
+                self.update_feed(db_feed[0], rss_item)
+
+    def update_feed(self, old_rss_item, new_rss_item):
         """
-        Checks if a date is newer then another date
-        :param old_date: older date
-        :param new_date: newer date
-        :return: true if the old date is truly older else false.
+        Replaces old rss item with the new one.
+        :param old_rss_item:
+        :param new_rss_item:
+        :return:
         """
-        return old_date < new_date
+        assert old_rss_item['id'] == new_rss_item['id'], 'Updates should only \
+                be made to a newer version of the article'
+
+        # get connection to the feed collection
+        connection = SmplConnPool.get_instance().get_connection()
+        feed_collection = connection[Grabber.cfg['database']['db']][
+            Grabber.cfg['database']['collections']['articles']]
+
+        if 'published' in old_rss_item:
+            # check if the new feed is really newer then the old one
+            if old_rss_item['published'] < new_rss_item['published']:
+
+                # replace the old article with the newer one
+                feed_collection.replace_one({'id': new_rss_item['id']}, new_rss_item)
+                Grabber.stats.updated.append(new_rss_item['link'])
+        else:
+            # if no published field exists, always replace the old item with the new one.
+            feed_collection.replace_one({'id': new_rss_item['id']}, new_rss_item)
 
     def encode(self, rm=None):
         """

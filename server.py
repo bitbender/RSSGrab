@@ -45,7 +45,12 @@ def preview_feed():
     jsn = request.get_json()
     data = feedparser.parse(jsn['url'])
 
-    return dumps([(entry['title'], entry['guid']) for entry in data['entries']], default=json_util.default)
+    feed_entries = []
+    for entry in data['entries']:
+        if 'title' in entry and 'link' in entry:
+            feed_entries.append((entry['title'], entry['link']))
+
+    return dumps(feed_entries, default=json_util.default)
 
 
 @app.route('/grabber', methods=['GET'])
