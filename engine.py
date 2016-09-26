@@ -40,6 +40,16 @@ class Engine:
 
         self.grabbers = {str(doc['_id']): Grabber.new(doc) for doc in self.grb_coll.find()}
 
+    def refresh(self):
+        """
+        Reload the grabber definitions from the database and
+        add new grabbers to the internal grabber collection.
+        """
+        for doc in self.grb_coll.find():
+            if str(doc['_id']) not in self.grabbers:
+                self.grabbers[str(doc['_id'])] = Grabber.new(doc)
+                logger.info('Adding new grabber id:{0} name:{1}'.format(str(doc['_id']), doc['name']))
+
     def add_grabber(self, grabber):
         self.grabbers[str(grabber._id)] = grabber
         grabber.save()

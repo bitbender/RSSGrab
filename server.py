@@ -69,6 +69,7 @@ def preview_feed():
 @app.route('/grabber', methods=['GET'])
 @login_required
 def get_all_grabbers():
+    engine.refresh()
     return dumps([grabber.encode() for grabber in engine.get_all()], default=json_util.default)
 
 
