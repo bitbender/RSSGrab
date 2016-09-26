@@ -5,6 +5,8 @@ from copy import copy
 import logging
 import bcrypt
 
+logger = logging.getLogger('server')
+
 
 class User(object):
 
@@ -41,10 +43,10 @@ class User(object):
             temp = copy(self.__dict__)
             del temp['_id']
             users_collection.replace_one(user, temp)
-            logging.info('Updated user: {0}'.format(self.__repr__()))
+            logger.info('Updated user: {0}'.format(self.__repr__()))
         else:
             user_id = users_collection.insert_one(self.__dict__).inserted_id
-            logging.info('Inserted new user: {0}'.format(self.__repr__()))
+            logger.info('Inserted new user: {0}'.format(self.__repr__()))
 
     @classmethod
     def load(cls, email):

@@ -1,6 +1,7 @@
 import yaml
 import os
 
+
 class Config(object):
     """
     This class implements a config holder. The holder is responsible for

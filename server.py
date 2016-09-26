@@ -1,4 +1,5 @@
 import logging
+from logging.handlers import RotatingFileHandler
 import feedparser
 from flask import Flask, request
 from config import Config
@@ -15,8 +16,20 @@ from json import dumps, loads
 conf = Config.get_instance()
 
 # configure logger
-logging.basicConfig(level=logging.DEBUG)
+log_formatter = logging.Formatter('%(asctime)s %(levelname)s %(funcName)s(%(lineno)d) %(message)s')
+log_file = './backend.log'
+if 'logger' in conf and 'out' in conf['logger']:
+    log_file = conf['logger']['out']
+
+my_handler = RotatingFileHandler(log_file, mode='a', maxBytes=50*1024*1024,
+                                 backupCount=2, encoding=None, delay=0)
+
+my_handler.setFormatter(log_formatter)
+my_handler.setLevel(logging.INFO)
+
 logger = logging.getLogger('server')
+logger.setLevel(logging.INFO)
+logger.addHandler(my_handler)
 
 # create the engine
 engine = Engine()

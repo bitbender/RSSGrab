@@ -23,7 +23,7 @@ grab. That means downloading the source code of the articles
 in an rss feed
 """
 
-logger = logging.getLogger('grabber')
+logger = logging.getLogger('server')
 
 
 class Grabber:
@@ -136,7 +136,10 @@ class Grabber:
 
         if len(pages) > 0:
             for page in pages:
-                url = url_prefix + page
+                if page.startswith(url_prefix):
+                    url = page
+                else:
+                    url = url_prefix + page
 
                 if url not in Grabber.crawl_state:
                     Grabber.crawl_state.add(url)

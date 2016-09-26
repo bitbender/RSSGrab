@@ -4,7 +4,7 @@ from bson import json_util, ObjectId
 from config import Config
 from smpl_conn_pool import SmplConnPool
 
-logger = logging.getLogger('statistics')
+logger = logging.getLogger('server')
 
 
 class Statistic:

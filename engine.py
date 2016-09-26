@@ -9,7 +9,7 @@ It is responsible for creating, managing and running the
 created grabbers.
 """
 
-logger = logging.getLogger('engine')
+logger = logging.getLogger('server')
 
 
 class Engine:
